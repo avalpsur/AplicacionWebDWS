@@ -21,4 +21,16 @@ En esta aplicación vamos a gestionar una cadena de cines y su base de datos.
 ---PRÁCTICA 2 VIEWS---
 En esta práctica vamos a incluir 10 URLs que deben cumplir diferentes criterios que iremos comentando.
 
-1. 
+1. Una URL que muestra todos los socios registrados con todos sus datos.
+   Esta URL sirve a modo de introducción para sacar todos los datos de una tabla (socio) que se relaciona 1:1 con otra tabla (cliente). Como a todos los socios son clientes, esta query no solo nos mostrará las credenciales como socio, sino que también nos mostrará sus datos de cliente.
+   
+
+2. Una  URL que muestre todas las salas de un cine pasado como parámetro.
+   Aquí trabajamos con las relaciones 1:M entre cine y sala, mostrando todas las salas de un cine en concreto.
+
+
+3. Una URL que muestre todas las proyecciones de una sala en un día en concreto ordenadas de manera ascendente.
+   Así incluimos el order-by en las querys.
+
+
+4. Una URL que 
