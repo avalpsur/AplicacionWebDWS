@@ -6,6 +6,8 @@ def index(request):
     return render(request, 'index.html')
 
 
-def listar_clientes(request):
-    return 
+def listar_socios(request):
+    socios = (Socio.objects.select_related("cliente")).all()
+    return render(request, 'socio/lista.html',{"socios":socios})
+
 
