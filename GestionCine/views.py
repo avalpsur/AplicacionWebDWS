@@ -11,3 +11,5 @@ def listar_socios(request):
     return render(request, 'socio/lista.html',{"socios":socios})
 
 
+def listar_salas_cine(request,id_cine):
+    salas = (Sala.objects.select_related("cine").prefetch_related("")).all()
