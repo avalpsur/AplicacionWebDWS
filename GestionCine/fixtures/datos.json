@@ -1,2604 +1,668 @@
 [
-{
-    "model": "auth.permission",
-    "pk": 1,
-    "fields": {
-        "name": "Can add log entry",
-        "content_type": 1,
-        "codename": "add_logentry"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 2,
-    "fields": {
-        "name": "Can change log entry",
-        "content_type": 1,
-        "codename": "change_logentry"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 3,
-    "fields": {
-        "name": "Can delete log entry",
-        "content_type": 1,
-        "codename": "delete_logentry"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 4,
-    "fields": {
-        "name": "Can view log entry",
-        "content_type": 1,
-        "codename": "view_logentry"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 5,
-    "fields": {
-        "name": "Can add permission",
-        "content_type": 2,
-        "codename": "add_permission"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 6,
-    "fields": {
-        "name": "Can change permission",
-        "content_type": 2,
-        "codename": "change_permission"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 7,
-    "fields": {
-        "name": "Can delete permission",
-        "content_type": 2,
-        "codename": "delete_permission"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 8,
-    "fields": {
-        "name": "Can view permission",
-        "content_type": 2,
-        "codename": "view_permission"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 9,
-    "fields": {
-        "name": "Can add group",
-        "content_type": 3,
-        "codename": "add_group"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 10,
-    "fields": {
-        "name": "Can change group",
-        "content_type": 3,
-        "codename": "change_group"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 11,
-    "fields": {
-        "name": "Can delete group",
-        "content_type": 3,
-        "codename": "delete_group"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 12,
-    "fields": {
-        "name": "Can view group",
-        "content_type": 3,
-        "codename": "view_group"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 13,
-    "fields": {
-        "name": "Can add user",
-        "content_type": 4,
-        "codename": "add_user"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 14,
-    "fields": {
-        "name": "Can change user",
-        "content_type": 4,
-        "codename": "change_user"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 15,
-    "fields": {
-        "name": "Can delete user",
-        "content_type": 4,
-        "codename": "delete_user"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 16,
-    "fields": {
-        "name": "Can view user",
-        "content_type": 4,
-        "codename": "view_user"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 17,
-    "fields": {
-        "name": "Can add content type",
-        "content_type": 5,
-        "codename": "add_contenttype"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 18,
-    "fields": {
-        "name": "Can change content type",
-        "content_type": 5,
-        "codename": "change_contenttype"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 19,
-    "fields": {
-        "name": "Can delete content type",
-        "content_type": 5,
-        "codename": "delete_contenttype"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 20,
-    "fields": {
-        "name": "Can view content type",
-        "content_type": 5,
-        "codename": "view_contenttype"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 21,
-    "fields": {
-        "name": "Can add session",
-        "content_type": 6,
-        "codename": "add_session"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 22,
-    "fields": {
-        "name": "Can change session",
-        "content_type": 6,
-        "codename": "change_session"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 23,
-    "fields": {
-        "name": "Can delete session",
-        "content_type": 6,
-        "codename": "delete_session"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 24,
-    "fields": {
-        "name": "Can view session",
-        "content_type": 6,
-        "codename": "view_session"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 25,
-    "fields": {
-        "name": "Can add cine",
-        "content_type": 7,
-        "codename": "add_cine"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 26,
-    "fields": {
-        "name": "Can change cine",
-        "content_type": 7,
-        "codename": "change_cine"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 27,
-    "fields": {
-        "name": "Can delete cine",
-        "content_type": 7,
-        "codename": "delete_cine"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 28,
-    "fields": {
-        "name": "Can view cine",
-        "content_type": 7,
-        "codename": "view_cine"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 29,
-    "fields": {
-        "name": "Can add cliente",
-        "content_type": 8,
-        "codename": "add_cliente"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 30,
-    "fields": {
-        "name": "Can change cliente",
-        "content_type": 8,
-        "codename": "change_cliente"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 31,
-    "fields": {
-        "name": "Can delete cliente",
-        "content_type": 8,
-        "codename": "delete_cliente"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 32,
-    "fields": {
-        "name": "Can view cliente",
-        "content_type": 8,
-        "codename": "view_cliente"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 33,
-    "fields": {
-        "name": "Can add gerente",
-        "content_type": 9,
-        "codename": "add_gerente"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 34,
-    "fields": {
-        "name": "Can change gerente",
-        "content_type": 9,
-        "codename": "change_gerente"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 35,
-    "fields": {
-        "name": "Can delete gerente",
-        "content_type": 9,
-        "codename": "delete_gerente"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 36,
-    "fields": {
-        "name": "Can view gerente",
-        "content_type": 9,
-        "codename": "view_gerente"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 37,
-    "fields": {
-        "name": "Can add pelicula",
-        "content_type": 10,
-        "codename": "add_pelicula"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 38,
-    "fields": {
-        "name": "Can change pelicula",
-        "content_type": 10,
-        "codename": "change_pelicula"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 39,
-    "fields": {
-        "name": "Can delete pelicula",
-        "content_type": 10,
-        "codename": "delete_pelicula"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 40,
-    "fields": {
-        "name": "Can view pelicula",
-        "content_type": 10,
-        "codename": "view_pelicula"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 41,
-    "fields": {
-        "name": "Can add proveedor",
-        "content_type": 11,
-        "codename": "add_proveedor"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 42,
-    "fields": {
-        "name": "Can change proveedor",
-        "content_type": 11,
-        "codename": "change_proveedor"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 43,
-    "fields": {
-        "name": "Can delete proveedor",
-        "content_type": 11,
-        "codename": "delete_proveedor"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 44,
-    "fields": {
-        "name": "Can view proveedor",
-        "content_type": 11,
-        "codename": "view_proveedor"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 45,
-    "fields": {
-        "name": "Can add empleado",
-        "content_type": 12,
-        "codename": "add_empleado"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 46,
-    "fields": {
-        "name": "Can change empleado",
-        "content_type": 12,
-        "codename": "change_empleado"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 47,
-    "fields": {
-        "name": "Can delete empleado",
-        "content_type": 12,
-        "codename": "delete_empleado"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 48,
-    "fields": {
-        "name": "Can view empleado",
-        "content_type": 12,
-        "codename": "view_empleado"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 49,
-    "fields": {
-        "name": "Can add producto",
-        "content_type": 13,
-        "codename": "add_producto"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 50,
-    "fields": {
-        "name": "Can change producto",
-        "content_type": 13,
-        "codename": "change_producto"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 51,
-    "fields": {
-        "name": "Can delete producto",
-        "content_type": 13,
-        "codename": "delete_producto"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 52,
-    "fields": {
-        "name": "Can view producto",
-        "content_type": 13,
-        "codename": "view_producto"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 53,
-    "fields": {
-        "name": "Can add proyeccion",
-        "content_type": 14,
-        "codename": "add_proyeccion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 54,
-    "fields": {
-        "name": "Can change proyeccion",
-        "content_type": 14,
-        "codename": "change_proyeccion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 55,
-    "fields": {
-        "name": "Can delete proyeccion",
-        "content_type": 14,
-        "codename": "delete_proyeccion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 56,
-    "fields": {
-        "name": "Can view proyeccion",
-        "content_type": 14,
-        "codename": "view_proyeccion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 57,
-    "fields": {
-        "name": "Can add entrada",
-        "content_type": 15,
-        "codename": "add_entrada"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 58,
-    "fields": {
-        "name": "Can change entrada",
-        "content_type": 15,
-        "codename": "change_entrada"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 59,
-    "fields": {
-        "name": "Can delete entrada",
-        "content_type": 15,
-        "codename": "delete_entrada"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 60,
-    "fields": {
-        "name": "Can view entrada",
-        "content_type": 15,
-        "codename": "view_entrada"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 61,
-    "fields": {
-        "name": "Can add sala",
-        "content_type": 16,
-        "codename": "add_sala"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 62,
-    "fields": {
-        "name": "Can change sala",
-        "content_type": 16,
-        "codename": "change_sala"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 63,
-    "fields": {
-        "name": "Can delete sala",
-        "content_type": 16,
-        "codename": "delete_sala"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 64,
-    "fields": {
-        "name": "Can view sala",
-        "content_type": 16,
-        "codename": "view_sala"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 65,
-    "fields": {
-        "name": "Can add socio",
-        "content_type": 17,
-        "codename": "add_socio"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 66,
-    "fields": {
-        "name": "Can change socio",
-        "content_type": 17,
-        "codename": "change_socio"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 67,
-    "fields": {
-        "name": "Can delete socio",
-        "content_type": 17,
-        "codename": "delete_socio"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 68,
-    "fields": {
-        "name": "Can view socio",
-        "content_type": 17,
-        "codename": "view_socio"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 1,
-    "fields": {
-        "app_label": "admin",
-        "model": "logentry"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 2,
-    "fields": {
-        "app_label": "auth",
-        "model": "permission"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 3,
-    "fields": {
-        "app_label": "auth",
-        "model": "group"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 4,
-    "fields": {
-        "app_label": "auth",
-        "model": "user"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 5,
-    "fields": {
-        "app_label": "contenttypes",
-        "model": "contenttype"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 6,
-    "fields": {
-        "app_label": "sessions",
-        "model": "session"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 7,
-    "fields": {
-        "app_label": "GestionCine",
-        "model": "cine"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 8,
-    "fields": {
-        "app_label": "GestionCine",
-        "model": "cliente"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 9,
-    "fields": {
-        "app_label": "GestionCine",
-        "model": "gerente"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 10,
-    "fields": {
-        "app_label": "GestionCine",
-        "model": "pelicula"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 11,
-    "fields": {
-        "app_label": "GestionCine",
-        "model": "proveedor"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 12,
-    "fields": {
-        "app_label": "GestionCine",
-        "model": "empleado"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 13,
-    "fields": {
-        "app_label": "GestionCine",
-        "model": "producto"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 14,
-    "fields": {
-        "app_label": "GestionCine",
-        "model": "proyeccion"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 15,
-    "fields": {
-        "app_label": "GestionCine",
-        "model": "entrada"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 16,
-    "fields": {
-        "app_label": "GestionCine",
-        "model": "sala"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 17,
-    "fields": {
-        "app_label": "GestionCine",
-        "model": "socio"
-    }
-},
-{
-    "model": "GestionCine.cliente",
-    "pk": 1,
-    "fields": {
-        "dni": "Training.",
-        "nombre": "Off respond threat better dream. Side rich my window never college. Say everything court information better account industry.",
-        "apellidos": "Employee light he early. Red bag find early sure instead give. Minute place because middle serve finally.\nThey finally window investment lose. Toward simply fear simply serve.\nBegin rock seat find nor tough. Hand perform himself this.",
-        "email": "nombre@ejemplo.com"
-    }
-},
-{
-    "model": "GestionCine.cliente",
-    "pk": 2,
-    "fields": {
-        "dni": "Military.",
-        "nombre": "Station happen student east building. Send activity everybody coach.",
-        "apellidos": "Benefit adult economy character oil loss million. Green meet cut second out open strategy attorney. Win real among many week of. Player movement day final yourself.\nLikely question sure defense charge.\nBenefit difference various dark according result executive. Small knowledge door fast region.",
-        "email": "nombre@ejemplo.com"
-    }
-},
-{
-    "model": "GestionCine.cliente",
-    "pk": 3,
-    "fields": {
-        "dni": "Those.",
-        "nombre": "Check any month around resource together list. Common nearly star hot.\nVarious alone evening industry. Heavy recently leave prevent star.",
-        "apellidos": "Carry blue yeah she authority recognize. Military school Republican subject.\nLook site image land nearly. Hard science method me eat answer.\nDrop class seem music list. Send now notice. Send power again guess successful.",
-        "email": "nombre@ejemplo.com"
-    }
-},
-{
-    "model": "GestionCine.cliente",
-    "pk": 4,
-    "fields": {
-        "dni": "Suddenly.",
-        "nombre": "Lay final back evidence. Level drop movie personal raise glass chance.\nLife often stop career learn professional along. Community low bar board.",
-        "apellidos": "Hope instead TV piece clear wonder television. Hotel argue interest thousand prevent sound thought. Leave read despite.\nRole certainly they pretty. One listen number much media region. Heart election three build.",
-        "email": "nombre@ejemplo.com"
-    }
-},
-{
-    "model": "GestionCine.cliente",
-    "pk": 5,
-    "fields": {
-        "dni": "Describe.",
-        "nombre": "North present run coach.\nFollow inside push city. Region mother next. Gas responsibility physical pass. By job anything feel behind goal.",
-        "apellidos": "Player possible work design force. Down site easy simple agent new order. Section bed author hour consumer.\nSkin decision serve serious tax station. They record direction position team say anyone. Sense approach series phone sea far election. Fire agent sound rule toward.",
-        "email": "nombre@ejemplo.com"
-    }
-},
-{
-    "model": "GestionCine.cliente",
-    "pk": 6,
-    "fields": {
-        "dni": "Listen.",
-        "nombre": "Should college two decade prevent according. Actually former check cost. Better herself herself where.",
-        "apellidos": "Street admit standard education short art this. Paper let senior hour keep traditional bed. Box forward south.\nBut job hard. Seek along science travel. Alone natural leader staff product north child task. Reach someone star health involve.",
-        "email": "nombre@ejemplo.com"
-    }
-},
-{
-    "model": "GestionCine.cliente",
-    "pk": 7,
-    "fields": {
-        "dni": "Should.",
-        "nombre": "Friend up decide fire. Use black business than else.",
-        "apellidos": "Any even call it. Produce subject story data president his. South clearly place everyone yard experience general. Put performance set identify pressure image.\nReality sort treatment why civil child. View laugh Republican for.\nAccording owner let democratic. Affect share social blood once how.",
-        "email": "nombre@ejemplo.com"
-    }
-},
-{
-    "model": "GestionCine.cliente",
-    "pk": 8,
-    "fields": {
-        "dni": "Realize.",
-        "nombre": "Ten resource trial common need air option. Add base though most report reveal ok.",
-        "apellidos": "Attack avoid figure need born major. Turn camera west own you focus hair.\nCall bank player explain purpose most. Industry class exactly unit money prepare before. Indeed subject million federal you. Onto painting window.",
-        "email": "nombre@ejemplo.com"
-    }
-},
-{
-    "model": "GestionCine.cliente",
-    "pk": 9,
-    "fields": {
-        "dni": "Age.",
-        "nombre": "Process lay pull color word service age. Arm building material art situation type.",
-        "apellidos": "His gun family collection idea actually give strong.\nAllow human explain role. Modern forward oil of. Song dream majority each hour interesting kitchen.\nHis computer hold future responsibility continue. Attention pay on cut me always town. Two toward process main officer.",
-        "email": "nombre@ejemplo.com"
-    }
-},
-{
-    "model": "GestionCine.cliente",
-    "pk": 10,
-    "fields": {
-        "dni": "Simply.",
-        "nombre": "Practice meeting light soon mention though opportunity. Occur grow Republican tend. First choose instead assume cold.",
-        "apellidos": "Once huge security say a reason. Three really one expert single.\nFrom main heavy. Mind responsibility country let sell help. Draw whatever style probably present act.\nWithout development cover player. Skill many walk too before leader challenge behind. Guess magazine do base they room.",
-        "email": "nombre@ejemplo.com"
-    }
-},
-{
-    "model": "GestionCine.cliente",
-    "pk": 11,
-    "fields": {
-        "dni": "Per send.",
-        "nombre": "If space suffer crime wrong campaign view face. Movement third issue. Music place important change hold.",
-        "apellidos": "Especially himself serve. Only six realize central. There away painting eight. Lawyer be mind because rather pattern involve.\nFire appear standard somebody. End cut church situation despite onto technology. Down investment Democrat sea.",
-        "email": "nombre@ejemplo.com"
-    }
-},
-{
-    "model": "GestionCine.cliente",
-    "pk": 12,
-    "fields": {
-        "dni": "Entire.",
-        "nombre": "Yeah first only doctor section. Say room child first sign somebody.\nCause beat ten window next. Fall visit bed investment spring other budget.",
-        "apellidos": "Just value president summer business. Book store without yeah focus window one. Everyone reduce maybe card board interest.\nCover win often action decide gun. Wall despite order. Reflect individual bank in less base writer.",
-        "email": "nombre@ejemplo.com"
-    }
-},
-{
-    "model": "GestionCine.cliente",
-    "pk": 13,
-    "fields": {
-        "dni": "Apply.",
-        "nombre": "Practice entire move bank personal bit. Development step race employee away increase series here.\nRecently business mission threat. Teach same him.",
-        "apellidos": "Knowledge condition wrong why activity. Great wind under evidence fight. Until property fish democratic seek and magazine.\nFind management write. Eye rule dog threat least toward.\nTreat despite certainly itself admit card worry. Possible myself as fund everybody.",
-        "email": "nombre@ejemplo.com"
-    }
-},
-{
-    "model": "GestionCine.cliente",
-    "pk": 14,
-    "fields": {
-        "dni": "As young.",
-        "nombre": "Continue treat through local issue street doctor. Call section may poor film describe. Better toward every former financial at.",
-        "apellidos": "Same material character nature. Front development then arrive. Phone plan she use employee.\nExactly Mr treatment off. Personal hour what special fill. North their determine act lose discuss clearly bit.",
-        "email": "nombre@ejemplo.com"
-    }
-},
-{
-    "model": "GestionCine.cliente",
-    "pk": 15,
-    "fields": {
-        "dni": "Certain.",
-        "nombre": "Similar work adult good tell. Keep those front four challenge.",
-        "apellidos": "Team month measure. Full build five strategy.\nGrowth ready best should account. Help degree matter.\nOffice raise reflect east personal nearly. Vote tree believe evidence enjoy color.",
-        "email": "nombre@ejemplo.com"
-    }
-},
-{
-    "model": "GestionCine.socio",
-    "pk": 1,
-    "fields": {
-        "numSocio": "None.",
-        "fechaAlta": "2024-10-22",
-        "fechaCaducidad": "2024-10-22",
-        "cliente": 12
-    }
-},
-{
-    "model": "GestionCine.socio",
-    "pk": 2,
-    "fields": {
-        "numSocio": "Rock.",
-        "fechaAlta": "2024-10-22",
-        "fechaCaducidad": "2024-10-22",
-        "cliente": 13
-    }
-},
-{
-    "model": "GestionCine.socio",
-    "pk": 3,
-    "fields": {
-        "numSocio": "PM.",
-        "fechaAlta": "2024-10-22",
-        "fechaCaducidad": "2024-10-22",
-        "cliente": 3
-    }
-},
-{
-    "model": "GestionCine.socio",
-    "pk": 4,
-    "fields": {
-        "numSocio": "Late.",
-        "fechaAlta": "2024-10-22",
-        "fechaCaducidad": "2024-10-22",
-        "cliente": 8
-    }
-},
-{
-    "model": "GestionCine.socio",
-    "pk": 5,
-    "fields": {
-        "numSocio": "Your.",
-        "fechaAlta": "2024-10-22",
-        "fechaCaducidad": "2024-10-22",
-        "cliente": 5
-    }
-},
-{
-    "model": "GestionCine.socio",
-    "pk": 6,
-    "fields": {
-        "numSocio": "Want.",
-        "fechaAlta": "2024-10-22",
-        "fechaCaducidad": "2024-10-22",
-        "cliente": 15
-    }
-},
-{
-    "model": "GestionCine.socio",
-    "pk": 7,
-    "fields": {
-        "numSocio": "Will.",
-        "fechaAlta": "2024-10-22",
-        "fechaCaducidad": "2024-10-22",
-        "cliente": 6
-    }
-},
-{
-    "model": "GestionCine.socio",
-    "pk": 8,
-    "fields": {
-        "numSocio": "Make.",
-        "fechaAlta": "2024-10-22",
-        "fechaCaducidad": "2024-10-22",
-        "cliente": 1
-    }
-},
-{
-    "model": "GestionCine.socio",
-    "pk": 9,
-    "fields": {
-        "numSocio": "Save.",
-        "fechaAlta": "2024-10-22",
-        "fechaCaducidad": "2024-10-22",
-        "cliente": 11
-    }
-},
-{
-    "model": "GestionCine.socio",
-    "pk": 10,
-    "fields": {
-        "numSocio": "Over.",
-        "fechaAlta": "2024-10-22",
-        "fechaCaducidad": "2024-10-22",
-        "cliente": 7
-    }
-},
-{
-    "model": "GestionCine.socio",
-    "pk": 11,
-    "fields": {
-        "numSocio": "Thus.",
-        "fechaAlta": "2024-10-22",
-        "fechaCaducidad": "2024-10-22",
-        "cliente": 10
-    }
-},
-{
-    "model": "GestionCine.socio",
-    "pk": 12,
-    "fields": {
-        "numSocio": "Risk.",
-        "fechaAlta": "2024-10-22",
-        "fechaCaducidad": "2024-10-22",
-        "cliente": 14
-    }
-},
-{
-    "model": "GestionCine.socio",
-    "pk": 13,
-    "fields": {
-        "numSocio": "Any.",
-        "fechaAlta": "2024-10-22",
-        "fechaCaducidad": "2024-10-22",
-        "cliente": 9
-    }
-},
-{
-    "model": "GestionCine.socio",
-    "pk": 14,
-    "fields": {
-        "numSocio": "Data.",
-        "fechaAlta": "2024-10-22",
-        "fechaCaducidad": "2024-10-22",
-        "cliente": 4
-    }
-},
-{
-    "model": "GestionCine.socio",
-    "pk": 15,
-    "fields": {
-        "numSocio": "Type.",
-        "fechaAlta": "2024-10-22",
-        "fechaCaducidad": "2024-10-22",
-        "cliente": 2
-    }
-},
-{
-    "model": "GestionCine.gerente",
-    "pk": 1,
-    "fields": {
-        "dni": "Turn.",
-        "nombre": "Since least usually to. Recognize state perhaps lose.",
-        "apellidos": "Reality goal admit trip itself already condition president. Trip condition back red world career degree none. Necessary summer money.\nWhom partner song future development method financial. Political mind room oil traditional window. Turn human today budget focus education decade.",
-        "telefono": "Away."
-    }
-},
-{
-    "model": "GestionCine.gerente",
-    "pk": 2,
-    "fields": {
-        "dni": "Agree.",
-        "nombre": "Brother same sing current every man test. Collection participant serve everybody together race economy.",
-        "apellidos": "Town town meet camera throughout walk develop.\nFish hope between learn. Month pattern run part. Reduce sometimes loss.\nQuestion performance position rule all. Either serve play six. Represent follow rest always start knowledge option manager.",
-        "telefono": "Instead."
-    }
-},
-{
-    "model": "GestionCine.gerente",
-    "pk": 3,
-    "fields": {
-        "dni": "Light.",
-        "nombre": "Example common image. Short dream trial piece resource audience fall. Race dog eat cause. Maintain available simple painting we herself effort.",
-        "apellidos": "Able job practice just probably realize administration. Agree study agency mean consider cut.\nData condition we interest bed.\nTask land sound beautiful son lot. Protect large mind Congress. Nor power again police our exist smile realize.",
-        "telefono": "Remain."
-    }
-},
-{
-    "model": "GestionCine.gerente",
-    "pk": 4,
-    "fields": {
-        "dni": "Teacher.",
-        "nombre": "Individual stage moment decision recently man. Trade stuff crime fear ever rate.",
-        "apellidos": "Little room high buy. Well hotel character baby. Realize suddenly simple dream radio one yard. Plan big little rest under finally happy.\nLaw low suffer yard different. Dream before call son bag contain.\nResult spend foot dog child. Accept nearly certainly offer check thousand upon certainly.",
-        "telefono": "Out beat."
-    }
-},
-{
-    "model": "GestionCine.gerente",
-    "pk": 5,
-    "fields": {
-        "dni": "Whole.",
-        "nombre": "Role message employee administration record politics talk allow. Painting key parent.\nModel sport if wrong be outside.",
-        "apellidos": "Party way team remain. Agreement today than number. Buy chair newspaper voice five.\nTravel protect major young where character pick. There appear five through away and. In fill trip lay.\nLess once may. They director group draw. Home information peace century.",
-        "telefono": "Trip."
-    }
-},
-{
-    "model": "GestionCine.gerente",
-    "pk": 6,
-    "fields": {
-        "dni": "Within.",
-        "nombre": "Person kind training stock benefit road region mouth. Top serve director identify perform board find. Who success statement him.",
-        "apellidos": "Without least that cultural seven senior. Building indicate often audience.\nThen light administration spring total remember. That dark number price price thought stage.",
-        "telefono": "Act."
-    }
-},
-{
-    "model": "GestionCine.gerente",
-    "pk": 7,
-    "fields": {
-        "dni": "Road.",
-        "nombre": "Nor old other class letter do.\nHear others at give. Success often near seek. Investment customer raise.",
-        "apellidos": "Pm school bar dark compare gun. Consumer live any mention put. Thing well it scene four six prove.\nEvidence value sound though choice quickly. See discover raise number reason play modern. Eat page next south.\nPosition outside example dog. Newspaper subject you couple itself page particular.",
-        "telefono": "And."
-    }
-},
-{
-    "model": "GestionCine.gerente",
-    "pk": 8,
-    "fields": {
-        "dni": "Subject.",
-        "nombre": "System attack usually security fast pattern region. Special try interview meet.\nPolitics than side. Fact different image food meeting.",
-        "apellidos": "Deal begin herself miss. Week recently expert discussion keep still.\nAnyone herself report card. They couple picture civil nation. Tend radio letter she direction sound. Consider two girl hear site born.",
-        "telefono": "Bill."
-    }
-},
-{
-    "model": "GestionCine.gerente",
-    "pk": 9,
-    "fields": {
-        "dni": "Bit high.",
-        "nombre": "Note still team. Product discover agree Democrat practice. To ago old tend.",
-        "apellidos": "But world administration present fine majority.\nWear action present. Conference develop answer participant sign shake through.\nItself director allow system catch. Writer current fear reflect important successful news. Friend base issue stand matter appear.",
-        "telefono": "Recently."
-    }
-},
-{
-    "model": "GestionCine.gerente",
-    "pk": 10,
-    "fields": {
-        "dni": "Study.",
-        "nombre": "Southern although stand wide with company others. Media as situation say attack.",
-        "apellidos": "Low cup father team increase. Clearly international concern. Most thank risk lawyer evening better.\nDinner wind six wonder give break score. Play know course two leg.",
-        "telefono": "Toward."
-    }
-},
-{
-    "model": "GestionCine.gerente",
-    "pk": 11,
-    "fields": {
-        "dni": "Use.",
-        "nombre": "Guy law performance. Dog though magazine.",
-        "apellidos": "Production address more learn trip lot. System certain top. Star politics adult that myself less artist.\nAnswer wish team age happy imagine arm. Hope research southern wide with.\nAhead social particular skill firm. Fire federal and.",
-        "telefono": "Across."
-    }
-},
-{
-    "model": "GestionCine.gerente",
-    "pk": 12,
-    "fields": {
-        "dni": "Loss can.",
-        "nombre": "Choice campaign it. Art wear health those later write put. Sort put effect site ask remain stage political. Doctor floor plant study.",
-        "apellidos": "One my bag address need. Suffer interest find consumer knowledge.\nYard over attack color. Sister college quite prevent since star. Civil arm yes try easy option open.\nNor environment see whether. Where current ok woman reduce difference. Allow before response sound become.",
-        "telefono": "Entire."
-    }
-},
-{
-    "model": "GestionCine.gerente",
-    "pk": 13,
-    "fields": {
-        "dni": "Culture.",
-        "nombre": "Report never finish its both recognize.\nOk wall western he. Between chance thought sing candidate.",
-        "apellidos": "Go action beyond cover use. Magazine foreign outside avoid.\nDevelopment occur camera direction agency buy. Worker red popular coach firm believe. Out stage project worry act find.\nDegree yourself moment front behind. Recently American figure voice. Husband near moment baby all threat more.",
-        "telefono": "Create."
-    }
-},
-{
-    "model": "GestionCine.gerente",
-    "pk": 14,
-    "fields": {
-        "dni": "Under.",
-        "nombre": "Technology feel professor physical consumer then institution. Though stop either thought.",
-        "apellidos": "Into somebody letter field allow attorney. Cell personal education eight television model project. Employee experience economy against life process rather.\nAlthough pick right smile all. Until perform prove lawyer.\nStrategy exist election own field. Total candidate skin result pick former morning.",
-        "telefono": "Officer."
-    }
-},
-{
-    "model": "GestionCine.gerente",
-    "pk": 15,
-    "fields": {
-        "dni": "So.",
-        "nombre": "Score consider letter approach. Camera exactly word room listen include remember.\nBudget you cold.",
-        "apellidos": "Require for than maintain. Middle special though term so.\nGreen age young at drive support prove. Best rise paper wind case take air.\nKnowledge read yes soon main do. Air yard ten should. College institution ball generation truth car adult. Compare it artist research moment yard.",
-        "telefono": "Civil."
-    }
-},
-{
-    "model": "GestionCine.cine",
-    "pk": 1,
-    "fields": {
-        "direccion": "Throughout morning close drug environmental order give. Stand identify happen believe network.\nActivity stand performance even. Other job share heavy become foot.\nDog history owner stuff. Risk leg against you fine doctor sit. Necessary expert base deep beyond.\nShake nor life of Democrat sometimes table prepare. Concern seat west seven computer fund letter reflect.\nAway interview nature enjoy question. Boy yeah rate receive.",
-        "telefono": "Policy.",
-        "email": "nombre@ejemplo.com",
-        "gerente": 11
-    }
-},
-{
-    "model": "GestionCine.cine",
-    "pk": 2,
-    "fields": {
-        "direccion": "Class piece center evening. Tonight page wide reason traditional. Week necessary agent. Take throw Republican product.\nWear south pull include far. Hear our after best travel.\nSo down expert forget go difference food. Value less success measure value easy if various. Article meet enough lot back.\nDefense decide half foreign old direction. Leader front laugh represent respond serious.\nProcess note six military describe three such. Civil to feel avoid building.",
-        "telefono": "There.",
-        "email": "nombre@ejemplo.com",
-        "gerente": 15
-    }
-},
-{
-    "model": "GestionCine.cine",
-    "pk": 3,
-    "fields": {
-        "direccion": "Cut me yard quickly clear night son. Professor join agent wrong edge. Need against father effect sort opportunity not along.\nSeries charge Mrs campaign she step. Catch sport for month.\nWhether turn just.\nFight fire idea.\nAvailable purpose strategy this eat edge suffer yes. Behavior travel hit result economic.\nPersonal beat crime toward industry born condition.\nInstitution perform increase room garden participant purpose.\nHome somebody bag international pay set movie.",
-        "telefono": "Unit and.",
-        "email": "nombre@ejemplo.com",
-        "gerente": 5
-    }
-},
-{
-    "model": "GestionCine.cine",
-    "pk": 4,
-    "fields": {
-        "direccion": "Ahead hold different know against. Professional peace ground cost join.\nNote about image ball goal campaign. Cell similar its important particularly instead. Task material value suddenly provide image sister.\nChurch develop later.\nClearly study entire mind activity loss popular. Enough because to smile best response.\nPersonal fire close wall discover item large decide. Early more light suggest main.\nState generation interview quality worker address. Eight head must street speech idea teach.",
-        "telefono": "Pull.",
-        "email": "nombre@ejemplo.com",
-        "gerente": 6
-    }
-},
-{
-    "model": "GestionCine.cine",
-    "pk": 5,
-    "fields": {
-        "direccion": "Number follow although check down might character. Individual professor our against likely stay. These our other while somebody occur week. Of movie grow.\nCoach record indeed street. Teach strategy break with movie deep check. Strategy pressure open great.\nCongress although theory discussion item onto style important.\nBed worry occur into no direction box. Part stop compare consider attack most site. Series either night difference expert true.",
-        "telefono": "Side.",
-        "email": "nombre@ejemplo.com",
-        "gerente": 14
-    }
-},
-{
-    "model": "GestionCine.cine",
-    "pk": 6,
-    "fields": {
-        "direccion": "Maybe study really. Policy development push family our federal difference might. Threat argue PM away apply moment trial war.\nCheck door early scientist woman person sometimes natural. Meeting daughter especially market personal boy business.\nClaim easy personal on bit late. Play including indicate modern.\nEven on often begin. Cell probably focus.\nAir military dinner choose simply. Simple place together manage education suddenly try. Call beat us statement paper.",
-        "telefono": "Forget.",
-        "email": "nombre@ejemplo.com",
-        "gerente": 10
-    }
-},
-{
-    "model": "GestionCine.cine",
-    "pk": 7,
-    "fields": {
-        "direccion": "Student certainly pull team. Stage almost year nearly relationship. Computer whole might sit watch let.\nStay leave alone issue fire shoulder recent. We middle thing order figure.\nTrial blue take check each else difference. Us beat eye give picture it trip.\nBillion energy stop green offer nearly will. Tough head both artist big simple on. Audience spring act account western response.\nWater great year. Card including yeah any. Fact its major air central staff whose.",
-        "telefono": "Go.",
-        "email": "nombre@ejemplo.com",
-        "gerente": 2
-    }
-},
-{
-    "model": "GestionCine.cine",
-    "pk": 8,
-    "fields": {
-        "direccion": "Fill light young child should so. Yard simple cup week test lawyer but society.\nAmount until impact my. Including financial these blood. Beautiful chair probably.\nRelationship yeah message kind.\nLoss account never mission see success daughter president. North outside population describe. Than himself deep season line race plan early.\nGarden common up foot. Decision but truth spend another near doctor. With myself state center. Opportunity begin certainly.",
-        "telefono": "Probably.",
-        "email": "nombre@ejemplo.com",
-        "gerente": 8
-    }
-},
-{
-    "model": "GestionCine.cine",
-    "pk": 9,
-    "fields": {
-        "direccion": "Artist perhaps bag believe memory stage election. Eight evening sport individual.\nAble street deal for could term. Focus simply care song eat. Economic away yet list.\nFinish probably law yes. Trial market final all plant full within. Clearly us fight community clear.\nSoldier there management approach. Sing education minute. Its decade project you what.\nLast technology suggest industry former amount. Event technology yeah human back. Member so amount sound sort civil.",
-        "telefono": "Talk.",
-        "email": "nombre@ejemplo.com",
-        "gerente": 4
-    }
-},
-{
-    "model": "GestionCine.cine",
-    "pk": 10,
-    "fields": {
-        "direccion": "Term environment foot free.\nHusband receive big recognize. Food speech couple cost. Machine nation write. Spend simple political.\nAgree suffer white pattern president two hope matter. Foreign young bad road direction open meet.\nUnderstand training student near Mr modern drop. Wrong born site my consider.\nNew whole recently movie claim boy. Their wear style of I total space. Spring production hair senior.\nBody feel wrong reach personal new. Paper direction bag street.",
-        "telefono": "Strategy.",
-        "email": "nombre@ejemplo.com",
-        "gerente": 12
-    }
-},
-{
-    "model": "GestionCine.cine",
-    "pk": 11,
-    "fields": {
-        "direccion": "Attack effort really society. Money though their.\nWorry field participant big next. Parent impact west any start set two network. Plant pretty hundred.\nHotel identify television management evening. Then Congress fine grow east. Lead parent wrong although window test discover.\nIt entire care visit expert reach. Ready but step none right.\nNone child old relate. Behavior Congress mother amount. Man stop spring animal wonder miss can.",
-        "telefono": "Detail.",
-        "email": "nombre@ejemplo.com",
-        "gerente": 9
-    }
-},
-{
-    "model": "GestionCine.cine",
-    "pk": 12,
-    "fields": {
-        "direccion": "Side camera approach society help share. Share design imagine answer experience teach radio. Message thought visit debate prepare very specific.\nYard ever smile less set involve. Again subject hope share wonder growth. Market whether race approach throughout.\nWriter realize practice. Deep someone pull son. Medical memory red share house return language.\nAnimal wait product anyone policy. Easy source policy though enter.",
-        "telefono": "Put.",
-        "email": "nombre@ejemplo.com",
-        "gerente": 1
-    }
-},
-{
-    "model": "GestionCine.cine",
-    "pk": 13,
-    "fields": {
-        "direccion": "Allow rock carry be professor church. Young state black central far. Last phone most if instead himself half manager.\nMarket age similar themselves rest morning conference. Low attack cold sound recently.\nTime mother move law always few lay least. Evidence authority end able sea building understand fill. Service because as Mrs.\nTelevision money him.\nPossible skill nearly drive. Develop project strong involve here. Identify sport figure network.",
-        "telefono": "Human.",
-        "email": "nombre@ejemplo.com",
-        "gerente": 7
-    }
-},
-{
-    "model": "GestionCine.cine",
-    "pk": 14,
-    "fields": {
-        "direccion": "Rich difference special century father resource.\nMr shoulder gun effect decision discussion meet. Mr last section. Wife pick foreign hot.\nFinish president court realize almost.\nArticle which central green research ever party. Table success movie customer.\nSide box relate organization point institution we ball. Sell none baby morning window court. Property yourself compare response.",
-        "telefono": "Series.",
-        "email": "nombre@ejemplo.com",
-        "gerente": 3
-    }
-},
-{
-    "model": "GestionCine.cine",
-    "pk": 15,
-    "fields": {
-        "direccion": "Law point pattern available issue find bad especially. Third everything yard.\nSon billion take our career theory. Wait leg read especially fear across. Away weight air enough. Yard bank bring daughter owner.\nSong dark ask. Plant eye once senior create remember.\nConsider lose chair again capital. Power officer strong lay.\nSet weight crime skill charge student card provide. Food Congress save language become hospital effect. Fall drop blood.",
-        "telefono": "Call PM.",
-        "email": "nombre@ejemplo.com",
-        "gerente": 13
-    }
-},
-{
-    "model": "GestionCine.empleado",
-    "pk": 1,
-    "fields": {
-        "dni": "Low.",
-        "nombre": "Might far future education ok. Show change break family arrive. Capital early power place technology.",
-        "apellidos": "Walk something now factor they woman. Always indicate than involve. Thought open case network break.\nMind leader compare half morning risk response. Lot take cultural teacher challenge. Value in national sense.\nEnd black happen your reduce care because computer.",
-        "nuss": "Other.",
-        "iban": "Wall visit bank partner.",
-        "salario": 1100,
-        "encargado": true,
-        "cine": 3
-    }
-},
-{
-    "model": "GestionCine.empleado",
-    "pk": 2,
-    "fields": {
-        "dni": "Material.",
-        "nombre": "Age can meeting. Impact enter program resource network.\nInformation company method heavy college. When head wrong activity behind seek debate.",
-        "apellidos": "Within rule network compare. Work professional rate several reality day.\nPolitical public safe movement place case difference. Professor leg seem firm value. North vote toward check coach. Thank mother late foreign.",
-        "nuss": "Hard treat.",
-        "iban": "Movie else stop sport.",
-        "salario": 1100,
-        "encargado": true,
-        "cine": 10
-    }
-},
-{
-    "model": "GestionCine.empleado",
-    "pk": 3,
-    "fields": {
-        "dni": "Easy.",
-        "nombre": "Cost officer resource.\nPlay interview pattern politics call. Computer dark cause site somebody unit.",
-        "apellidos": "Discussion always beyond discuss all.\nRelationship material plant how. Family herself often cell others can produce general.\nAlready relate another artist win only. Rise her anything certainly election.\nStill experience knowledge sea many where. Close movement yet change hold when final.",
-        "nuss": "Try rule.",
-        "iban": "Night certain.",
-        "salario": 1100,
-        "encargado": false,
-        "cine": 3
-    }
-},
-{
-    "model": "GestionCine.empleado",
-    "pk": 4,
-    "fields": {
-        "dni": "Rather.",
-        "nombre": "Me of sign fund. Whose vote important huge avoid arrive he anyone.",
-        "apellidos": "Manage southern TV feel decision. Movement camera public plan. Organization rock nearly future.\nEstablish him nature stay yet.\nRecord view challenge man. End trade check turn black either.\nNorth dinner without although than speak. Toward artist media meeting cultural risk girl away.",
-        "nuss": "Child.",
-        "iban": "Number first boy.",
-        "salario": 1100,
-        "encargado": false,
-        "cine": 14
-    }
-},
-{
-    "model": "GestionCine.empleado",
-    "pk": 5,
-    "fields": {
-        "dni": "Call.",
-        "nombre": "Town million significant late. Use degree cultural behind threat success likely speech. Accept southern smile growth and around.",
-        "apellidos": "Not add everyone actually beat. Level know stuff gas if exist. Interview find government house. Wrong tell once ten short walk.\nRecent use both require spend thought. Among still myself catch book cold off. Outside religious enjoy sell.\nService build win two night money property. Event enough hear.",
-        "nuss": "All explain.",
-        "iban": "Until wait form church.",
-        "salario": 1100,
-        "encargado": false,
-        "cine": 14
-    }
-},
-{
-    "model": "GestionCine.empleado",
-    "pk": 6,
-    "fields": {
-        "dni": "Guess.",
-        "nombre": "Worry least professor view newspaper matter who. Figure its civil table cold hour.\nInterest behind this yeah they.",
-        "apellidos": "Skin movie full expert leader issue. Discuss phone total very again task parent nature.\nState true door nearly find. Number direction small professor nothing top expert. Fly voice strong listen manager.\nDream occur court hand main. Career determine attack cover reality shake.",
-        "nuss": "Fast act.",
-        "iban": "Media we reality.",
-        "salario": 1100,
-        "encargado": true,
-        "cine": 7
-    }
-},
-{
-    "model": "GestionCine.empleado",
-    "pk": 7,
-    "fields": {
-        "dni": "Card.",
-        "nombre": "Catch amount name stop tax safe along. Her remain those return.",
-        "apellidos": "Support per discuss west standard.\nSuch country bag from today. Provide almost consumer.\nData we best teacher something recognize race. Tend amount assume my defense.",
-        "nuss": "Enjoy true.",
-        "iban": "Nature will here sure.",
-        "salario": 1100,
-        "encargado": false,
-        "cine": 7
-    }
-},
-{
-    "model": "GestionCine.empleado",
-    "pk": 8,
-    "fields": {
-        "dni": "Far wish.",
-        "nombre": "Respond meeting hot. That must perhaps daughter decision see identify. Benefit impact direction know find voice.",
-        "apellidos": "Give already election. Floor even degree sing. Determine mention decade medical.\nMiss professional many including this. Physical together rock. Store modern sense they. Provide continue no girl.\nCompany executive by. Message form economic during can life here. Floor more air during.",
-        "nuss": "Simply.",
-        "iban": "Parent artist lawyer.",
-        "salario": 1100,
-        "encargado": true,
-        "cine": 2
-    }
-},
-{
-    "model": "GestionCine.empleado",
-    "pk": 9,
-    "fields": {
-        "dni": "Offer.",
-        "nombre": "Small factor security near. Most black analysis character.",
-        "apellidos": "Color leader front tonight current huge human most. Trouble soon air discover best deal response anyone.\nSmall choice take would feeling. Modern treatment lead from.\nLeader possible enjoy contain. Window return someone individual religious. Seat treatment whose the step today.",
-        "nuss": "Behind.",
-        "iban": "Every soldier outside.",
-        "salario": 1100,
-        "encargado": false,
-        "cine": 8
-    }
-},
-{
-    "model": "GestionCine.empleado",
-    "pk": 10,
-    "fields": {
-        "dni": "Music.",
-        "nombre": "Bad light third manage all agent ten available.",
-        "apellidos": "Direction college consider sense car pretty. Resource increase program pass identify as individual bit. Occur already result.\nMrs accept physical remain. Site argue maintain put. Always behind military list decision coach apply black.",
-        "nuss": "Score.",
-        "iban": "Science century.",
-        "salario": 1100,
-        "encargado": true,
-        "cine": 3
-    }
-},
-{
-    "model": "GestionCine.empleado",
-    "pk": 11,
-    "fields": {
-        "dni": "Health.",
-        "nombre": "High car ball poor be central us. Nothing smile less issue past paper Republican. Plan care lead put color.",
-        "apellidos": "Edge natural what pressure door center resource. Short modern able head voice history example. Less fall clear apply prevent.\nReach appear full ready. Serve since matter enough dream far. On general industry teach.",
-        "nuss": "Picture.",
-        "iban": "Because red become.",
-        "salario": 1100,
-        "encargado": true,
-        "cine": 5
-    }
-},
-{
-    "model": "GestionCine.empleado",
-    "pk": 12,
-    "fields": {
-        "dni": "Later.",
-        "nombre": "Pressure news effort free country. Prepare lose town city exist art his. Strong second maybe between their.",
-        "apellidos": "Manage think available while figure. Involve big best guess team.\nSocial alone here woman section future evidence. Station meeting wait size that difference team. Type leg somebody.",
-        "nuss": "Type avoid.",
-        "iban": "Large too leader.",
-        "salario": 1100,
-        "encargado": true,
-        "cine": 10
-    }
-},
-{
-    "model": "GestionCine.empleado",
-    "pk": 13,
-    "fields": {
-        "dni": "People.",
-        "nombre": "Reflect occur health area. Argue increase whose with chance bar.",
-        "apellidos": "Go catch high own. Knowledge group so scene herself either few. Perform sell create yard factor network.\nLanguage approach sister wife board. Quality because control truth too arm discussion.",
-        "nuss": "Owner huge.",
-        "iban": "Per another why thing.",
-        "salario": 1100,
-        "encargado": false,
-        "cine": 6
-    }
-},
-{
-    "model": "GestionCine.empleado",
-    "pk": 14,
-    "fields": {
-        "dni": "Hope.",
-        "nombre": "Television news direction gun hotel ability article. Room election type you shoulder drug. Particular visit edge every.",
-        "apellidos": "Economy program food across. Himself sister time course. Between former picture seek.\nStrong two very visit may game. Ask north similar partner level us mouth three.\nThese account talk. Mrs natural around fact single.",
-        "nuss": "Manager.",
-        "iban": "Political year myself.",
-        "salario": 1100,
-        "encargado": false,
-        "cine": 5
-    }
-},
-{
-    "model": "GestionCine.empleado",
-    "pk": 15,
-    "fields": {
-        "dni": "Husband.",
-        "nombre": "Prevent ball loss. Certain provide whose tell high affect poor. Base trial goal arm speech friend.",
-        "apellidos": "Including word sometimes Republican bill cost point more. Modern send wait word.\nAffect whatever significant buy. Together so administration three smile recent.\nDrive smile interesting address near check. Before this let throughout exactly.",
-        "nuss": "Easy unit.",
-        "iban": "Show realize public.",
-        "salario": 1100,
-        "encargado": true,
-        "cine": 3
-    }
-},
-{
-    "model": "GestionCine.sala",
-    "pk": 1,
-    "fields": {
-        "tamano": "ME",
-        "cine": 14,
-        "empleado": [
-            1
-        ]
-    }
-},
-{
-    "model": "GestionCine.sala",
-    "pk": 2,
-    "fields": {
-        "tamano": "ME",
-        "cine": 1,
-        "empleado": [
-            12
-        ]
-    }
-},
-{
-    "model": "GestionCine.sala",
-    "pk": 3,
-    "fields": {
-        "tamano": "ME",
-        "cine": 12,
-        "empleado": [
-            5,
-            15
-        ]
-    }
-},
-{
-    "model": "GestionCine.sala",
-    "pk": 4,
-    "fields": {
-        "tamano": "ME",
-        "cine": 11,
-        "empleado": [
-            3,
-            14
-        ]
-    }
-},
-{
-    "model": "GestionCine.sala",
-    "pk": 5,
-    "fields": {
-        "tamano": "ME",
-        "cine": 8,
-        "empleado": [
-            11
-        ]
-    }
-},
-{
-    "model": "GestionCine.sala",
-    "pk": 6,
-    "fields": {
-        "tamano": "ME",
-        "cine": 3,
-        "empleado": [
-            5,
-            9,
-            13
-        ]
-    }
-},
-{
-    "model": "GestionCine.sala",
-    "pk": 7,
-    "fields": {
-        "tamano": "ME",
-        "cine": 13,
-        "empleado": [
-            2,
-            3,
-            15
-        ]
-    }
-},
-{
-    "model": "GestionCine.sala",
-    "pk": 8,
-    "fields": {
-        "tamano": "ME",
-        "cine": 15,
-        "empleado": [
-            6
-        ]
-    }
-},
-{
-    "model": "GestionCine.sala",
-    "pk": 9,
-    "fields": {
-        "tamano": "ME",
-        "cine": 7,
-        "empleado": [
-            1,
-            6,
-            14
-        ]
-    }
-},
-{
-    "model": "GestionCine.sala",
-    "pk": 10,
-    "fields": {
-        "tamano": "ME",
-        "cine": 13,
-        "empleado": [
-            4,
-            8
-        ]
-    }
-},
-{
-    "model": "GestionCine.sala",
-    "pk": 11,
-    "fields": {
-        "tamano": "ME",
-        "cine": 6,
-        "empleado": [
-            5,
-            13,
-            15
-        ]
-    }
-},
-{
-    "model": "GestionCine.sala",
-    "pk": 12,
-    "fields": {
-        "tamano": "ME",
-        "cine": 2,
-        "empleado": [
-            3,
-            11,
-            12
-        ]
-    }
-},
-{
-    "model": "GestionCine.sala",
-    "pk": 13,
-    "fields": {
-        "tamano": "ME",
-        "cine": 4,
-        "empleado": [
-            5,
-            14
-        ]
-    }
-},
-{
-    "model": "GestionCine.sala",
-    "pk": 14,
-    "fields": {
-        "tamano": "ME",
-        "cine": 10,
-        "empleado": [
-            5
-        ]
-    }
-},
-{
-    "model": "GestionCine.sala",
-    "pk": 15,
-    "fields": {
-        "tamano": "ME",
-        "cine": 11,
-        "empleado": [
-            1
-        ]
-    }
-},
-{
-    "model": "GestionCine.pelicula",
-    "pk": 1,
-    "fields": {
-        "titulo": "And often remember sense maintain however upon finish. Maybe event citizen entire bit Congress do.\nForce which player never where now particular. Bag economic strategy simply. Hair method example.\nFederal name assume southern before. Including participant trade act interesting city age.\nWish particular green brother. There throw evidence seven expect.\nTogether certainly could thousand politics media. Team even war degree stay keep glass small.",
-        "director": "Build industry card state group. Street likely watch standard.\nHappen around international next. Event when hot action he class. Matter agency inside low spring go today.\nLeave today international drug. Sign chance condition lay. Boy on bag military experience.",
-        "sinopsis": "Everything suffer clearly probably their return within strong. Central already seven power. Recent again other bar able.",
-        "fechaLanzamiento": "2024-10-22",
-        "tiempoProyectada": "13547 11:41:12",
-        "sala": [
-            4,
-            14
-        ]
-    }
-},
-{
-    "model": "GestionCine.pelicula",
-    "pk": 2,
-    "fields": {
-        "titulo": "Detail that trade ahead. Rest large somebody. Hotel join wear maybe activity.\nAway beyond book exist. Into century medical off author change right affect. Series serious serious season.\nConsider environmental movie matter piece skin reveal. Goal use perhaps on far protect south. Glass challenge evening several over deal along finally.\nStudy issue area. Character case sport more camera order here. Although feeling door none language sister.",
-        "director": "Central western rock trouble. Recent event create blood feeling.\nLow course suddenly body. Simply figure system.\nPick move easy without operation story.\nStation affect fly fish policy nation sort. Step everybody officer free natural soon than mind. Director push growth wait stop run stock rate.",
-        "sinopsis": "Morning ready under beat particularly. Student decide through however develop pull. Consider support need quite.",
-        "fechaLanzamiento": "2024-10-22",
-        "tiempoProyectada": "5093 00:43:46",
-        "sala": [
-            1,
-            3,
-            7,
-            15
-        ]
-    }
-},
-{
-    "model": "GestionCine.pelicula",
-    "pk": 3,
-    "fields": {
-        "titulo": "Light decision blood phone production represent action matter. Tax property old owner father gas. Magazine expert whether.\nFact road might bring everybody art table. Billion discussion top a four represent memory. Rich out color tell century surface his. My above from ask memory.\nFill significant baby lot suffer. Follow drug specific light building.",
-        "director": "They energy cost claim where. Present news onto beat edge bag sense learn. Make where purpose yeah then black clear.\nRoad table view style. Order us other paper lawyer bar large.\nPerformance me light letter feel. Once space when our until outside. From animal consumer recognize.",
-        "sinopsis": "Tree ready sound dark discussion drive get. Represent possible begin truth to green instead.",
-        "fechaLanzamiento": "2024-10-22",
-        "tiempoProyectada": "11248 12:02:51",
-        "sala": [
-            2,
-            4,
-            10
-        ]
-    }
-},
-{
-    "model": "GestionCine.pelicula",
-    "pk": 4,
-    "fields": {
-        "titulo": "Record town force unit attorney. Above organization notice task weight successful official. State boy fly half.\nCollection position west age growth help eye. Vote law lead close.\nWord member study purpose under anyone cultural teacher. How of decision threat town wall when. Another director after apply author must.\nLaw economic experience service key beyond. Recently approach leader poor do coach what.",
-        "director": "Say sea let sport not cold. Follow American outside rise rule. Brother car property out occur dinner like.\nRecognize check nature girl toward. Statement just try almost board. Word impact participant detail difference.",
-        "sinopsis": "Blue wall since less different. Tax PM reality bar the.\nAdd debate sit hit hundred five interest war. Term bar because reveal wife. Simple prepare better think walk not test.",
-        "fechaLanzamiento": "2024-10-22",
-        "tiempoProyectada": "3426 11:10:08",
-        "sala": [
-            1,
-            2
-        ]
-    }
-},
-{
-    "model": "GestionCine.pelicula",
-    "pk": 5,
-    "fields": {
-        "titulo": "Contain make out on outside subject hard. Outside around exactly along experience outside. Goal law job they certainly.\nToday yourself minute management theory page true.\nSister member others use least piece mouth direction. American imagine member upon have cultural sell. Record which someone bank represent real current treat.\nStory less party defense these.\nHerself window fact yard win network. Candidate development television morning summer support rest. Else education strategy rich heavy.",
-        "director": "Music low think include think. Anything according student common point take health.\nRequire voice but force. Manage these member call color study. Company certain whose field full.\nEven may sea minute natural voice. Outside might visit left notice.",
-        "sinopsis": "Miss mind himself. Talk threat cultural challenge small financial attack. Southern where walk explain expect real election.",
-        "fechaLanzamiento": "2024-10-22",
-        "tiempoProyectada": "17799 19:38:32",
-        "sala": [
-            3
-        ]
-    }
-},
-{
-    "model": "GestionCine.pelicula",
-    "pk": 6,
-    "fields": {
-        "titulo": "Bed full reason what concern consumer baby. Someone candidate position seek outside security question.\nManage save page no. Team situation light chance wear.\nUs despite activity effect. Point experience media business anything rich. Economic situation it member fund once.\nSave list three seat decade. Power book run call people. About out anything give hope always team. Market let international great fish nor.\nTrial color computer drive beyond important wish. Base born last morning.",
-        "director": "Ready ok before you hair subject current. Claim industry cold or first age guy.\nMost direction mean never follow always computer ago. Long pay history point. Appear save hand house group toward culture.\nIncluding weight top where knowledge girl. Relationship measure sound fact.",
-        "sinopsis": "Condition ever animal live senior billion. Event run total animal perhaps detail.\nOver generation sense lot station activity. Hear wind collection fight.",
-        "fechaLanzamiento": "2024-10-22",
-        "tiempoProyectada": "19079 01:05:32",
-        "sala": [
-            2
-        ]
-    }
-},
-{
-    "model": "GestionCine.pelicula",
-    "pk": 7,
-    "fields": {
-        "titulo": "Ever bar take region short. Case relate next. Writer thus Democrat work home.\nCentral Republican culture vote front environment. Effort mean political raise return.\nSeason natural side wind. Admit hold across hour light.\nThousand up law describe itself why a six. Receive job deep experience. Million property star Democrat serious star. Girl cup they agent final teacher law simply.\nLearn vote within loss husband. Food position stage record. Middle popular practice but sit.",
-        "director": "Drive dog south computer center several start. Five country check wife.\nCompare degree floor doctor go. Tough case during account natural. Machine time exactly whole.\nLaw change as. Attorney student and magazine break yard. College some west action glass action present.",
-        "sinopsis": "Next east officer reality evidence sense design. Two career democratic. Realize quality five career in.\nRequire carry save outside language serve. Piece nature mouth our area too stand information.",
-        "fechaLanzamiento": "2024-10-22",
-        "tiempoProyectada": "18622 07:59:06",
-        "sala": [
-            1,
-            2,
-            7
-        ]
-    }
-},
-{
-    "model": "GestionCine.pelicula",
-    "pk": 8,
-    "fields": {
-        "titulo": "Finish call practice media marriage. Me simple eight herself team author attack age. Indeed hundred lot whole bit.\nEffect base dog defense weight style game serve. Model score as as. Final push because involve.\nBlue move painting. Kid available matter significant machine. Perform seven green last accept everything itself for.\nWhen subject poor participant. Soon growth total yes job. Nation hundred resource light. Direction send out administration picture meet tax.",
-        "director": "Form though court fall community. Really loss attorney travel sometimes side pay.\nTrouble charge process they. Actually face body. Bill phone argue life individual.\nBeyond whether message senior religious. Property civil education help team. These into wind.",
-        "sinopsis": "Firm smile room member glass. Stock discover can increase.\nFast church turn better sea. Decision kind could amount challenge wide painting.\nPractice spend despite send instead finally six.",
-        "fechaLanzamiento": "2024-10-22",
-        "tiempoProyectada": "6554 04:17:31",
-        "sala": [
-            5,
-            7
-        ]
-    }
-},
-{
-    "model": "GestionCine.pelicula",
-    "pk": 9,
-    "fields": {
-        "titulo": "Those meeting staff usually involve those hotel. Movie look boy during smile thing hundred.\nNation far personal fall.\nMove hand law character early line. Final garden six. Arm remember somebody early million number style position.\nWorker owner rather between. Clear write again talk front. Whom us change current.\nThem model or key while might color total. Type life others either. Myself direction prove garden machine take.",
-        "director": "Eat radio mind security moment.\nSix just TV. Join interest woman than Republican.\nAfter image economic happen anyone certainly. System foot into stop trip arrive.\nPower statement room grow nation figure every. Nice kitchen service for. Take hear plant town entire prepare so.",
-        "sinopsis": "Institution case argue meeting.\nOutside perhaps executive soldier various subject bad. Work board education both. Great million nice me small often which three.\nAbout live challenge sea purpose.",
-        "fechaLanzamiento": "2024-10-22",
-        "tiempoProyectada": "6423 14:16:06",
-        "sala": [
-            6,
-            8
-        ]
-    }
-},
-{
-    "model": "GestionCine.pelicula",
-    "pk": 10,
-    "fields": {
-        "titulo": "As stay campaign pull. Itself garden color only people capital. Need serve prepare.\nAbility not race yourself fire yet million. Direction pick throughout western name. Consider same year chance door.\nOccur available leave system wish reality. Race go let with source player culture. Culture chance court coach.\nAlready game set laugh scientist respond however sing. Anything speak indeed past visit bit. Focus budget first should film position.",
-        "director": "Suddenly better however yeah. Might spring position cut choice. Computer marriage exist pass response partner.\nAlthough on similar. Entire voice ball same.\nNational power thought you leave cause cultural. Evidence room half main husband side.\nCase but job. They return brother tree strong.",
-        "sinopsis": "General help enter look perform. Remember drug argue real. Report message price look them special property.\nCity finish as Democrat. Animal perform similar sell.",
-        "fechaLanzamiento": "2024-10-22",
-        "tiempoProyectada": "10593 18:18:28",
-        "sala": [
-            5,
-            9,
-            11,
-            14
-        ]
-    }
-},
-{
-    "model": "GestionCine.pelicula",
-    "pk": 11,
-    "fields": {
-        "titulo": "Sell lay baby people. Establish inside brother social why perform feel six. Final account book pay he bed different join. Chance environmental red hope cup heart yet.\nImagine receive anything skill sign piece movement need. Bad expect lay tax. Gun key she listen. Media education school series type hear.\nHealth bank fine wall. Affect dinner change night.\nYard within exactly agency color. For top whole her happen wife. Present various hope plant effect prepare section.\nHead political so.",
-        "director": "Us arrive mother hope Congress which phone. Film as line structure. Term structure cost ok knowledge white someone.\nCrime land concern look nice me carry. Already Republican good son wonder summer where.",
-        "sinopsis": "Clearly ground water fund. Low Congress possible born apply college war. Fall ball own attorney.\nAccount able read chair usually page. List onto happen. Wall peace wall behavior article.",
-        "fechaLanzamiento": "2024-10-22",
-        "tiempoProyectada": "17523 17:09:35",
-        "sala": [
-            10,
-            13,
-            15
-        ]
-    }
-},
-{
-    "model": "GestionCine.pelicula",
-    "pk": 12,
-    "fields": {
-        "titulo": "Within either even office. Minute control expect similar would account paper.\nFloor leg behavior activity sport time method.\nSimple whose century compare tax cold put. Try despite travel light. Civil herself item television.\nThat let discover best civil writer idea. Cell Mrs arm job data total scientist. Decision system will their paper beyond.\nPossible foreign short option. Prepare popular college will loss.\nMeet agree half can film. Because indeed accept turn.",
-        "director": "Court right her offer world. Sport reality industry song story staff be behavior.\nExist include let out.\nOthers window sort. Know under century.\nContinue feeling four. Increase order official customer general way.\nLanguage run its. Each civil garden week soon far discover decide.",
-        "sinopsis": "Upon couple partner. Moment Mrs imagine arrive. Officer become put because part. Anyone father it by.\nOrganization plan me should true by. Area will several science campaign evening law member.",
-        "fechaLanzamiento": "2024-10-22",
-        "tiempoProyectada": "12101 09:19:55",
-        "sala": [
-            3,
-            4
-        ]
-    }
-},
-{
-    "model": "GestionCine.pelicula",
-    "pk": 13,
-    "fields": {
-        "titulo": "Degree gun yet short forward mouth. Catch feel wonder.\nMind citizen mission present. Crime control agree far hard boy bring. Politics alone official despite call.\nInstitution charge identify. Provide government figure join kind hand care building.\nControl herself open study recognize. Feeling future civil support cause.\nPressure young specific line perform quite friend. Face with goal pretty modern read heavy.\nTravel yet scientist down. Seem so woman hard everyone month them.",
-        "director": "Program national allow candidate page sport age court. Image book charge might company.\nProduct eye spring myself two.\nSure out fact always realize time behind. Respond others read himself someone various account. Ground try day.",
-        "sinopsis": "Describe food seven worry knowledge three. Daughter notice when up hundred.",
-        "fechaLanzamiento": "2024-10-22",
-        "tiempoProyectada": "12434 13:29:33",
-        "sala": [
-            6
-        ]
-    }
-},
-{
-    "model": "GestionCine.pelicula",
-    "pk": 14,
-    "fields": {
-        "titulo": "Affect sit at.\nSoldier significant deep sound example. Green new most like production.\nBecome purpose thank natural lead race. Crime job alone second country central.\nAdmit concern worker yet attorney official door. Indeed laugh ahead technology side.\nSenior activity no true allow lose.\nTrouble structure those really still word food. Concern no reach reduce product might ask. Decide office agree thank population.",
-        "director": "Note drive institution land he new. Memory smile gas whose day. Born business different share majority new while.\nSuch style sister court society base agree early. Expect movement science out down.\nPicture indicate idea citizen charge view. Keep new stand.",
-        "sinopsis": "Television more personal their structure strategy. When serious center relationship.",
-        "fechaLanzamiento": "2024-10-22",
-        "tiempoProyectada": "16282 09:17:19",
-        "sala": [
-            9
-        ]
-    }
-},
-{
-    "model": "GestionCine.pelicula",
-    "pk": 15,
-    "fields": {
-        "titulo": "Next story enjoy politics more hold just. House billion card open home woman.\nHow final subject director garden than ten. Itself page miss again kitchen economic. Little question risk word answer. Field else real senior various research animal.\nManagement always music interesting themselves. Deep contain least participant partner range.",
-        "director": "Dark feel cover smile campaign deep carry. Through resource enough often party experience personal. Meet little game for usually allow involve kid.\nParty across major member six. Economic oil official financial place can. Trouble order by watch sister save. Set either animal air.",
-        "sinopsis": "Though wait happy. Current discover conference force member way make.\nEnjoy wall difference history ahead season. We seat focus step prevent sea. By mind smile million save test stage.",
-        "fechaLanzamiento": "2024-10-22",
-        "tiempoProyectada": "1989 11:16:13",
-        "sala": [
-            3
-        ]
-    }
-},
-{
-    "model": "GestionCine.proyeccion",
-    "pk": 1,
-    "fields": {
-        "hora": "2024-10-22T10:21:53.018Z",
-        "sala": 13,
-        "pelicula": 2
-    }
-},
-{
-    "model": "GestionCine.proyeccion",
-    "pk": 2,
-    "fields": {
-        "hora": "2024-10-22T10:21:53.018Z",
-        "sala": 5,
-        "pelicula": 1
-    }
-},
-{
-    "model": "GestionCine.proyeccion",
-    "pk": 3,
-    "fields": {
-        "hora": "2024-10-22T10:21:53.018Z",
-        "sala": 13,
-        "pelicula": 12
-    }
-},
-{
-    "model": "GestionCine.proyeccion",
-    "pk": 4,
-    "fields": {
-        "hora": "2024-10-22T10:21:53.018Z",
-        "sala": 6,
-        "pelicula": 12
-    }
-},
-{
-    "model": "GestionCine.proyeccion",
-    "pk": 5,
-    "fields": {
-        "hora": "2024-10-22T10:21:53.018Z",
-        "sala": 13,
-        "pelicula": 12
-    }
-},
-{
-    "model": "GestionCine.proyeccion",
-    "pk": 6,
-    "fields": {
-        "hora": "2024-10-22T10:21:53.018Z",
-        "sala": 10,
-        "pelicula": 14
-    }
-},
-{
-    "model": "GestionCine.proyeccion",
-    "pk": 7,
-    "fields": {
-        "hora": "2024-10-22T10:21:53.018Z",
-        "sala": 15,
-        "pelicula": 10
-    }
-},
-{
-    "model": "GestionCine.proyeccion",
-    "pk": 8,
-    "fields": {
-        "hora": "2024-10-22T10:21:53.018Z",
-        "sala": 14,
-        "pelicula": 4
-    }
-},
-{
-    "model": "GestionCine.proyeccion",
-    "pk": 9,
-    "fields": {
-        "hora": "2024-10-22T10:21:53.018Z",
-        "sala": 14,
-        "pelicula": 10
-    }
-},
-{
-    "model": "GestionCine.proyeccion",
-    "pk": 10,
-    "fields": {
-        "hora": "2024-10-22T10:21:53.018Z",
-        "sala": 3,
-        "pelicula": 2
-    }
-},
-{
-    "model": "GestionCine.proyeccion",
-    "pk": 11,
-    "fields": {
-        "hora": "2024-10-22T10:21:53.018Z",
-        "sala": 13,
-        "pelicula": 13
-    }
-},
-{
-    "model": "GestionCine.proyeccion",
-    "pk": 12,
-    "fields": {
-        "hora": "2024-10-22T10:21:53.018Z",
-        "sala": 10,
-        "pelicula": 1
-    }
-},
-{
-    "model": "GestionCine.proyeccion",
-    "pk": 13,
-    "fields": {
-        "hora": "2024-10-22T10:21:53.018Z",
-        "sala": 11,
-        "pelicula": 14
-    }
-},
-{
-    "model": "GestionCine.proyeccion",
-    "pk": 14,
-    "fields": {
-        "hora": "2024-10-22T10:21:53.018Z",
-        "sala": 13,
-        "pelicula": 15
-    }
-},
-{
-    "model": "GestionCine.proyeccion",
-    "pk": 15,
-    "fields": {
-        "hora": "2024-10-22T10:21:53.018Z",
-        "sala": 15,
-        "pelicula": 12
-    }
-},
-{
-    "model": "GestionCine.entrada",
-    "pk": 1,
-    "fields": {
-        "fechaCompra": "2024-10-22T10:21:53.018Z",
-        "cliente": 11,
-        "proyeccion": 9
-    }
-},
-{
-    "model": "GestionCine.entrada",
-    "pk": 2,
-    "fields": {
-        "fechaCompra": "2024-10-22T10:21:53.018Z",
-        "cliente": 2,
-        "proyeccion": 12
-    }
-},
-{
-    "model": "GestionCine.entrada",
-    "pk": 3,
-    "fields": {
-        "fechaCompra": "2024-10-22T10:21:53.018Z",
-        "cliente": 10,
-        "proyeccion": 7
-    }
-},
-{
-    "model": "GestionCine.entrada",
-    "pk": 4,
-    "fields": {
-        "fechaCompra": "2024-10-22T10:21:53.018Z",
-        "cliente": 1,
-        "proyeccion": 15
-    }
-},
-{
-    "model": "GestionCine.entrada",
-    "pk": 5,
-    "fields": {
-        "fechaCompra": "2024-10-22T10:21:53.018Z",
-        "cliente": 7,
-        "proyeccion": 5
-    }
-},
-{
-    "model": "GestionCine.entrada",
-    "pk": 6,
-    "fields": {
-        "fechaCompra": "2024-10-22T10:21:53.018Z",
-        "cliente": 8,
-        "proyeccion": 12
-    }
-},
-{
-    "model": "GestionCine.entrada",
-    "pk": 7,
-    "fields": {
-        "fechaCompra": "2024-10-22T10:21:53.018Z",
-        "cliente": 15,
-        "proyeccion": 6
-    }
-},
-{
-    "model": "GestionCine.entrada",
-    "pk": 8,
-    "fields": {
-        "fechaCompra": "2024-10-22T10:21:53.018Z",
-        "cliente": 4,
-        "proyeccion": 13
-    }
-},
-{
-    "model": "GestionCine.entrada",
-    "pk": 9,
-    "fields": {
-        "fechaCompra": "2024-10-22T10:21:53.018Z",
-        "cliente": 6,
-        "proyeccion": 1
-    }
-},
-{
-    "model": "GestionCine.entrada",
-    "pk": 10,
-    "fields": {
-        "fechaCompra": "2024-10-22T10:21:53.018Z",
-        "cliente": 14,
-        "proyeccion": 4
-    }
-},
-{
-    "model": "GestionCine.entrada",
-    "pk": 11,
-    "fields": {
-        "fechaCompra": "2024-10-22T10:21:53.018Z",
-        "cliente": 12,
-        "proyeccion": 5
-    }
-},
-{
-    "model": "GestionCine.entrada",
-    "pk": 12,
-    "fields": {
-        "fechaCompra": "2024-10-22T10:21:53.018Z",
-        "cliente": 5,
-        "proyeccion": 14
-    }
-},
-{
-    "model": "GestionCine.entrada",
-    "pk": 13,
-    "fields": {
-        "fechaCompra": "2024-10-22T10:21:53.018Z",
-        "cliente": 13,
-        "proyeccion": 14
-    }
-},
-{
-    "model": "GestionCine.entrada",
-    "pk": 14,
-    "fields": {
-        "fechaCompra": "2024-10-22T10:21:53.018Z",
-        "cliente": 3,
-        "proyeccion": 7
-    }
-},
-{
-    "model": "GestionCine.entrada",
-    "pk": 15,
-    "fields": {
-        "fechaCompra": "2024-10-22T10:21:53.018Z",
-        "cliente": 9,
-        "proyeccion": 3
-    }
-},
-{
-    "model": "GestionCine.proveedor",
-    "pk": 1,
-    "fields": {
-        "nombre": "Card growth draw reason leader scene special. Social give economy federal rich indicate defense.",
-        "direccion": "Least next court son analysis produce book. Live imagine computer risk wrong sense. Week plant change. Easy source office fill ground Democrat but.\nKind population friend reason arm more significant. Bed difference husband couple happen bank.\nServe place author list act field. Young throughout early class popular. Describe nice break now deep individual.\nForget specific fast especially bar over skin. At never school those. Appear less color.",
-        "telefono": "Safe.",
-        "web": "https://www.soto.info/explore/app/categorieslogin.html"
-    }
-},
-{
-    "model": "GestionCine.proveedor",
-    "pk": 2,
-    "fields": {
-        "nombre": "Pressure teacher discover cup bed. Term Mrs rule throw station adult level.\nIf quickly class fast. Manage stand series resource consumer statement economic.",
-        "direccion": "Cost little environmental that seem seem. Seem some quite wide some. Already friend third quickly send network none. Hit certain risk PM main.\nCongress though admit alone.\nOk long natural professor. Modern week four term do buy.\nWill particularly agreement certainly finally or agency family. Article these money bill.\nAhead machine interview east. Actually floor hotel.\nAnyone executive across window market usually. Wear with serve likely several professor religious.",
-        "telefono": "Young.",
-        "web": "http://www.rhodes.net/tags/app/postsregister.html"
-    }
-},
-{
-    "model": "GestionCine.proveedor",
-    "pk": 3,
-    "fields": {
-        "nombre": "Store enjoy join. Court interest network plan behavior authority. Administration top bill southern fact despite.",
-        "direccion": "Lead product number who again. Rather wide ready firm leave.\nHand less whatever generation listen seek whose. Opportunity series no moment sport provide score. Never reveal some doctor film.\nFinally position skill ball mother program campaign. Risk character old suddenly recently method respond. Focus environment mission benefit significant commercial.\nEspecially although business wait here at ok. Environment job listen region road area. Politics visit area have laugh.",
-        "telefono": "Improve.",
-        "web": "https://www.rodriguez-clayton.com/explore/app/tagssearch.php"
-    }
-},
-{
-    "model": "GestionCine.proveedor",
-    "pk": 4,
-    "fields": {
-        "nombre": "Grow security present truth. Five guess represent pass pressure interest term military.\nOccur service table protect. Land street hold many within reach. Be add artist write which bring understand.",
-        "direccion": "After bed cover opportunity item key. Yourself picture religious which. Able gun say newspaper total control word.\nFall guy alone example. Save reach responsibility particular state real. Each serious institution half size deep argue.\nAgree whole accept quality thank. Song attack whom move third.\nPartner four I environment weight community stuff. Billion each kind fine.\nTrue onto they imagine seem. Accept easy build quality. Beautiful quite crime few wide.",
-        "telefono": "Should.",
-        "web": "https://www.strong-white.info/tags/tags/categorieshome.jsp"
-    }
-},
-{
-    "model": "GestionCine.proveedor",
-    "pk": 5,
-    "fields": {
-        "nombre": "Type lose local now mother hard. Dream painting far above her red. Current space us.",
-        "direccion": "According meet argue force less important see. Also sport garden mouth little door. Team fall sort information build seem staff player. Near writer campaign ever inside wife.\nCost billion they. President federal him. Lose show outside final.\nRoom inside also. Soldier building top strategy have. Voice drive training field according.\nIf simple position can attention somebody. Cold particular study those write it your bring.",
-        "telefono": "Heart.",
-        "web": "https://www.holland-dunn.biz/bloghomepage.asp"
-    }
-},
-{
-    "model": "GestionCine.proveedor",
-    "pk": 6,
-    "fields": {
-        "nombre": "Final PM experience bring once life. Occur herself idea right single their. Picture whose TV three central strong.\nLittle get represent boy. Teach activity two seek take whom.",
-        "direccion": "Close note else on bed never.\nBetween brother game onto. Eye organization yes mission service interest. Often me although which matter culture. Trial theory lot build loss science activity.\nNext when important specific not control local. Hope interest within possible. Wind threat cultural language message.\nReport line doctor with magazine nice. To two war eat.\nYear force serious trial add. East citizen card mean behavior true subject air. Person perform write include pick station.",
-        "telefono": "Issue.",
-        "web": "http://www.murray.biz/categories/appabout.html"
-    }
-},
-{
-    "model": "GestionCine.proveedor",
-    "pk": 7,
-    "fields": {
-        "nombre": "Number under someone. Long set great change yourself machine claim. Best firm trouble young different rule.",
-        "direccion": "Air smile open center. Gas area else knowledge eat. Stay hundred poor game evening despite.\nThrow participant such evening. Hard five Republican. Enjoy imagine girl join management only bed.\nDraw more us moment bar imagine nor. Stand enter figure various. Glass difficult response then thus.\nCongress class series father fear situation public. Water be news act east shoulder. Same quality himself.\nChance pay anyone join. Food political cover free money. Because she it current.",
-        "telefono": "Enjoy.",
-        "web": "http://porter.com/list/wp-content/wp-contentindex.html"
-    }
-},
-{
-    "model": "GestionCine.proveedor",
-    "pk": 8,
-    "fields": {
-        "nombre": "Bill meeting health these hair provide. Notice table result politics east real computer life. Really system wife professor power fund.",
-        "direccion": "Side likely condition. Big budget ability answer year pass fear.\nCentral manager true get condition staff. Direction policy race matter probably.\nApply do north outside leader across. Summer street weight.\nSpecial test although discussion. Amount activity successful century. More analysis blue.\nName tree each goal view college. Across actually defense thus level thought. Kid ready itself walk customer common modern.",
-        "telefono": "Leader.",
-        "web": "http://green-parker.net/list/categoriessearch.php"
-    }
-},
-{
-    "model": "GestionCine.proveedor",
-    "pk": 9,
-    "fields": {
-        "nombre": "On decision exactly. Simple me able ground.\nThing of one sing mouth other throughout. Of government image off ready wish.\nCurrent and during bank check send. Guess away catch cultural.",
-        "direccion": "Night fish director reflect turn should painting. Strong bank agreement take within stuff job.\nAction practice truth coach tree nothing challenge property. Energy nature lot thing today. Culture either card authority student.\nBack bad have safe movement. World hair American accept contain want.\nGreen although boy memory go south. Relationship partner discuss across decide bit budget.\nLong population door population. Property note great effort no spring. Bed personal computer hour ago peace.",
-        "telefono": "Choice.",
-        "web": "https://harmon.info/tag/tag/tagsearch.htm"
-    }
-},
-{
-    "model": "GestionCine.proveedor",
-    "pk": 10,
-    "fields": {
-        "nombre": "Inside determine true this yourself others yet. Cup change whole page ground figure.\nWest popular phone product.\nSuffer fine eight wait law attorney paper.",
-        "direccion": "Visit speech maybe hot.\nAsk coach phone again boy cost serious example. Change respond suddenly school. Side end four attack amount office ever.\nSimple such everybody lay product food citizen. Final kind forget president. Purpose despite south start chance four.\nOne attack teacher determine message heavy and mind. Process certain never tend air reason different account. Option pay history no maybe like apply.",
-        "telefono": "Find.",
-        "web": "http://west.com/main/list/categoryindex.html"
-    }
-},
-{
-    "model": "GestionCine.proveedor",
-    "pk": 11,
-    "fields": {
-        "nombre": "Option budget out represent many nice executive.\nEnter themselves treatment. Member how whole memory once take side hair.",
-        "direccion": "Show one item international buy skin open. Begin process everybody me. Reflect black hand seven state four.\nDecision likely whose interest morning. Benefit of a address. Professional seat when drive here top.\nQuite worker management middle coach forward. Window buy director. Case career catch son exist clearly.\nBack pick street behavior. Full somebody career miss defense fill. Data take culture work imagine.",
-        "telefono": "Together.",
-        "web": "https://www.davis.com/mainlogin.htm"
-    }
-},
-{
-    "model": "GestionCine.proveedor",
-    "pk": 12,
-    "fields": {
-        "nombre": "Me entire low wear. Campaign suggest that local.\nHear enough home international minute total blue.",
-        "direccion": "Last why green personal morning. Right would game training around employee scientist.\nMiddle class city stand her method. Play now art continue hand now despite. Child reach who interesting dinner investment Congress.\nConcern great herself necessary form society. Message material see there own officer. Benefit phone nation subject north man matter.\nLevel structure position dinner study. Draw type early thought apply require picture. Major writer bit action.",
-        "telefono": "Weight.",
-        "web": "https://www.george-clark.biz/categoryregister.html"
-    }
-},
-{
-    "model": "GestionCine.proveedor",
-    "pk": 13,
-    "fields": {
-        "nombre": "Truth truth factor. Consider available look true card.\nThose someone finally analysis. Recognize woman must defense change public. System trade take degree lot.",
-        "direccion": "Growth determine least try measure purpose rather. Fall unit feel everybody.\nHeavy election truth popular laugh. Off federal team leave look middle goal. Instead various cup gas.\nEveryone send mind staff hundred many. Image discover water deep.\nLawyer red travel human local daughter page. Three remain piece good.\nWide represent financial can road report. Several reveal nature fly maybe building.\nOn material movie business charge including. Price later among ready very.",
-        "telefono": "Land.",
-        "web": "http://www.snyder-frank.biz/posts/app/blogcategory.html"
-    }
-},
-{
-    "model": "GestionCine.proveedor",
-    "pk": 14,
-    "fields": {
-        "nombre": "Between near social movie trouble. Economic manage figure guy. Standard cover form affect may second.\nCountry market democratic choose choice century. Quality upon question loss meeting Mr.",
-        "direccion": "Fire toward nor center. Yeah food hot investment. Responsibility bill they health show tax while.\nPerhaps simple off thing leg loss morning challenge. Sure over able north. Paper table anything.\nApproach see back common want serve herself. Decision answer respond person analysis.\nPartner music once writer herself represent real. Walk phone knowledge. Religious pull information.\nSix recognize boy no imagine activity idea. Score factor believe crime data watch.",
-        "telefono": "Boy.",
-        "web": "http://howard.biz/wp-content/app/mainindex.htm"
-    }
-},
-{
-    "model": "GestionCine.proveedor",
-    "pk": 15,
-    "fields": {
-        "nombre": "Mission simple Congress us. Big best call age gas boy although similar.",
-        "direccion": "Evidence many best Republican camera administration. Agree activity nation leader. Half piece central listen no.\nSit morning area.\nLoss need receive until notice. Teach fire above especially sense. We base account.\nGeneration perform billion movement employee. Skill similar personal.\nTheir hit commercial. Level Democrat white nearly political. Prepare realize ten lose our.",
-        "telefono": "Stand.",
-        "web": "https://www.davis-meyers.info/categoriesprivacy.html"
-    }
-},
-{
-    "model": "GestionCine.producto",
-    "pk": 1,
-    "fields": {
-        "nombre": "Recently will follow issue break. Campaign support argue fast glass fall shoulder. Star president cultural fund.",
-        "tipo": "co",
-        "fechaCaducidad": "2024-10-22",
-        "proveedor": 11,
-        "cliente": [
-            6
-        ]
-    }
-},
-{
-    "model": "GestionCine.producto",
-    "pk": 2,
-    "fields": {
-        "nombre": "Do commercial question once. Modern federal appear.\nOption room capital left as church develop. West tell cause specific bill natural.",
-        "tipo": "co",
-        "fechaCaducidad": "2024-10-22",
-        "proveedor": 13,
-        "cliente": [
-            10,
-            12,
-            13
-        ]
-    }
-},
-{
-    "model": "GestionCine.producto",
-    "pk": 3,
-    "fields": {
-        "nombre": "Over positive have everyone American kind. Five say light water laugh compare imagine.",
-        "tipo": "co",
-        "fechaCaducidad": "2024-10-22",
-        "proveedor": 10,
-        "cliente": [
-            6,
-            8
-        ]
-    }
-},
-{
-    "model": "GestionCine.producto",
-    "pk": 4,
-    "fields": {
-        "nombre": "Have reason home they. Pattern high anyone us carry offer produce. Candidate state miss money fire rest.",
-        "tipo": "co",
-        "fechaCaducidad": "2024-10-22",
-        "proveedor": 7,
-        "cliente": [
-            2,
-            5,
-            7
-        ]
-    }
-},
-{
-    "model": "GestionCine.producto",
-    "pk": 5,
-    "fields": {
-        "nombre": "Phone money likely southern. Represent show artist test save. Many lot gas. Someone out member guess reach.",
-        "tipo": "co",
-        "fechaCaducidad": "2024-10-22",
-        "proveedor": 8,
-        "cliente": [
-            2,
-            13
-        ]
-    }
-},
-{
-    "model": "GestionCine.producto",
-    "pk": 6,
-    "fields": {
-        "nombre": "Show parent determine respond pattern anyone. Sport test culture any doctor career likely. Special red remain.\nThen continue most himself.",
-        "tipo": "co",
-        "fechaCaducidad": "2024-10-22",
-        "proveedor": 5,
-        "cliente": [
-            9,
-            15
-        ]
-    }
-},
-{
-    "model": "GestionCine.producto",
-    "pk": 7,
-    "fields": {
-        "nombre": "Factor none election nearly someone. Rich none small international person. Home member mission chance six.",
-        "tipo": "co",
-        "fechaCaducidad": "2024-10-22",
-        "proveedor": 9,
-        "cliente": [
-            2,
-            8,
-            12,
-            14
-        ]
-    }
-},
-{
-    "model": "GestionCine.producto",
-    "pk": 8,
-    "fields": {
-        "nombre": "Me their blue continue operation future sit. Hit television road step feel resource.",
-        "tipo": "co",
-        "fechaCaducidad": "2024-10-22",
-        "proveedor": 11,
-        "cliente": [
-            8,
-            13
-        ]
-    }
-},
-{
-    "model": "GestionCine.producto",
-    "pk": 9,
-    "fields": {
-        "nombre": "Animal yeah less situation require. Report small gas kind of effect face official. Significant edge quite huge ok like cup.\nWrong wrong make fine.",
-        "tipo": "co",
-        "fechaCaducidad": "2024-10-22",
-        "proveedor": 1,
-        "cliente": [
-            7,
-            12,
-            15
-        ]
-    }
-},
-{
-    "model": "GestionCine.producto",
-    "pk": 10,
-    "fields": {
-        "nombre": "Within member produce pick head increase through. Require former nice catch. Hour program less wall help.",
-        "tipo": "co",
-        "fechaCaducidad": "2024-10-22",
-        "proveedor": 7,
-        "cliente": [
-            9,
-            10,
-            11
-        ]
-    }
-},
-{
-    "model": "GestionCine.producto",
-    "pk": 11,
-    "fields": {
-        "nombre": "Left wrong bring it control realize number hundred. Personal million above occur.",
-        "tipo": "co",
-        "fechaCaducidad": "2024-10-22",
-        "proveedor": 9,
-        "cliente": [
-            5,
-            14,
-            15
-        ]
-    }
-},
-{
-    "model": "GestionCine.producto",
-    "pk": 12,
-    "fields": {
-        "nombre": "Other name north finally. Claim whether account eat worker boy list.",
-        "tipo": "co",
-        "fechaCaducidad": "2024-10-22",
-        "proveedor": 6,
-        "cliente": [
-            2,
-            4,
-            6
-        ]
-    }
-},
-{
-    "model": "GestionCine.producto",
-    "pk": 13,
-    "fields": {
-        "nombre": "Along throughout else product government majority. Artist future prove build measure great.",
-        "tipo": "co",
-        "fechaCaducidad": "2024-10-22",
-        "proveedor": 6,
-        "cliente": [
-            13
-        ]
-    }
-},
-{
-    "model": "GestionCine.producto",
-    "pk": 14,
-    "fields": {
-        "nombre": "Your phone represent son.",
-        "tipo": "co",
-        "fechaCaducidad": "2024-10-22",
-        "proveedor": 14,
-        "cliente": [
-            1,
-            2,
-            10,
-            15
-        ]
-    }
-},
-{
-    "model": "GestionCine.producto",
-    "pk": 15,
-    "fields": {
-        "nombre": "Data forward remain indeed road. Law list use remember.",
-        "tipo": "co",
-        "fechaCaducidad": "2024-10-22",
-        "proveedor": 6,
-        "cliente": [
-            1,
-            11
-        ]
-    }
-}
+    {
+        "model": "GestionCine.cliente",
+        "pk": 1,
+        "fields": {
+            "dni": "12345678A",
+            "nombre": "Juan",
+            "apellidos": "Pérez García",
+            "email": "juan.perez@example.com"
+        }
+    },
+    {
+        "model": "GestionCine.cliente",
+        "pk": 2,
+        "fields": {
+            "dni": "87654321B",
+            "nombre": "Maria",
+            "apellidos": "Lopez Martin",
+            "email": "maria.lopez@example.com"
+        }
+    },
+    {
+        "model": "GestionCine.cliente",
+        "pk": 3,
+        "fields": {
+            "dni": "13579246C",
+            "nombre": "Luis",
+            "apellidos": "Ramirez Suarez",
+            "email": "luis.ramirez@example.com"
+        }
+    },
+    {
+        "model": "GestionCine.cliente",
+        "pk": 4,
+        "fields": {
+            "dni": "24681357D",
+            "nombre": "Ana",
+            "apellidos": "Garcia Fernandez",
+            "email": "ana.garcia@example.com"
+        }
+    },
+    {
+        "model": "GestionCine.cliente",
+        "pk": 5,
+        "fields": {
+            "dni": "12348765E",
+            "nombre": "Carlos",
+            "apellidos": "Sanchez Ortega",
+            "email": "carlos.sanchez@example.com"
+        }
+    },
+    {
+        "model": "GestionCine.cliente",
+        "pk": 6,
+        "fields": {
+            "dni": "87651234F",
+            "nombre": "Elena",
+            "apellidos": "Mendez Alonso",
+            "email": "elena.mendez@example.com"
+        }
+    },
+    {
+        "model": "GestionCine.socio",
+        "pk": 1,
+        "fields": {
+            "numSocio": "10001",
+            "fechaAlta": "2023-01-15",
+            "fechaCaducidad": "2024-01-15",
+            "cliente": 1
+        }
+    },
+    {
+        "model": "GestionCine.socio",
+        "pk": 3,
+        "fields": {
+            "numSocio": "10003",
+            "fechaAlta": "2023-03-05",
+            "fechaCaducidad": "2024-03-05",
+            "cliente": 3
+        }
+    },
+    {
+        "model": "GestionCine.socio",
+        "pk": 4,
+        "fields": {
+            "numSocio": "10004",
+            "fechaAlta": "2023-04-15",
+            "fechaCaducidad": "2024-04-15",
+            "cliente": 4
+        }
+    },
+    {
+        "model": "GestionCine.socio",
+        "pk": 6,
+        "fields": {
+            "numSocio": "10006",
+            "fechaAlta": "2023-06-10",
+            "fechaCaducidad": "2024-06-10",
+            "cliente": 6
+        }
+    },
+    {
+        "model": "GestionCine.gerente",
+        "pk": 1,
+        "fields": {
+            "dni": "11223344C",
+            "nombre": "Laura",
+            "apellidos": "Hernández López",
+            "telefono": "666777888"
+        }
+    },
+    {
+        "model": "GestionCine.gerente",
+        "pk": 2,
+        "fields": {
+            "dni": "55667788D",
+            "nombre": "Pedro",
+            "apellidos": "Martinez Gómez",
+            "telefono": "666888999"
+        }
+    },
+    {
+        "model": "GestionCine.gerente",
+        "pk": 3,
+        "fields": {
+            "dni": "77889900E",
+            "nombre": "Rosa",
+            "apellidos": "Diaz Ortega",
+            "telefono": "666999111"
+        }
+    },
+    {
+        "model": "GestionCine.gerente",
+        "pk": 4,
+        "fields": {
+            "dni": "99001122F",
+            "nombre": "Miguel",
+            "apellidos": "Fernandez Lopez",
+            "telefono": "666222333"
+        }
+    },
+    {
+        "model": "GestionCine.gerente",
+        "pk": 5,
+        "fields": {
+            "dni": "22334455G",
+            "nombre": "Alba",
+            "apellidos": "Lopez Ruiz",
+            "telefono": "666333444"
+        }
+    },
+    {
+        "model": "GestionCine.gerente",
+        "pk": 6,
+        "fields": {
+            "dni": "33445566H",
+            "nombre": "Javier",
+            "apellidos": "Castro Delgado",
+            "telefono": "666444555"
+        }
+    },
+    {
+        "model": "GestionCine.cine",
+        "pk": 1,
+        "fields": {
+            "direccion": "Calle Gran Via 1, Madrid",
+            "telefono": "915555555",
+            "email": "info@cinecentral.com",
+            "gerente": 1
+        }
+    },
+    {
+        "model": "GestionCine.cine",
+        "pk": 2,
+        "fields": {
+            "direccion": "Avenida de la Constitución 20, Sevilla",
+            "telefono": "954555555",
+            "email": "info@cineandaluz.com",
+            "gerente": 2
+        }
+    },
+    {
+        "model": "GestionCine.cine",
+        "pk": 3,
+        "fields": {
+            "direccion": "Calle Mayor 15, Barcelona",
+            "telefono": "934555555",
+            "email": "info@cinecatalunya.com",
+            "gerente": 3
+        }
+    },
+    {
+        "model": "GestionCine.cine",
+        "pk": 4,
+        "fields": {
+            "direccion": "Plaza Mayor 2, Valencia",
+            "telefono": "963555555",
+            "email": "info@cinevalenciano.com",
+            "gerente": 4
+        }
+    },
+    {
+        "model": "GestionCine.cine",
+        "pk": 5,
+        "fields": {
+            "direccion": "Paseo de la Castellana 101, Madrid",
+            "telefono": "917555555",
+            "email": "info@cinecastellana.com",
+            "gerente": 5
+        }
+    },
+    {
+        "model": "GestionCine.cine",
+        "pk": 6,
+        "fields": {
+            "direccion": "Calle Alcalá 50, Madrid",
+            "telefono": "918555555",
+            "email": "info@cinealcala.com",
+            "gerente": 6
+        }
+    },
+    {
+        "model": "GestionCine.empleado",
+        "pk": 1,
+        "fields": {
+            "dni": "44556677I",
+            "nombre": "Mario",
+            "apellidos": "Torres Diaz",
+            "nuss": "123456789012",
+            "iban": "ES9121000418450200051332",
+            "salario": 1300,
+            "encargado": true,
+            "cine": 1
+        }
+    },
+    {
+        "model": "GestionCine.empleado",
+        "pk": 2,
+        "fields": {
+            "dni": "55667788J",
+            "nombre": "Sara",
+            "apellidos": "Gonzalez Perez",
+            "nuss": "123456789013",
+            "iban": "ES9121000418450200051333",
+            "salario": 1200,
+            "encargado": false,
+            "cine": 2
+        }
+    },
+    {
+        "model": "GestionCine.empleado",
+        "pk": 3,
+        "fields": {
+            "dni": "66778899K",
+            "nombre": "Pablo",
+            "apellidos": "Santos Molina",
+            "nuss": "123456789014",
+            "iban": "ES9121000418450200051334",
+            "salario": 1250,
+            "encargado": false,
+            "cine": 3
+        }
+    },
+    {
+        "model": "GestionCine.empleado",
+        "pk": 4,
+        "fields": {
+            "dni": "77889900L",
+            "nombre": "Lucia",
+            "apellidos": "Martinez Lopez",
+            "nuss": "123456789015",
+            "iban": "ES9121000418450200051335",
+            "salario": 1350,
+            "encargado": true,
+            "cine": 4
+        }
+    },
+    {
+        "model": "GestionCine.empleado",
+        "pk": 5,
+        "fields": {
+            "dni": "88990011M",
+            "nombre": "David",
+            "apellidos": "Fernandez Ruiz",
+            "nuss": "123456789016",
+            "iban": "ES9121000418450200051336",
+            "salario": 1400,
+            "encargado": false,
+            "cine": 5
+        }
+    },
+    {
+        "model": "GestionCine.empleado",
+        "pk": 6,
+        "fields": {
+            "dni": "99001122N",
+            "nombre": "Carla",
+            "apellidos": "Sanchez Gonzalez",
+            "nuss": "123456789017",
+            "iban": "ES9121000418450200051337",
+            "salario": 1500,
+            "encargado": true,
+            "cine": 6
+        }
+    },
+
+    {
+            "model": "GestionCine.sala",
+            "pk": 1,
+            "fields": {
+                "tamano": "PE",
+                "cine": 1,
+                "empleado": [1]
+        }
+    },
+        {
+            "model": "GestionCine.sala",
+            "pk": 2,
+            "fields": {
+                "tamano": "ME",
+                "cine": 2,
+                "empleado": [2]
+            }
+        },
+        {
+            "model": "GestionCine.sala",
+            "pk": 3,
+            "fields": {
+                "tamano": "GR",
+                "cine": 3,
+                "empleado": [3]
+            }
+        },
+        {
+            "model": "GestionCine.sala",
+            "pk": 4,
+            "fields": {
+                "tamano": "PE",
+                "cine": 4,
+                "empleado": [4]
+            }
+        },
+        {
+            "model": "GestionCine.sala",
+            "pk": 5,
+            "fields": {
+                "tamano": "ME",
+                "cine": 5,
+                "empleado": [5]
+            }
+        },
+        {
+            "model": "GestionCine.sala",
+            "pk": 6,
+            "fields": {
+                "tamano": "GR",
+                "cine": 6,
+                "empleado": [6]
+            }
+        },
+        {
+            "model": "GestionCine.pelicula",
+            "pk": 1,
+            "fields": {
+                "titulo": "Inception",
+                "director": "Christopher Nolan",
+                "sinopsis": "A mind-bending thriller about dream infiltration.",
+                "fechaLanzamiento": "2010-07-16",
+                "tiempoProyectada": "02:28:00",
+                "sala": [1, 2]
+            }
+        },
+        {
+            "model": "GestionCine.pelicula",
+            "pk": 2,
+            "fields": {
+                "titulo": "Interstellar",
+                "director": "Christopher Nolan",
+                "sinopsis": "Exploration of space and time.",
+                "fechaLanzamiento": "2014-11-07",
+                "tiempoProyectada": "02:49:00",
+                "sala": [2, 3]
+            }
+        },
+        {
+            "model": "GestionCine.pelicula",
+            "pk": 3,
+            "fields": {
+                "titulo": "The Matrix",
+                "director": "The Wachowskis",
+                "sinopsis": "A hacker learns the truth about his reality.",
+                "fechaLanzamiento": "1999-03-31",
+                "tiempoProyectada": "02:16:00",
+                "sala": [3, 4]
+            }
+        },
+        {
+            "model": "GestionCine.pelicula",
+            "pk": 4,
+            "fields": {
+                "titulo": "Avatar",
+                "director": "James Cameron",
+                "sinopsis": "Humans attempt to colonize a new world.",
+                "fechaLanzamiento": "2009-12-18",
+                "tiempoProyectada": "02:42:00",
+                "sala": [4, 5]
+            }
+        },
+        {
+            "model": "GestionCine.pelicula",
+            "pk": 5,
+            "fields": {
+                "titulo": "The Lord of the Rings",
+                "director": "Peter Jackson",
+                "sinopsis": "An epic fantasy journey.",
+                "fechaLanzamiento": "2001-12-19",
+                "tiempoProyectada": "03:48:00",
+                "sala": [5, 6]
+            }
+        },
+        {
+            "model": "GestionCine.pelicula",
+            "pk": 6,
+            "fields": {
+                "titulo": "Harry Potter and the Philosopher's Stone",
+                "director": "Chris Columbus",
+                "sinopsis": "A young boy discovers he is a wizard.",
+                "fechaLanzamiento": "2001-11-16",
+                "tiempoProyectada": "02:32:00",
+                "sala": [1, 6]
+            }
+        },
+        {
+            "model": "GestionCine.proyeccion",
+            "pk": 1,
+            "fields": {
+                "hora": "2023-12-01T18:00:00Z",
+                "sala": 1,
+                "pelicula": 1
+            }
+        },
+        {
+            "model": "GestionCine.proyeccion",
+            "pk": 2,
+            "fields": {
+                "hora": "2023-12-02T20:00:00Z",
+                "sala": 2,
+                "pelicula": 2
+            }
+        },
+        {
+            "model": "GestionCine.proyeccion",
+            "pk": 3,
+            "fields": {
+                "hora": "2023-12-03T22:00:00Z",
+                "sala": 3,
+                "pelicula": 3
+            }
+        },
+        {
+            "model": "GestionCine.proyeccion",
+            "pk": 4,
+            "fields": {
+                "hora": "2023-12-04T19:00:00Z",
+                "sala": 4,
+                "pelicula": 4
+            }
+        },
+        {
+            "model": "GestionCine.proyeccion",
+            "pk": 5,
+            "fields": {
+                "hora": "2023-12-05T21:30:00Z",
+                "sala": 5,
+                "pelicula": 5
+            }
+        },
+        {
+            "model": "GestionCine.proyeccion",
+            "pk": 6,
+            "fields": {
+                "hora": "2023-12-06T18:30:00Z",
+                "sala": 6,
+                "pelicula": 6
+            }
+        },
+        {
+            "model": "GestionCine.entrada",
+            "pk": 1,
+            "fields": {
+                "fechaCompra": "2023-11-25T16:00:00Z",
+                "cliente": 1,
+                "proyeccion": 1
+            }
+        },
+        {
+            "model": "GestionCine.entrada",
+            "pk": 2,
+            "fields": {
+                "fechaCompra": "2023-11-25T16:30:00Z",
+                "cliente": 2,
+                "proyeccion": 2
+            }
+        },
+        {
+            "model": "GestionCine.entrada",
+            "pk": 3,
+            "fields": {
+                "fechaCompra": "2023-11-25T17:00:00Z",
+                "cliente": 3,
+                "proyeccion": 3
+            }
+        },
+        {
+            "model": "GestionCine.entrada",
+            "pk": 4,
+            "fields": {
+                "fechaCompra": "2023-11-25T17:30:00Z",
+                "cliente": 4,
+                "proyeccion": 4
+            }
+        },
+        {
+            "model": "GestionCine.entrada",
+            "pk": 5,
+            "fields": {
+                "fechaCompra": "2023-11-25T18:00:00Z",
+                "cliente": 5,
+                "proyeccion": 5
+            }
+        },
+        {
+            "model": "GestionCine.entrada",
+            "pk": 6,
+            "fields": {
+                "fechaCompra": "2023-11-25T18:30:00Z",
+                "cliente": 6,
+                "proyeccion": 6
+            }
+        },
+        {
+            "model": "GestionCine.proveedor",
+            "pk": 1,
+            "fields": {
+                "nombre": "Distribuidora Alimentos SA",
+                "direccion": "Calle Mayor 50, Barcelona",
+                "telefono": "934567890",
+                "web": "http://www.distribuidoraalimentos.com"
+            }
+        },
+        {
+            "model": "GestionCine.proveedor",
+            "pk": 2,
+            "fields": {
+                "nombre": "Bebidas Nacionales S.L.",
+                "direccion": "Avenida Central 23, Madrid",
+                "telefono": "912345678",
+                "web": "http://www.bebidasnacionales.com"
+            }
+        },
+        {
+            "model": "GestionCine.proveedor",
+            "pk": 3,
+            "fields": {
+                "nombre": "Snack World",
+                "direccion": "Plaza España 10, Sevilla",
+                "telefono": "954321987",
+                "web": "http://www.snackworld.com"
+            }
+        },
+        {
+            "model": "GestionCine.proveedor",
+            "pk": 4,
+            "fields": {
+                "nombre": "Popcorn Supply",
+                "direccion": "Calle Popcorn 5, Valencia",
+                "telefono": "963214579",
+                "web": "http://www.popcornsupply.com"
+            }
+        },
+        {
+            "model": "GestionCine.proveedor",
+            "pk": 5,
+            "fields": {
+                "nombre": "Chocolates y Más",
+                "direccion": "Calle del Chocolate 12, Bilbao",
+                "telefono": "944567321",
+                "web": "http://www.chocolatesymas.com"
+            }
+        },
+        {
+            "model": "GestionCine.proveedor",
+            "pk": 6,
+            "fields": {
+                "nombre": "Fruit and Juice",
+                "direccion": "Calle de la Salud 7, Málaga",
+                "telefono": "952123456",
+                "web": "http://www.fruitandjuice.com"
+            }
+        },
+        {
+            "model": "GestionCine.producto",
+            "pk": 1,
+            "fields": {
+                "nombre": "Palomitas",
+                "tipo": "co",
+                "fechaCaducidad": "2024-01-15",
+                "proveedor": 1,
+                "cliente": [1, 2]
+            }
+        },
+        {
+            "model": "GestionCine.producto",
+            "pk": 2,
+            "fields": {
+                "nombre": "Coca-Cola",
+                "tipo": "be",
+                "fechaCaducidad": "2024-01-20",
+                "proveedor": 2,
+                "cliente": [3, 4]
+            }
+        },
+        {
+            "model": "GestionCine.producto",
+            "pk": 3,
+            "fields": {
+                "nombre": "Chocolates",
+                "tipo": "co",
+                "fechaCaducidad": "2024-02-10",
+                "proveedor": 5,
+                "cliente": [5, 6]
+            }
+        },
+        {
+            "model": "GestionCine.producto",
+            "pk": 4,
+            "fields": {
+                "nombre": "Agua Mineral",
+                "tipo": "be",
+                "fechaCaducidad": "2024-03-05",
+                "proveedor": 6,
+                "cliente": [1, 3]
+            }
+        },
+        {
+            "model": "GestionCine.producto",
+            "pk": 5,
+            "fields": {
+                "nombre": "Nachos",
+                "tipo": "co",
+                "fechaCaducidad": "2024-04-12",
+                "proveedor": 3,
+                "cliente": [2, 4]
+            }
+        },
+        {
+            "model": "GestionCine.producto",
+            "pk": 6,
+            "fields": {
+                "nombre": "Jugo de Naranja",
+                "tipo": "be",
+                "fechaCaducidad": "2024-05-18",
+                "proveedor": 4,
+                "cliente": [5, 6]
+            }
+        }
+    
 ]
