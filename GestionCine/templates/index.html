@@ -13,10 +13,17 @@
     </div>
 
     <div>
-        <h3>1-URL que muestra una lista de todas las salas
+        <h3>2-URL que muestra una lista de todas las salas
             de un cine en concreto.
         </h3>
-        <a href="{% url 'lista_socios' %}">Lista de socios</a>
+        <a href="{% url 'lista_salas_cine' 1 %}">Lista de salas</a>
+    </div>
+
+    <div>
+        <h3>3-URL que muestra una lista de todas las proyecciones
+            de una sala en concreto ordenadas de manera ascendente.
+        </h3>
+        <a href="{% url 'lista_proyecciones' 1 %}">Lista de proyecciones</a>
     </div>
 
     </body>

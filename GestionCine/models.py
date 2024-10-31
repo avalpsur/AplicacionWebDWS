@@ -37,7 +37,7 @@ class Empleado(models.Model):
     iban = models.CharField(max_length=24, unique=True)
     salario = models.IntegerField(default=1100)
     encargado = models.BooleanField(default=False)
-    cine = models.ForeignKey(Cine, on_delete=models.CASCADE)
+    cine = models.ForeignKey(Cine, on_delete=models.CASCADE, related_name="empleados_cine")
 
 class Sala(models.Model):
     TAMANO = [
@@ -50,8 +50,8 @@ class Sala(models.Model):
         choices=TAMANO,
         default='ME',
     )
-    cine = models.ForeignKey(Cine, on_delete=models.CASCADE)
-    empleado = models.ManyToManyField(Empleado)
+    cine = models.ForeignKey(Cine, on_delete=models.CASCADE,related_name="salas_cine")
+    empleado = models.ManyToManyField(Empleado,related_name="salas_empleado")
 
 class Pelicula(models.Model):
     titulo = models.CharField(max_length=500)
@@ -59,17 +59,17 @@ class Pelicula(models.Model):
     sinopsis = models.TextField(null=True)
     fechaLanzamiento = models.DateField(default=timezone.now)
     tiempoProyectada = models.DurationField(null=True)
-    sala = models.ManyToManyField(Sala)
+    sala = models.ManyToManyField(Sala,related_name="peliculas_sala")
 
 class Proyeccion(models.Model):
     hora = models.DateTimeField(default=timezone.now)
-    sala = models.ForeignKey(Sala, on_delete=models.CASCADE)
-    pelicula = models.ForeignKey(Pelicula, on_delete=models.CASCADE)
+    sala = models.ForeignKey(Sala, on_delete=models.CASCADE, related_name="proyecciones_sala")
+    pelicula = models.ForeignKey(Pelicula, on_delete=models.CASCADE, related_name="proyecciones_pelicula")
 
 class Entrada(models.Model):
     fechaCompra = models.DateTimeField(default=timezone.now)
-    cliente = models.OneToOneField(Cliente, on_delete=models.DO_NOTHING)
-    proyeccion = models.ForeignKey(Proyeccion, on_delete=models.CASCADE)
+    cliente = models.OneToOneField(Cliente, on_delete=models.DO_NOTHING,related_name="entradas_cliente")
+    proyeccion = models.ForeignKey(Proyeccion, on_delete=models.CASCADE,related_name="entradas_proyeccion")
 
 class Proveedor(models.Model):
     nombre = models.CharField(max_length=200)
@@ -89,5 +89,5 @@ class Producto(models.Model):
         default='co',
     )
     fechaCaducidad = models.DateField(default=timezone.now)
-    proveedor = models.ForeignKey(Proveedor, on_delete=models.CASCADE)
-    cliente = models.ManyToManyField(Cliente)
+    proveedor = models.ForeignKey(Proveedor, on_delete=models.CASCADE,related_name="productos_proveedor")
+    cliente = models.ManyToManyField(Cliente,related_name="productos_cliente")
