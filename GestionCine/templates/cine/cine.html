@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine</title>
+</head>
+<body>
+    <h1>Salas del Cine: {{ cine.direccion }}</h1>
+    <h2>Detalles del Cine:</h2>
+    <p>DNI del Gerente: {{ cine.gerente.dni }}</p>
+    <p>Nombre del Gerente: {{ cine.gerente.nombre }} {{ cine.gerente.apellidos }}</p>
+    <p>Teléfono: {{ cine.telefono }}</p>
+    <p>Email: {{ cine.email }}</p>
+
+    <h2>Salas disponibles:</h2>
+    <ul>
+        {% for sala in cine.salas_cine.all %}
+            <li>
+                <strong>ID Sala:</strong> {{sala.id}}
+                <strong>Tamaño:</strong> {{ sala.tamano }} 
+
+            </li>
+        {% empty %}
+            <li>No hay salas disponibles en este cine.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

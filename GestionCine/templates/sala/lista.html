@@ -9,11 +9,7 @@
 
     {% for sala in salas %}
         <div>
-            <h2>Tamaño de la Sala: 
-                {% if sala.tamano == "PE" %}Pequeña
-                {% elif sala.tamano == "ME" %}Mediana
-                {% elif sala.tamano == "GR" %}Grande
-                {% endif %}
+            <h2>Tamaño de la Sala: {{sala.tamano}}
             </h2>
             <p><strong>Dirección del Cine:</strong> {{ sala.cine.direccion }}</p>
             <p><strong>Teléfono del Cine:</strong> {{ sala.cine.telefono }}</p>

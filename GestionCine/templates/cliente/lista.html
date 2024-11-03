@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de clientes</title>
+</head>
+<body>
+    <h1>Lista de clientes</h1>
+    {% for cliente in clientes %}
+        <p><strong>DNI:</strong> {{ cliente.dni }}</p>
+        <p><strong>Nombre:</strong> {{ cliente.nombre }}</p>
+        <p><strong>Apellidos:</strong> {{ cliente.apellidos }}</p>
+        <p><strong>Email:</strong> {{ cliente.email }}</p>
+        <hr>
+        {% empty %}
+        <p>No hay clientes que no sean socios</p>
+    {% endfor %}
+</body>
+</html>

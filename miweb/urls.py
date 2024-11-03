@@ -19,5 +19,12 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("__debug__/",include("debug_toolbar.urls")),
     path('',include("GestionCine.urls")),
 ]
+
+from django.conf.urls import handler400,handler404,handler403,handler500
+handler404 = "GestionCine.views.mi_error_400"
+handler503 = "GestionCine.views.mi_error_403"
+handler503 = "GestionCine.views.mi_error_404"
+handler500 = "GestionCine.views.mi_error_500"

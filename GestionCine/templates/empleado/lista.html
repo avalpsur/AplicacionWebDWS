@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Empleados</title>
+</head>
+<body>
+    <h1>Lista de Empleados</h1>
+
+    {% for empleado in empleados %}
+        <h2>{{ empleado.nombre }} {{ empleado.apellidos }}</h2>
+        <p>DNI: {{ empleado.dni }}</p>
+        <p>NUSS: {{ empleado.nuss }}</p>
+        <p>IBAN: {{ empleado.iban }}</p>
+        <p>Salario: {{ empleado.salario }}</p>
+        <p>Encargado: {{ empleado.encargado }}</p>
+        <hr>
+    {% empty %}
+        <p>No hay empleados disponibles.</p>
+    {% endfor %}
+</body>
+</html>

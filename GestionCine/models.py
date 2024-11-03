@@ -15,7 +15,7 @@ class Socio(models.Model):
     numSocio = models.CharField(max_length=5, unique=True)
     fechaAlta = models.DateField(default=timezone.now)
     fechaCaducidad = models.DateField(default=timezone.now)
-    cliente = models.OneToOneField(Cliente, on_delete=models.CASCADE)
+    cliente = models.OneToOneField(Cliente, on_delete=models.CASCADE, related_name="socios_cliente")
 
 class Gerente(models.Model):
     dni = models.CharField(max_length=9, unique=True)
