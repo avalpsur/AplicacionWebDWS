@@ -33,4 +33,23 @@ En esta práctica vamos a incluir 10 URLs que deben cumplir diferentes criterios
    Así incluimos el order-by en las querys.
 
 
-4. Una URL que 
+4. Una URL que muestre todos los clientes que no son socios.
+   En esta URL trabajamos la relación entre dos tablas donde no hay coincidencias (None).
+
+5. Una URL que muestre la última proyección de un cine en concreto.
+   En esta utilizamos el limit 1 y el orden en sentido descendente.
+
+6. Una URL que muestre el salario medio de todos los empleados.
+   Aquí trabajamos con el aggregate, el cual no hemos visto en clase.
+
+7. Una URL que muestre las salas en la que se proyectarán películas cuya sinopsis empiece por un texto pasado como parámetro.
+   Volvemos a trabajar con relaciones many-to-many.
+
+8. Lista de películas de más de 3 horas que se proyecten en una sala en concreto
+  Añadimos el AND a las queries.
+
+9. Lista de salas de un cine pero de forma reversa.
+
+10. Lista de encargados o empleados con un sueldo mayor a 1300 euros de un cine en concreto.
+
+**Lo único que no hemos visto en clase es el timedelta, que lo he tenido que utilizar para condicionar las horas de proyección de las películas porque el atributo era de tipo Duration**
