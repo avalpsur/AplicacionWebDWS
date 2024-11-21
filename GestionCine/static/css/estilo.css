@@ -1,0 +1,10 @@
+*{
+    background-color:beige ;
+}
+h1{
+    color: lime;
+}
+#contenedor_imagen{
+    justify-content: center;
+    align-items: center;
+}

@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de clientes</title>
-</head>
-<body>
+{% extends "principal.html" %}
+{% block header %}
     <h1>Lista de clientes</h1>
+{% endblock %}
+
+{% block contenido %}
     {% for cliente in clientes %}
-        <p><strong>DNI:</strong> {{ cliente.dni }}</p>
-        <p><strong>Nombre:</strong> {{ cliente.nombre }}</p>
-        <p><strong>Apellidos:</strong> {{ cliente.apellidos }}</p>
-        <p><strong>Email:</strong> {{ cliente.email }}</p>
-        <hr>
+        {% include 'cliente/cliente.html' %}
         {% empty %}
-        <p>No hay clientes que no sean socios</p>
+        <p>No hay clientes que cumplan esa condición</p>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
+

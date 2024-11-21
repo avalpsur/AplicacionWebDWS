@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Salarios</title>
-</head>
-<body>
+{% extends "principal.html" %}
+
+{% block header %}
     <h1>Media salarial</h1>
+{% endblock %}
+
+{% block contenido }
     <p>La media de salarios es: <strong>{{media.salario__avg}}</strong></p>
-</body>
-</html>
+{% endblock %}

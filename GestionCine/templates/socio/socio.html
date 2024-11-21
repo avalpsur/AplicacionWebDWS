@@ -1,0 +1,13 @@
+<div>
+    <h2>Número de Socio: {{ socio.numSocio }}</h2>
+    <p>Fecha de Alta: {{ socio.fechaAlta }}</p>
+    <p>Fecha de Caducidad: {{ socio.fechaCaducidad }}</p>
+    <p>Datos personales:</p>
+    <ul>
+        <li><strong>DNI:</strong> {{ socio.cliente.dni }}</li>
+        <li><strong>Nombre:</strong> {{ socio.cliente.nombre }}</li>
+        <li><strong>Apellidos:</strong> {{ socio.cliente.apellidos }}</li>
+        <li><strong>Email:</strong> {{ socio.cliente.email }}</li>
+    </ul>
+</div>
+<hr>

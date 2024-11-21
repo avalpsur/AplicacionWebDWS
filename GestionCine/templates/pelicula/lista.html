@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Películas</title>
-</head>
-<body>
-    <h1>Lista de Películas</h1>
+{% extends "principal.html" %}
 
+{% block header %}
+    <h1>Lista de Películas</h1>
+{% endblock %}
+
+{% block contenido %}
     {% for pelicula in peliculas %}
-        <h2>{{ pelicula.titulo }}</h2>
-        <p>Director: {{ pelicula.director }}</p>
-        <p>Sinopsis: {{ pelicula.sinopsis|default:"Sin sinopsis disponible." }}</p>
-        <p>Fecha de Lanzamiento: {{ pelicula.fechaLanzamiento|date:"d/m/Y" }}</p>
-        <p>Tiempo Proyectado: {{ pelicula.tiempoProyectada }}</p>
-        <hr>
+        {% include 'pelicula/pelicula.html' %}
     {% empty %}
         <p>No hay películas disponibles.</p>
     {% endfor %}
-</body>
-</html>
+{% endblock %}

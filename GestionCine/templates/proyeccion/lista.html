@@ -1,22 +1,13 @@
+{% extends "principal.html" %}
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Proyecciones</title>
-</head>
-<body>
+{% block header %}
     <h1>Lista de Proyecciones</h1>
+{% endblock %}
 
+{% block contenido %}
     {% for proyeccion in proyecciones %}
-        <div>
-            <h2>Película: {{ proyeccion.pelicula.titulo }}</h2>
-            <p><strong>Hora de Proyección:</strong> {{ proyeccion.hora }}</p>
-            <p><strong>Sala:</strong> {{ proyeccion.sala.id }}</p>
-        </div>
-        <hr>
+        {% include 'proyeccion/proyeccion.html' %}
     {% empty %}
         <p>No hay proyecciones programadas para esta película.</p>
     {% endfor %}
-</body>
-</html>
+{% endblock %}

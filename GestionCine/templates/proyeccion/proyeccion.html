@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Proyección</title>
-</head>
-<body>
-    <div>
-        <h2>Película: {{ proyeccion.pelicula.titulo }}</h2>
+{% extends "principal.html" %}
+
+{% block header %}
+        <h1>Película: {{ proyeccion.pelicula.titulo }}</h1>
+{% endblock %}
+
+{% block contenido %}
+<div>
         <p><strong>Hora de Proyección:</strong> {{ proyeccion.hora }}</p>
         <p><strong>Sala:</strong> {{ proyeccion.sala.id }}</p>
     </div>
-</body>
-</html>
+{% endblock %}
+

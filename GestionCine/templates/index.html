@@ -1,9 +1,9 @@
-<html>
-    <head></head>
-    <body>
-    <h1>GESTIÓN DE CINES</h1>
+{% extends "principal.html" %}
+    {% block header %}
+        <h1>Listado de enlaces</h1>
+    {% endblock %}
 
-    <h2>Listado de enlaces</h2>
+    {% block contenido %}
     
     <div>
         <h3>1-URL que muestra una lista de todos 
@@ -64,7 +64,4 @@
         </h3>
         <a href="{% url 'lista_encargados' 6 %}">Lista encargados</a>
     </div>
-
-
-    </body>
-</html>
+    {% endblock %}

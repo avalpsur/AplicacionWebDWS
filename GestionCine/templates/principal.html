@@ -1,0 +1,24 @@
+<html>
+    {% load static %}
+    <head>
+        <title>Gestion de Cine</title>
+        <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    </head>
+    <body>
+        {% include 'estructura/menu.html' %}
+        <link rel="stylesheet" href="{% static 'javascript/script.js' %}">
+        <div id="contenedor_imagen">
+            <img src="{% static 'imagenes/imagen.webp' %}" alt="Imagen">
+        </div>
+        <h1>GESTIÓN DE CINE</h1>
+
+
+        {% block header %}
+        {% endblock %}
+
+        {% block contenido %}
+        {% endblock %}
+
+        {% include 'estructura/pie.html' %}
+    </body>
+</html>
