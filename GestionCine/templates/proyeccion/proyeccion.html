@@ -1,12 +1,12 @@
 {% extends "principal.html" %}
 
 {% block header %}
-        <h1>Película: {{ proyeccion.pelicula.titulo }}</h1>
+        <h1>Película: {{ proyeccion.pelicula.titulo|title }}</h1>
 {% endblock %}
 
 {% block contenido %}
 <div>
-        <p><strong>Hora de Proyección:</strong> {{ proyeccion.hora }}</p>
+        <p><strong>Hora de Proyección:</strong> {{ proyeccion.hora|date:"d m Y" }} {{ proyeccion.hora|time:"H:i" }}</p>
         <p><strong>Sala:</strong> {{ proyeccion.sala.id }}</p>
     </div>
 {% endblock %}

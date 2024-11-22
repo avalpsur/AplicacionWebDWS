@@ -2,8 +2,8 @@
 {% block contenido %}
     <h1>Salas del Cine: {{ cine.direccion }}</h1>
     <h2>Detalles del Cine:</h2>
-    <p>DNI del Gerente: {{ cine.gerente.dni }}</p>
-    <p>Nombre del Gerente: {{ cine.gerente.nombre }} {{ cine.gerente.apellidos }}</p>
+    <p>DNI del/la Gerente: {{ cine.gerente.dni }}</p>
+    <p>Nombre del/la Gerente: {{ cine.gerente.nombre|capfirst }} {{ cine.gerente.apellidos|capfirst }}</p>
     <p>Teléfono: {{ cine.telefono }}</p>
     <p>Email: {{ cine.email }}</p>
 

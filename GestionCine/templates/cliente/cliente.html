@@ -1,5 +1,8 @@
-<p><strong>DNI:</strong> {{ cliente.dni }}</p>
-        <p><strong>Nombre:</strong> {{ cliente.nombre }}</p>
-        <p><strong>Apellidos:</strong> {{ cliente.apellidos }}</p>
+        <p><strong>DNI:</strong> {{ cliente.dni }}</p>
+        <p><strong>Nombre:</strong> {{ cliente.nombre|capfirst }}</p>
+        <p><strong>Apellidos:</strong> {{ cliente.apellidos|capfirst }}</p>
+        {% if cliente.nombre == "Juan Carlos" and cliente.apellidos == "de Borbón y Borbón"%}
+         <p>No se admiten personajes de la realeza en nuestros cines</p> 
+        {% endif %}
         <p><strong>Email:</strong> {{ cliente.email }}</p>
         <hr>

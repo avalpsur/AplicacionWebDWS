@@ -1,5 +1,5 @@
 <div>
-    <h2>Tamaño de la Sala: {{sala.tamano}}
+    <h2>Tamaño de la Sala: {{sala.tamano|lower}}
     </h2>
     <p><strong>Dirección del Cine:</strong> {{ sala.cine.direccion }}</p>
     <p><strong>Teléfono del Cine:</strong> {{ sala.cine.telefono }}</p>
@@ -10,12 +10,7 @@
     <ul>
         {% for empleado in sala.empleado.all %}
             <li>
-                <strong>Nombre:</strong> {{ empleado.nombre }} {{ empleado.apellidos }}<br>
-                <strong>DNI:</strong> {{ empleado.dni }}<br>
-                <strong>NUSS:</strong> {{ empleado.nuss }}<br>
-                <strong>IBAN:</strong> {{ empleado.iban }}<br>
-                <strong>Salario:</strong> {{ empleado.salario }}<br>
-                <strong>Encargado:</strong> {{ empleado.encargado|yesno:"Sí,No" }}
+                {% include 'empleado/empleado.html' %}
             </li>
         {% empty %}
             <li>No hay empleados asignados a esta sala.</li>

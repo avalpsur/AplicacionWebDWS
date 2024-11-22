@@ -1,7 +1,23 @@
-<h2>{{ empleado.nombre }} {{ empleado.apellidos }}</h2>
+<h2>{{ empleado.nombre|capfirst }} {{ empleado.apellidos|capfirst }}</h2>
         <p>DNI: {{ empleado.dni }}</p>
-        <p>NUSS: {{ empleado.nuss }}</p>
-        <p>IBAN: {{ empleado.iban }}</p>
-        <p>Salario: {{ empleado.salario }}</p>
-        <p>Encargado: {{ empleado.encargado }}</p>
+        {% if empleado.dni == "666" or empleado.dni == 616 %}
+                    <p>EL DIABLO</p>
+        {% endif %}
+        <p>NUSS: {{ empleado.nuss|cut:" " }}</p>
+        <p>IBAN: {{ empleado.iban|upper }}</p>
+        <div>
+        <p>Salario:</p> 
+                {% if empleado.salario > 18000 %}
+                        Usted cobra {{ empleado.salario }} euros, no se queje que está la cosa mala.
+                {% elif empleado.salario == 18000%}
+                        Usted cobra {{ empleado.salario }} euros, no está mal.
+                {% else %}
+                        Usted cobra {{ empleado.salario }} euros, es un/a tieso/a.
+                {% endif %}
+        </div>
+                {% if empleado.encargado != true %}
+                        <p>Es un pobre y triste empleado</p>
+                {% else %}
+                        <p><strong>Encargado</strong></p>
+                {% endif %}
         <hr>
