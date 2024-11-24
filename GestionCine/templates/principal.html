@@ -6,7 +6,6 @@
     </head>
     <body>
         {% include 'estructura/menu.html' %}
-        <link rel="stylesheet" href="{% static 'javascript/script.js' %}">
         <div id="contenedor_imagen">
             <img src="{% static 'imagenes/imagen.webp' %}" alt="Imagen">
         </div>
@@ -20,5 +19,7 @@
         {% endblock %}
 
         {% include 'estructura/pie.html' %}
+
+        <link rel="stylesheet" href="{% static 'javascript/script.js' %}">
     </body>
 </html>
