@@ -18,7 +18,7 @@ En esta aplicación vamos a gestionar una cadena de cines y su base de datos.
 * Lo único que no hemos visto que he añadido ha sido el on-delete: do-nothing, puesto que no quería que se eliminara la tabla de las entradas si se elimina el cliente, puesto que se podrían duplicar asientos.
 
 
----PRÁCTICA 2 VIEWS---
+**---PRÁCTICA 2 VIEWS---**
 En esta práctica vamos a incluir 10 URLs que deben cumplir diferentes criterios que iremos comentando.
 
 1. Una URL que muestra todos los socios registrados con todos sus datos.
@@ -53,3 +53,15 @@ En esta práctica vamos a incluir 10 URLs que deben cumplir diferentes criterios
 10. Lista de encargados o empleados con un sueldo mayor a 1300 euros de un cine en concreto.
 
 **Lo único que no hemos visto en clase es el timedelta, que lo he tenido que utilizar para condicionar las horas de proyección de las películas porque el atributo era de tipo Duration**
+
+
+**---PRÁCTICA 3 TEMPLATES---**
+
+- Para cumplir la condición de los template tags, encontramos un "for" con cada lista, varios "if-else" (por ejemplo en empleado.html), "include" para añadir un .html completo (así es como reutilizo código en las listas), "block" para añadir contenido específico de cada página a la plantilla principal, "extends" para que hereden de ella el resto y "load" para cargar archivos estáticos.
+
+- He utilizado los operadores >, ==, != y or en empleado y "and" en cliente.
+
+- Para los template filters he usado "capfirst" para nombres y apellidos, "cut" para quitar espacios en el NUSS, "upper" para que las letras del IBAN estén siempre en mayúsculas, "default" para poner una sinopsis por defecto, "timesince" para calcular desde hace cuanto lleva la película estrenada, "default_if_none" para que ponga un mensaje por defecto si no hay un tiempo de película establecido, "date" y "time" para ordenar las fechas, "title" para poner el título de la película en formato título y "lower" para poner en minúsculas el tamaño de la sala.
+
+**Toda la información para añadir filtros y template tags la he extraido de los apuntes y la documentación oficial de Django**
+
