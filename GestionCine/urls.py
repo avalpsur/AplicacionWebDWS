@@ -12,5 +12,7 @@ urlpatterns = [
     path('salas/listar_por_sinopsis/<str:texto>',views.listar_salas_sinopsis,name="lista_salas_sinopsis"),
     path('peliculas/listar/<int:id_sala>',views.listar_peliculas,name="lista_peliculas"),
     path('cine/mostrar_salasReversa/<int:id_cine>',views.mostrar_salasReversa,name="mostrar_salasReversa"),
-    re_path(r"^filtro/(?P<id_cine>\d+)$",views.listar_encargados,name="lista_encargados")
+    re_path(r"^filtro/(?P<id_cine>\d+)$",views.listar_encargados,name="lista_encargados"),
+    
+    path('cliente/create',views.cliente_create,name='cliente_create'),
 ]

@@ -1,7 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.db.models import Q,Prefetch,Avg
+from django.forms import modelform_factory
 from datetime import timedelta
 from .models import *
+from .forms import *
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -68,6 +71,24 @@ def listar_encargados(request,id_cine):
         cine=id_cine
         ).all()
     return render(request,'empleado/lista.html',{"empleados":empleados})
+
+
+def cliente_create(request):
+    datosFormulario = None
+    if request.method == "POST":
+        datosFormulario = request.POST
+        
+    formulario = ClienteModelForm(datosFormulario)
+    if (request.method == "POST"):
+        if formulario.is_valid():
+            try:
+                formulario.save()
+                return redirect("cliente_lista")
+            except Exception as error:
+                print(error)
+                
+    return render(request, 'cliente/create.html',{"formulario":formulario})
+
 
 #Errores
 def mi_error_400(request,exception=None):

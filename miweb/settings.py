@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'GestionCine',
-    'django_seed'
+    'django_seed',
+    'django_bootstrap5',
+    'django_bootstrap_icons', 
 ]
 
 MIDDLEWARE = [
