@@ -83,11 +83,33 @@ def cliente_create(request):
         if formulario.is_valid():
             try:
                 formulario.save()
-                return redirect("cliente_lista")
+                return redirect("lista_clientes")
             except Exception as error:
                 print(error)
                 
     return render(request, 'cliente/create.html',{"formulario":formulario})
+
+
+
+
+
+def socio_create(request):
+    datosFormulario = None
+    if request.method == "POST":
+        datosFormulario = request.POST
+        
+    formulario = SocioModelForm(datosFormulario)
+    
+    if (request.method == "POST"):
+        if formulario.is_valid():
+            try:
+                formulario.save()
+                return redirect("lista_socios")
+            except Exception as error:
+                print(error)
+                
+    return render(request, 'socio/create.html',{"formulario":formulario})
+
 
 
 #Errores

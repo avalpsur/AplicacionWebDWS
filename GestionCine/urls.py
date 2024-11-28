@@ -15,4 +15,8 @@ urlpatterns = [
     re_path(r"^filtro/(?P<id_cine>\d+)$",views.listar_encargados,name="lista_encargados"),
     
     path('cliente/create',views.cliente_create,name='cliente_create'),
+    #path('cliente/buscar',views.cliente_buscar,name='cliente_buscar'),
+
+    path('socio/create',views.socio_create, name='socio_create'),
 ]
+
