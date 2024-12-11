@@ -70,3 +70,103 @@ class SocioModelForm(ModelForm):
             self.add_error('fechaCaducidad','La fecha de caducidad debe ser mayor a hoy')
         
         return self.cleaned_data
+    
+
+
+class PeliculaForm(forms.Form):
+    titulo = forms.CharField(label="Título",
+                             required=True,
+                             max_length=150,
+                            )
+    
+    director = forms.CharField(label="Director",
+                               required=True,
+                               max_length=100,
+                               help_text="Nombre y apellido"
+                               )
+    
+
+    sinopsis = forms.CharField(label="Sinopsis",
+                               required=True,
+                               widget=forms.Textarea()
+                               )
+    
+    fechaLanzamiento = forms.DateField(label="Fecha de estreno",
+                                       initial=datetime.date.today,
+                                       widget=forms.SelectDateWidget()
+                                       )
+    
+    tiempoProyectada = forms.DurationField(label="Duración",
+                                           required=True,
+
+                                           )
+    sala = forms.ModelMultipleChoiceField(queryset=Sala.objects.all(),
+                                            required=False,
+                                            widget=forms.CheckboxSelectMultiple,
+                                            label="Salas disponibles"
+                                        )
+    def clean(self):
+        super().clean()
+
+        titulo = self.cleaned_data.get('titulo')
+        director = self.cleaned_data.get('director')
+        sinopsis = self.cleaned_data.get('sinopsis')
+        fechaLanzamiento = self.cleaned_data.get('fechaLanzamiento')
+        tiempoProyectada = self.cleaned_data.get('tiempoProyectada')
+        sala = self.cleaned_data.get('sala')
+
+        #No puede haber dos películas con el mismo título
+        peliculaTitulo = Pelicula.objects.filter(titulo=titulo).first()
+        if(not peliculaTitulo is None):
+            self.add_error('Titulo','Ya existe una película con ese título')
+
+        #La fecha de lanzamiento no puede ser superior a la de hoy, puesto que solo guardamos películas que ya están estrenadas
+        fechaHoy = date.today()
+        if fechaHoy < fechaLanzamiento :
+            self.add_error('fechaLanzamiento','Solamente guardamos películas ya estrenadas')
+
+        return self.cleaned_data
+    
+
+class BusquedaPeliculaForm(forms.Form):
+    textoBusqueda = forms.CharField(required=False)
+
+    fecha_desde = forms.DateField(label="Fecha Desde",
+                                  required=False,
+                                  widget=forms.SelectDateWidget(years=range(1960,2024))
+                                  )
+
+    fecha_hasta =  forms.DateField(label="Fecha Hasta",
+                                   required=False,
+                                   widget=forms.SelectDateWidget(years=range(1960,2024)))
+
+    sala = forms.MultipleChoiceField(choices=Pelicula.sala,
+                                     required=False,
+                                     widget=forms.CheckboxSelectMultiple())
+    
+
+    def clean(self):
+        super().clean()
+
+        textoBusqueda = self.cleaned_data.get("textoBusqueda")
+        fecha_desde = self.cleaned_data.get("fecha_desde")
+        fecha_hasta = self.cleaned_data.get("fecha_hasta")
+        sala = self.cleaned_data.get("sala")
+
+        if(textoBusqueda == ""
+           and len(sala)==0
+           and fecha_desde is None
+           and fecha_hasta is None
+           ):
+            self.add_error('textoBusqueda','Debe introducir al menos un valor en un campo del formulario')
+            self.add_error('sala','Debe introducir al menos un valor en un campo del formulario')
+            self.add_error('fecha_desde','Debe introducir al menos un valor en un campo del formulario')
+            self.add_error('fecha_hasta','Debe introducir al menos un valor en un campo del formulario')
+        else:
+            if(textoBusqueda != "" and len(textoBusqueda) < 3):
+                self.add_error('textoBusqueda','Debe introducir al menos 3 caracteres')
+            
+            if(not fecha_desde is None  and not fecha_hasta is None and fecha_hasta < fecha_desde):
+                self.add_error('fecha_desde','La fecha hasta no puede ser menor que la fecha desde')
+                self.add_error('fecha_hasta','La fecha hasta no puede ser menor que la fecha desde')
+        return self.cleaned_data

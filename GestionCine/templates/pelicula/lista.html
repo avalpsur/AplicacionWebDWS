@@ -5,9 +5,12 @@
 {% endblock %}
 
 {% block contenido %}
-    {% for pelicula in peliculas %}
+    {% for pelicula in peliculas_mostrar %}
         {% include 'pelicula/pelicula.html' %}
     {% empty %}
         <p>No hay películas disponibles.</p>
     {% endfor %}
+{% endblock %}
+
+{% block busqueda %}
 {% endblock %}

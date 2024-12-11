@@ -18,5 +18,9 @@ urlpatterns = [
     #path('cliente/buscar',views.cliente_buscar,name='cliente_buscar'),
 
     path('socio/create',views.socio_create, name='socio_create'),
+
+    path('pelicula/buscar',views.pelicula_buscar,name='pelicula_buscar'),
+    path('pelicula/editar/<int:pelicula_id>',views.pelicula_editar,name='pelicula_editar'),
+    path('pelicula/eliminar/<int:pelicula_id>',views.pelicula_eliminar,name='pelicula_eliminar'),
 ]
 

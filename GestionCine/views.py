@@ -111,6 +111,113 @@ def socio_create(request):
     return render(request, 'socio/create.html',{"formulario":formulario})
 
 
+def pelicula_create(formulario):
+    pelicula_creada = False
+
+    if formulario.is_valid():
+
+        pelicula = Pelicula.objects.create(
+            titulo = formulario.cleaned_data.get('titulo'),
+            director = formulario.cleaned_data.get('director'),
+            sinopsis = formulario.cleaned_data.get('sinopsis'),
+            fechaLanzamiento = formulario.cleaned_data.get('fechaLanzamiento'),
+            tiempoProyectada = formulario.cleaned_data.get('tiempoProyectada'),
+        )
+        pelicula.sala.set(formulario.cleaned_data.get('sala'))
+        try:
+            pelicula.save()
+            pelicula_creada=True
+        except:
+            pass
+    return pelicula_creada
+
+
+def pelicula_buscar(request):
+
+    if(len(request.GET) > 0):
+        formulario = BusquedaPeliculaForm(request.GET)
+        if formulario.is_valid():
+            
+            mensaje_busqueda = "Se ha buscado por los siguientes valores:\n"
+            
+            QSpeliculas = Pelicula.objects.prefetch_related("sala")
+            
+            textoBusqueda = formulario.cleaned_data.get('textoBusqueda')
+            sala = formulario.cleaned_data.get('sala')
+            fechaDesde = formulario.cleaned_data.get('fecha_desde')
+            fechaHasta = formulario.cleaned_data.get('fecha_hasta')
+            
+            if(textoBusqueda != ""):
+                QSpeliculas = QSpeliculas.filter(Q(titulo__icontains=textoBusqueda) | Q(director__icontains=textoBusqueda))
+                mensaje_busqueda +=" Nombre o contenido que contengan la palabra "+textoBusqueda+"\n"
+            
+            if(len(sala) > 0):
+                mensaje_busqueda +=" La sala sea "+sala[0]
+                filtroOR = Q(sala=sala[0])
+                for sala in sala[1:]:
+                    mensaje_busqueda += " o "+sala[1]
+                    filtroOR |= Q(sala=sala)
+                mensaje_busqueda += "\n"
+                QSpeliculas =  QSpeliculas.filter(filtroOR)
+            
+             
+            if(not fechaDesde is None):
+                mensaje_busqueda += " La fecha sea mayor a " + fechaDesde.strftime('%d-%m-%Y') + "\n"
+                QSpeliculas = QSpeliculas.filter(fechaLanzamiento__gte=fechaDesde)
+            
+            if(not fechaHasta is None):
+                mensaje_busqueda +=" La fecha sea menor a "+fechaHasta.strftime('%d-%m-%Y')+"\n"
+                QSpeliculas = QSpeliculas.filter(fechaLanzamiento__lte=fechaHasta)
+            
+            peliculas = QSpeliculas.all()
+    
+            return render(request, 'pelicula/lista_busqueda.html',
+                            {"peliculas_mostrar":peliculas,
+                             "texto_busqueda":mensaje_busqueda})
+    else:
+       formulario = BusquedaPeliculaForm(None)
+    return render(request, 'pelicula/busqueda_avanzada_datepicker.html',{"formulario":formulario})
+  
+def pelicula_editar(request, pelicula_id):
+    pelicula = Pelicula.objects.get(id=pelicula_id)  # Obtenemos la película
+    
+    # Si el formulario es POST, procesamos los datos
+    if request.method == "POST":
+        formulario = PeliculaForm(request.POST)  # Crear el formulario con los datos POST
+        
+        if formulario.is_valid():
+            # Si el formulario es válido, guardamos la película manualmente
+            pelicula.titulo = formulario.cleaned_data['titulo']
+            pelicula.director = formulario.cleaned_data['director']
+            pelicula.sinopsis = formulario.cleaned_data['sinopsis']
+            pelicula.fechaLanzamiento = formulario.cleaned_data['fechaLanzamiento']
+            pelicula.tiempoProyectada = formulario.cleaned_data['tiempoProyectada']
+            pelicula.save()  # Guardamos la instancia de la película
+            
+            messages.success(request, f'Se ha editado la película "{pelicula.titulo}" correctamente')
+            return redirect('pelicula_lista')  # Redirigir a la lista de películas después de guardar
+        
+    else:
+        # Si el método no es POST, mostramos el formulario con los datos actuales de la película
+        formulario = PeliculaForm(initial={
+            'titulo': pelicula.titulo,
+            'director': pelicula.director,
+            'sinopsis': pelicula.sinopsis,
+            'fechaLanzamiento': pelicula.fechaLanzamiento,
+            'tiempoProyectada': pelicula.tiempoProyectada,
+        })
+    
+    return render(request, 'pelicula/actualizar.html', {"formulario": formulario, "pelicula": pelicula})
+
+
+def pelicula_eliminar(request,pelicula_id):
+    pelicula = Pelicula.objects.filter(id=pelicula_id).all()
+    try:
+        pelicula.delete()
+        messages.success(request, "Se ha elimnado la pelicula "+pelicula.titulo+" correctamente")
+    except Exception as error:
+        print(error)
+    return redirect('lista_socios')
 
 #Errores
 def mi_error_400(request,exception=None):
