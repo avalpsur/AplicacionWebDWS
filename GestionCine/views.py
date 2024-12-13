@@ -12,7 +12,7 @@ def index(request):
 
 #Lista de socios
 def listar_socios(request):
-    socios = (Socio.objects.select_related("cliente")).all()
+    socios = (Socio.objects.select_related("Gerente")).all()
     return render(request, 'socio/lista.html',{"socios":socios})
 
 #Lista de salas en un cine en concreto
@@ -27,10 +27,10 @@ def listar_proyecciones(request,id_sala):
     proyecciones = proyecciones.filter(sala=id_sala).order_by("hora").all()
     return render(request,"proyeccion/lista.html",{"proyecciones":proyecciones})
 
-#Lista de clientes que no son socios
-def listar_clientes(request):
-    clientes = Cliente.objects.filter(socios_cliente=None).all()
-    return render(request,"cliente/lista.html",{"clientes":clientes})
+#Lista de Gerentes que no son socios
+def listar_Gerentes(request):
+    Gerentes = Gerente.objects.filter(socios_Gerente=None).all()
+    return render(request,"Gerente/lista.html",{"Gerentes":Gerentes})
 
 #Última proyección de un cine en concreto
 def listar_proyecciones_cine(request,id_cine):
@@ -71,24 +71,6 @@ def listar_encargados(request,id_cine):
         cine=id_cine
         ).all()
     return render(request,'empleado/lista.html',{"empleados":empleados})
-
-
-def cliente_create(request):
-    datosFormulario = None
-    if request.method == "POST":
-        datosFormulario = request.POST
-        
-    formulario = ClienteModelForm(datosFormulario)
-    if (request.method == "POST"):
-        if formulario.is_valid():
-            try:
-                formulario.save()
-                return redirect("lista_clientes")
-            except Exception as error:
-                print(error)
-                
-    return render(request, 'cliente/create.html',{"formulario":formulario})
-
 
 
 
@@ -218,6 +200,26 @@ def pelicula_eliminar(request,pelicula_id):
     except Exception as error:
         print(error)
     return redirect('lista_socios')
+
+
+
+def Gerente_create(request):
+    datosFormulario = None
+    if request.method == "POST":
+        datosFormulario = request.POST
+        
+    formulario = GerenteModelForm(datosFormulario)
+    if (request.method == "POST"):
+        if formulario.is_valid():
+            try:
+                formulario.save()
+                return redirect("lista_Gerentes")
+            except Exception as error:
+                print(error)
+                
+    return render(request, 'Gerente/create.html',{"formulario":formulario})
+
+
 
 #Errores
 def mi_error_400(request,exception=None):

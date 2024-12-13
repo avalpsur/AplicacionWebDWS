@@ -170,3 +170,24 @@ class BusquedaPeliculaForm(forms.Form):
                 self.add_error('fecha_desde','La fecha hasta no puede ser menor que la fecha desde')
                 self.add_error('fecha_hasta','La fecha hasta no puede ser menor que la fecha desde')
         return self.cleaned_data
+    
+    
+class GerenteModelForm(ModelForm):
+    class Meta:
+        model = Gerente
+        fields = ['dni','nombre','apellidos','telefono']
+        labels = {
+            "dni":("DNI del gerente"),
+        }
+    
+    def clean(self):
+        dni = self.cleaned_data.get("dni")
+        nombre = self.cleaned_data.get("nombre")
+        apellidos = self.cleaned_data.get("apellidos")
+        telefono = self.cleaned_data.get("telefono")
+        
+        if(not dni is None):
+            self.add_error('dni','Ya hay un/a gerente con ese número')
+            
+        if(telefono.length > 9 or telefono.length < 1):
+            self.add_error('telefono','El telefono debe tener 9 caracteres')

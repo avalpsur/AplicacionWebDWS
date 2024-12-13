@@ -19,8 +19,12 @@ urlpatterns = [
 
     path('socio/create',views.socio_create, name='socio_create'),
 
+    path('pelicula/create',views.pelicula_create,name='pelicula_create'),
     path('pelicula/buscar',views.pelicula_buscar,name='pelicula_buscar'),
     path('pelicula/editar/<int:pelicula_id>',views.pelicula_editar,name='pelicula_editar'),
     path('pelicula/eliminar/<int:pelicula_id>',views.pelicula_eliminar,name='pelicula_eliminar'),
+
+    path('gerente/create',views.gerente_create,name='gerente_create'),
+    
 ]
 
