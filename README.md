@@ -65,3 +65,31 @@ En esta práctica vamos a incluir 10 URLs que deben cumplir diferentes criterios
 
 **Toda la información para añadir filtros y template tags la he extraido de los apuntes y la documentación oficial de Django**
 
+**---PRÁCTICA 4 FORMULARIOS---***
+- Respecto a las validaciones, se han tenido en cuenta los siguientes campos:
+  Socio:
+    Validación de campos obligatorios: DNI, Nombre, Apellidos.
+    Validación de formato: DNI debe tener 9 caracteres.
+Cliente:
+  Validación de formato: El correo electrónico debe tener el formato correcto.
+  Validación de longitud máxima de los campos: Nombre y Apellidos.
+Película:
+  Validación de campos obligatorios: Título, Director.
+  Validación de longitud máxima: Título (100 caracteres).
+Empleado:
+  Validación de formato: Número de teléfono debe tener 9 dígitos.
+  Validación de campo obligatorio: NUSS (Número de Seguridad Social).
+Gerente:
+  Validación de campos obligatorios: Nombre, Apellidos.
+  Validación de formato: Teléfono debe tener 9 dígitos.
+Cine:
+  Validación de campos obligatorios: Dirección, Teléfono.
+  Validación de formato: El email debe tener el formato correcto
+
+- Se han utilizado diferentes widgets en los formularios, garantizando que los formularios sean visualmente atractivos y fáciles de usar. Los widgets utilizados son los siguientes:
+Textarea: Para campos de texto largo (por ejemplo, descripción de una película).
+Input de tipo number: Para ingresar datos numéricos (por ejemplo, salario de un empleado).
+Select: Para elegir opciones predefinidas de una lista (por ejemplo, seleccionar un cine o sala).
+Checkbox: Para seleccionar opciones booleanas (por ejemplo, si un empleado es encargado).
+DateInput: Para elegir fechas (por ejemplo, fecha de alta del socio).
+FileInput: Para subir imágenes o archivos (por ejemplo, imágenes asociadas a una película o cine).
