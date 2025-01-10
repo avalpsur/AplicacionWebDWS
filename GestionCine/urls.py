@@ -1,4 +1,4 @@
-from django.urls import path,re_path
+from django.urls import path,re_path, include
 from .import views
 
 urlpatterns = [
@@ -49,6 +49,10 @@ urlpatterns = [
     path('gerente/buscar',views.gerente_buscar,name='gerente_buscar'),
     path('gerente/editar/<int:gerente_id>',views.gerente_editar,name='gerente_editar'),
     path('gerente/eliminar/<int:gerente_id>',views.gerente_eliminar,name='gerente_eliminar'),
+    
+    
+    
+    path('registrar',views.registrar_usuario,name='registrar_usuario'),
 
 ]
 

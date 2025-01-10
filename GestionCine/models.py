@@ -1,15 +1,34 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 from django.db import models
+
+class Usuario(AbstractUser):
+    ADMINISTRADOR = 1
+    CLIENTE = 2
+    EMPLEADO = 3
+    GERENTE = 4
+    
+    ROLES = (
+        (CLIENTE,'cliente'),
+        (EMPLEADO,'empleado'),
+        (GERENTE,'gerente'),
+    )
+    
+    rol = models.PositiveSmallIntegerField(
+        choices=ROLES,default=2
+    )
+    
 
 class Cliente(models.Model):
     dni = models.CharField(max_length=9, unique=True)
     nombre = models.CharField(max_length=150)
     apellidos = models.CharField(max_length=300)
     email = models.EmailField(default='nombre@ejemplo.com')
+    usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE, related_name="clientes_usuario", null=True)
 
 class Socio(models.Model):
     numSocio = models.CharField(max_length=5, unique=True)
@@ -22,6 +41,7 @@ class Gerente(models.Model):
     nombre = models.CharField(max_length=150)
     apellidos = models.CharField(max_length=300)
     telefono = models.CharField(max_length=9)
+    usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE,related_name="gerentes_usuario", null=True)
 
 class Cine(models.Model):
     direccion = models.CharField(max_length=500)
@@ -38,6 +58,7 @@ class Empleado(models.Model):
     salario = models.IntegerField(default=1100)
     encargado = models.BooleanField(default=False)
     cine = models.ForeignKey(Cine, on_delete=models.CASCADE, related_name="empleados_cine")
+    usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE, related_name="empleados_usuario", null=True)
 
 class Sala(models.Model):
     TAMANO = [

@@ -690,6 +690,29 @@ def gerente_eliminar(request,gerente_id):
     return redirect('lista_gerentes')
 
 
+#Sesiones y permisos
+
+def registrar_usuario(request):
+    if request.method == 'POST':
+        fomulario = RegistroForm(request.POST)
+        if fomulario.is_valid():
+            user = formulario.save()
+            rol = int(formulario.cleaned_data.get('rol'))
+            if(rol == Usuario.CLIENTE):
+                cliente = Cliente.objects.create(usuario = user)
+                cliente.save()
+            elif(rol == Usuario.EMPLEADO):
+                empleado = Empleado.objects.create(usuario=user)
+                empleado.save()
+            elif(rol == Usuario.GERENTE):
+                gerente = Gerente.objects.create(usuario = user)
+                gerente.save()
+    else:
+        formulario = RegistroForm()
+    return render(request,'registration/signup.html', {'formulario':formulario})
+
+
+
 #Errores
 def mi_error_400(request,exception=None):
     return render(request, 'errores/400.html',None,None,400)

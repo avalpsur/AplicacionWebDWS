@@ -3,6 +3,8 @@ from django.forms import ModelForm
 from .models import *
 from datetime import date
 import datetime
+from django.contrib.auth.forms import UserCreationForm
+
 #from bootstrap_datepicker_plus.widgets import DatePickerInput
 
 
@@ -421,3 +423,17 @@ class BusquedaGerenteForm(forms.Form):
             self.add_error('telefono', 'Debe introducir al menos un valor en un campo del formulario.')
 
         return self.cleaned_data
+    
+    
+#SESIONES Y PERMISOS
+class RegistroForm(UserCreationForm):
+    roles = (
+        (Usuario.CLIENTE,'cliente'),
+        (Usuario.EMPLEADO,'empleado'),
+        (Usuario.GERENTE,'gerente'),
+    )
+    
+    rol = forms.ChoiceField(choices=roles)
+    class Meta:
+        model = Usuario
+        fields = ('username', 'email', 'password1', 'password2', 'rol')
