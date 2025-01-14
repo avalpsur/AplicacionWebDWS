@@ -1,117 +1,98 @@
-{% load static %}
+{%load static%}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg py-3">
+  <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="{% url 'index' %}">
+          <img src="{% static 'imagenes/logo.webp' %}" alt="Logo" width="40" height="40" class="d-inline-block align-middle me-2">
+          CinesPoligonoSur
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link active" href="{% url 'index' %}">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="sociosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Socios
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="sociosDropdown">
+                      <li><a class="dropdown-item" href="{% url 'lista_socios' %}">Listar Socios</a></li>
+                      <li><a class="dropdown-item" href="{% url 'socio_create' %}">Crear Socio</a></li>
+                      <li><a class="dropdown-item" href="{% url 'socio_buscar' %}">Buscar Socio</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="empleadosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Empleados
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="empleadosDropdown">
+                      <li><a class="dropdown-item" href="{% url 'lista_empleados' %}">Listar Empleados</a></li>
+                      <li><a class="dropdown-item" href="{% url 'empleado_create' %}">Crear Empleado</a></li>
+                      <li><a class="dropdown-item" href="{% url 'empleado_buscar' %}">Buscar Empleado</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="cinesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Cines
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="cinesDropdown">
+                      <li><a class="dropdown-item" href="{% url 'lista_cines' %}">Listar Cines</a></li>
+                      <li><a class="dropdown-item" href="{% url 'cine_create' %}">Crear Cine</a></li>
+                      <li><a class="dropdown-item" href="{% url 'cine_buscar' %}">Buscar Cine</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="peliculasDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Películas
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="peliculasDropdown">
+                      <li><a class="dropdown-item" href="{% url 'lista_peliculas' 0 %}">Listar Películas</a></li>
+                      <li><a class="dropdown-item" href="{% url 'pelicula_create' %}">Crear Película</a></li>
+                      <li><a class="dropdown-item" href="{% url 'pelicula_buscar' %}">Buscar Película</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="gerentesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Gerentes
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="gerentesDropdown">
+                      <li><a class="dropdown-item" href="{% url 'lista_gerentes' %}">Listar Gerentes</a></li>
+                      <li><a class="dropdown-item" href="{% url 'gerente_create' %}">Crear Gerente</a></li>
+                      <li><a class="dropdown-item" href="{% url 'gerente_buscar' %}">Buscar Gerente</a></li>
+                  </ul>
+              </li>
+          </ul>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-success px-4">
-    <a class="navbar-brand" href="#">
-      <img src="{% static 'imagenes/logo.png' %}" 
-          alt="Logo" width="100" height="50" 
-          class="d-inline-block align-text-middle">
-    </a>
-    <p>
-      Fecha Inicio:
-      </br>
-      {{ request.session.fecha_inicio }}
-    </p>
-    {% if request.user.is_authenticated %}
-      <p>
-        Nombre Usuario: {{ request.user }}
-      </p>
-    {% endif %}
+          <div class="ml-2">
+            {% if not request.user.is_authenticated %}
+            <a class="btn btn-outline-warning" href="{% url 'login' %}">
+                Login
+            </a>
+            {% endif %}
     
-    <button class="navbar-toggler" type="button" 
-      data-bs-toggle="collapse" 
-      data-bs-target="#accionesMenu" 
-      aria-controls="accionesMenu" 
-      aria-expanded="false" 
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+            {% if not request.user.is_authenticated %}
+              <a class="btn btn-outline-warning" href="{% url 'registrar_usuario' %}">
+                  Registrarse
+              </a>
+             {% endif %}
+    
+             {% if request.user.is_authenticated %}
+             <form action="{% url 'logout' %}" class="d-flex m-3" role="search" method="POST">
+              {% csrf_token %} 
+              <button class="btn btn-light btn-outline-dark" type="submit">  Desconectarse</button>
+            </form>
+            {% endif %}
+    
+    
+          </div>
+    
 
-    <div class="collapse navbar-collapse" id="accionesMenu">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" 
-              id="accionesSociosLink" 
-              role="button" 
-              data-bs-toggle="dropdown" 
-              aria-expanded="false">
-            Socios
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="accionesSociosLink">
-            <li><a class="dropdown-item" href="{% url 'lista_socios' %}">Ver Socios</a></li>
-            <li><a class="dropdown-item" href="{% url 'cliente_create' %}">Crear Socio</a></li>
-            <li><a class="dropdown-item" href="{% url 'socio_buscar' %}">Buscar Socio</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" 
-              id="accionesPeliculasLink" 
-              role="button" 
-              data-bs-toggle="dropdown" 
-              aria-expanded="false">
-            Películas
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="accionesPeliculasLink">
-            <li><a class="dropdown-item" href="{% url 'lista_peliculas' 0 %}">Ver Películas</a></li>
-            <li><a class="dropdown-item" href="{% url 'pelicula_create' %}">Crear Película</a></li>
-            <li><a class="dropdown-item" href="{% url 'pelicula_buscar' %}">Buscar Película</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" 
-              id="accionesEmpleadosLink" 
-              role="button" 
-              data-bs-toggle="dropdown" 
-              aria-expanded="false">
-            Empleados
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="accionesEmpleadosLink">
-            <li><a class="dropdown-item" href="{% url 'lista_empleados' %}">Ver Empleados</a></li>
-            <li><a class="dropdown-item" href="{% url 'empleado_create' %}">Crear Empleado</a></li>
-            <li><a class="dropdown-item" href="{% url 'empleado_buscar' %}">Buscar Empleado</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" 
-              id="accionesCinesLink" 
-              role="button" 
-              data-bs-toggle="dropdown" 
-              aria-expanded="false">
-            Cines
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="accionesCinesLink">
-            <li><a class="dropdown-item" href="{% url 'lista_cines' %}">Ver Cines</a></li>
-            <li><a class="dropdown-item" href="{% url 'cine_create' %}">Crear Cine</a></li>
-            <li><a class="dropdown-item" href="{% url 'cine_buscar' %}">Buscar Cine</a></li>
-          </ul>
-        </li>
-        
-        {% if request.user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
-        </li>
-        {% else %}
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'registrar_usuario' %}">Registrarse</a>
-        </li>
-        {% endif %}
-        
-      </ul>
-
-      <div class="ml-2">
-        <form action="{% url 'pelicula_buscar' %}" class="d-flex m-3" role="search" method="GET">
-          <input name="textoBusqueda" class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
-          <button class="btn btn-light btn-outline-dark" type="submit">Buscar</button>
-        </form>
+          <form class="d-flex" action="{% url 'pelicula_buscar' %}" method="GET">
+              <input class="form-control me-2 rounded-pill" type="search" placeholder="Buscar..." name="textoBusqueda" aria-label="Search">
+              <button class="btn btn-outline-light rounded-pill" type="submit">Buscar</button>
+          </form>
       </div>
-    </div>
+  </div>
 </nav>

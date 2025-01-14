@@ -424,8 +424,29 @@ class BusquedaGerenteForm(forms.Form):
 
         return self.cleaned_data
     
-    
+
 #SESIONES Y PERMISOS
+
+class EntradaForm(ModelForm):
+    class Meta:
+        model = Entrada
+        fields = ('proyeccion','cliente')
+        widgets = {
+            "cliente":forms.HiddenInput()
+        }
+
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop("request")
+        super(EntradaForm, self).__init__(*args, **kwargs)
+        proyeccionesdisponibles = Proyeccion.objects.exclude(entrada__cliente=self.request.user.cliente).all()
+        self.fields["proyeccion"] = forms.ModelChoiceField(
+            queryset=proyeccionesdisponibles,
+            widget=forms.Select,
+            required=True,
+            empty_label="Ninguna"
+        )
+
+
 class RegistroForm(UserCreationForm):
     roles = (
         (Usuario.CLIENTE,'cliente'),

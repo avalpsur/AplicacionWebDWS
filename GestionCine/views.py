@@ -5,6 +5,8 @@ from datetime import timedelta
 from .models import *
 from .forms import *
 from django.contrib import messages
+from django.contrib.auth import login
+
 
 # Create your views here.
 def index(request):
@@ -255,25 +257,33 @@ def socio_eliminar(request,socio_id):
 
 #CRUD de Película
 
-def pelicula_create(formulario):
-    pelicula_creada = False
+def pelicula_create(request):
+    if request.method == 'POST':
+        form = PeliculaForm(request.POST)
+        
+        if form.is_valid():
+            try:
+                pelicula = Pelicula.objects.create(
+                    titulo=form.cleaned_data.get('titulo'),
+                    director=form.cleaned_data.get('director'),
+                    sinopsis=form.cleaned_data.get('sinopsis'),
+                    fechaLanzamiento=form.cleaned_data.get('fechaLanzamiento'),
+                    tiempoProyectada=form.cleaned_data.get('tiempoProyectada'),
+                )
+                
+                pelicula.sala.set(form.cleaned_data.get('sala'))
+                pelicula.save()  # Guardar la película
 
-    if formulario.is_valid():
-
-        pelicula = Pelicula.objects.create(
-            titulo = formulario.cleaned_data.get('titulo'),
-            director = formulario.cleaned_data.get('director'),
-            sinopsis = formulario.cleaned_data.get('sinopsis'),
-            fechaLanzamiento = formulario.cleaned_data.get('fechaLanzamiento'),
-            tiempoProyectada = formulario.cleaned_data.get('tiempoProyectada'),
-        )
-        pelicula.sala.set(formulario.cleaned_data.get('sala'))
-        try:
-            pelicula.save()
-            pelicula_creada=True
-        except:
-            pass
-    return pelicula_creada
+                return redirect('lista_peliculas')
+            except Exception as e:
+                form.add_error(None, f"Hubo un error al guardar la película: {e}")
+        else:
+            form.add_error(None, "Formulario inválido.")
+    
+    else:
+        form = PeliculaForm() 
+    
+    return render(request, 'pelicula/create.html', {'form': form})
 
 
 def pelicula_buscar(request):
@@ -694,8 +704,8 @@ def gerente_eliminar(request,gerente_id):
 
 def registrar_usuario(request):
     if request.method == 'POST':
-        fomulario = RegistroForm(request.POST)
-        if fomulario.is_valid():
+        formulario = RegistroForm(request.POST)
+        if formulario.is_valid():
             user = formulario.save()
             rol = int(formulario.cleaned_data.get('rol'))
             if(rol == Usuario.CLIENTE):
@@ -707,10 +717,25 @@ def registrar_usuario(request):
             elif(rol == Usuario.GERENTE):
                 gerente = Gerente.objects.create(usuario = user)
                 gerente.save()
+                
+            login(request, user)
+            return redirect('index')
     else:
         formulario = RegistroForm()
     return render(request,'registration/signup.html', {'formulario':formulario})
 
+def entrada_crear(request):
+    if request.method == 'POST':
+        formulario = EntradaForm(request.POST)
+        if formulario.is_valid():
+            try:
+                formulario.save()
+                return redirect("entrada_lista_usuario",usuario_id=request.user.cliente.id)
+            except Exception as error:
+                print(error)
+    else:
+        formulario = EntradaForm(initial={"cliente":request.user.cliente})
+    return render(request, 'entrada/create.html', {'formulario': formulario})
 
 
 #Errores
