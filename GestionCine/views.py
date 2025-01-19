@@ -6,7 +6,8 @@ from .models import *
 from .forms import *
 from django.contrib import messages
 from django.contrib.auth import login
-
+from django.contrib.auth.decorators import permission_required
+from django.contrib.auth.models import Group
 
 # Create your views here.
 def index(request):
@@ -88,7 +89,7 @@ def listar_encargados(request,id_cine):
 
 
 #CRUD de Cliente
-
+@permission_required('GestionCine.add_cliente')
 def cliente_create(request):
     datosFormulario = None
     if request.method == "POST":
@@ -129,6 +130,7 @@ def cliente_buscar(request):
 
     return render(request, 'cliente/busqueda_avanzada.html', {'formulario': formulario})
 
+@permission_required('GestionCine.change_cliente')
 def cliente_editar(request, cliente_id):
     cliente = Cliente.objects.get(id=cliente_id)  # Obtener cliente por ID
 
@@ -155,6 +157,7 @@ def cliente_editar(request, cliente_id):
 
     return render(request, 'cliente/actualizar.html', {'formulario': formulario, 'cliente': cliente})
 
+@permission_required('GestionCine.delete_cliente')
 def cliente_eliminar(request,cliente_id):
     cliente = Cliente.objects.filter(id=cliente_id).all()
     try:
@@ -165,7 +168,7 @@ def cliente_eliminar(request,cliente_id):
     return redirect('lista_clientes')
 
 #CRUD de Socio
-
+@permission_required('GestionCine.add_socio')
 def socio_create(request):
     datosFormulario = None
     if request.method == "POST":
@@ -219,7 +222,7 @@ def socio_buscar(request):
 
     return render(request, 'socio/busqueda_avanzada_datepicker.html', {'formulario': formulario})
 
-
+@permission_required('GestionCine.change_socio')
 def socio_editar(request, socio_id):
     socio = Socio.objects.get(id=socio_id) 
 
@@ -244,7 +247,7 @@ def socio_editar(request, socio_id):
 
     return render(request, 'socio/actualizar.html', {'formulario': formulario, 'socio': socio})
 
-
+@permission_required('GestionCine.delete_socio')
 def socio_eliminar(request,socio_id):
     socio = Socio.objects.filter(id=socio_id).all()
     try:
@@ -256,7 +259,7 @@ def socio_eliminar(request,socio_id):
 
 
 #CRUD de Película
-
+@permission_required('GestionCine.add_pelicula')
 def pelicula_create(request):
     if request.method == 'POST':
         form = PeliculaForm(request.POST)
@@ -332,6 +335,8 @@ def pelicula_buscar(request):
        formulario = BusquedaPeliculaForm(None)
     return render(request, 'pelicula/busqueda_avanzada_datepicker.html',{"formulario":formulario})
   
+
+@permission_required('GestionCine.change_pelicula')
 def pelicula_editar(request, pelicula_id):
     pelicula = Pelicula.objects.get(id=pelicula_id)  
     
@@ -362,7 +367,7 @@ def pelicula_editar(request, pelicula_id):
     
     return render(request, 'pelicula/actualizar.html', {"formulario": formulario, "pelicula": pelicula})
 
-
+@permission_required('GestionCine.delete_pelicula')
 def pelicula_eliminar(request,pelicula_id):
     pelicula = Pelicula.objects.filter(id=pelicula_id).all()
     try:
@@ -373,7 +378,7 @@ def pelicula_eliminar(request,pelicula_id):
     return redirect('index')
 
 #CRUD de Empleado
-
+@permission_required('GestionCine.add_empleado')
 def empleado_create(request):
     datosFormulario = None
     if request.method == "POST":
@@ -453,52 +458,51 @@ def empleado_buscar(request):
         formulario = BusquedaEmpleadoForm()
         return render(request, 'empleado/busqueda_avanzada.html', {'formulario': formulario})
 
-def empleado_editar(request, empleado_id):
-    empleado = Empleado.objects.get(id=empleado_id)
-
+# CRUD de Empleado
+@permission_required('GestionCine.add_empleado')
+def empleado_create(request):
     if request.method == "POST":
         formulario = empleadoModelForm(request.POST)
-
         if formulario.is_valid():
-            empleado.dni = formulario.cleaned_data['dni']
-            empleado.nombre = formulario.cleaned_data['nombre']
-            empleado.apellidos = formulario.cleaned_data['apellidos']
-            empleado.nuss = formulario.cleaned_data['nuss']
-            empleado.iban = formulario.cleaned_data['iban']
-            empleado.salario = formulario.cleaned_data['salario']
-            empleado.encargado = formulario.cleaned_data['encargado']
-            empleado.cine = formulario.cleaned_data['cine']
-            empleado.save()
-
-            messages.success(request, f'Se ha editado el empleado "{empleado.nombre}" correctamente.')
-            return redirect('empleado_lista') 
-
+            try:
+                formulario.save()
+                messages.success(request, "Empleado creado correctamente")
+                return redirect('lista_empleados')
+            except Exception as error:
+                messages.error(request, f"Error al crear empleado: {error}")
     else:
-        formulario = empleadoModelForm(initial={
-            'dni': empleado.dni,
-            'nombre': empleado.nombre,
-            'apellidos': empleado.apellidos,
-            'nuss': empleado.nuss,
-            'iban': empleado.iban,
-            'salario': empleado.salario,
-            'encargado': empleado.encargado,
-            'cine': empleado.cine,
-        })
+        formulario = empleadoModelForm()
+    return render(request, 'empleado/create.html', {"formulario": formulario})
 
+@permission_required('GestionCine.change_empleado')
+def empleado_editar(request, empleado_id):
+    empleado = Empleado.objects.get(id=empleado_id)
+    if request.method == "POST":
+        formulario = empleadoModelForm(request.POST, instance=empleado)
+        if formulario.is_valid():
+            try:
+                formulario.save()
+                messages.success(request, "Empleado editado correctamente")
+                return redirect('lista_empleados')
+            except Exception as error:
+                messages.error(request, f"Error al editar empleado: {error}")
+    else:
+        formulario = empleadoModelForm(instance=empleado)
     return render(request, 'empleado/actualizar.html', {'formulario': formulario, 'empleado': empleado})
 
-
-def empleado_eliminar(request,empleado_id):
-    empleado = Empleado.objects.filter(id=empleado_id).all()
+@permission_required('GestionCine.delete_empleado')
+def empleado_eliminar(request, empleado_id):
+    empleado = Empleado.objects.get(id=empleado_id)
     try:
         empleado.delete()
-        messages.success(request, "Se ha elimnado el empleado con DNI: "+empleado.dni+" correctamente")
+        messages.success(request, "Empleado eliminado correctamente")
     except Exception as error:
-        print(error)
+        messages.error(request, f"Error al eliminar empleado: {error}")
     return redirect('lista_empleados')
 
 
 #CRUD de Cine
+@permission_required('GestionCine.add_cine')
 def cine_create(request):
     datosFormulario = None
     if request.method == "POST":
@@ -566,7 +570,7 @@ def cine_buscar(request):
         formulario = BusquedaCineForm()
         return render(request, 'cine/busqueda_avanzada.html', {'formulario': formulario})
 
-
+@permission_required('GestionCine.change_cine')
 def cine_editar(request, cine_id):
     cine = Cine.objects.get(id=cine_id)
 
@@ -593,6 +597,7 @@ def cine_editar(request, cine_id):
 
     return render(request, 'cine/actualizar.html', {'formulario': formulario, 'cine': cine})
 
+@permission_required('GestionCine.delete_cine')
 def cine_eliminar(request,cine_id):
     cine = Cine.objects.filter(id=cine_id).all()
     try:
@@ -604,22 +609,6 @@ def cine_eliminar(request,cine_id):
 
 
 #CRUD de Gerente
-
-def gerente_create(request):
-    datosFormulario = None
-    if request.method == "POST":
-        datosFormulario = request.POST
-        
-    formulario = gerenteModelForm(datosFormulario)
-    if (request.method == "POST"):
-        if formulario.is_valid():
-            try:
-                formulario.save()
-                return redirect("lista_gerentes")
-            except Exception as error:
-                print(error)
-                
-    return render(request, 'gerente/create.html',{"formulario":formulario})
 
 def gerente_buscar(request):
     if request.method == 'GET':
@@ -662,43 +651,46 @@ def gerente_buscar(request):
     else:
         formulario = BusquedaGerenteForm()
         return render(request, 'gerente/busqueda_avanzada.html', {'formulario': formulario})
-
-
-def gerente_editar(request, gerente_id):
-    gerente = Gerente.objects.get(id=gerente_id) 
-
+@permission_required('GestionCine.add_gerente')
+def gerente_create(request):
     if request.method == "POST":
-        formulario = gerenteModelForm(request.POST) 
-
+        formulario = gerenteModelForm(request.POST)
         if formulario.is_valid():
-            gerente.dni = formulario.cleaned_data['dni']
-            gerente.nombre = formulario.cleaned_data['nombre']
-            gerente.apellidos = formulario.cleaned_data['apellidos']
-            gerente.telefono = formulario.cleaned_data['telefono']
-            gerente.save()
-
-            messages.success(request, f'Se ha editado el gerente "{gerente.nombre}" correctamente.')
-            return redirect('gerente_lista')
-
+            try:
+                formulario.save()
+                messages.success(request, "Gerente creado correctamente")
+                return redirect('lista_gerentes')
+            except Exception as error:
+                messages.error(request, f"Error al crear gerente: {error}")
     else:
-        formulario = gerenteModelForm(initial={
-            'dni': gerente.dni,
-            'nombre': gerente.nombre,
-            'apellidos': gerente.apellidos,
-            'telefono': gerente.telefono,
-        })
+        formulario = gerenteModelForm()
+    return render(request, 'gerente/create.html', {"formulario": formulario})
 
+@permission_required('GestionCine.change_gerente')
+def gerente_editar(request, gerente_id):
+    gerente = Gerente.objects.get(id=gerente_id)
+    if request.method == "POST":
+        formulario = gerenteModelForm(request.POST, instance=gerente)
+        if formulario.is_valid():
+            try:
+                formulario.save()
+                messages.success(request, "Gerente editado correctamente")
+                return redirect('lista_gerentes')
+            except Exception as error:
+                messages.error(request, f"Error al editar gerente: {error}")
+    else:
+        formulario = gerenteModelForm(instance=gerente)
     return render(request, 'gerente/actualizar.html', {'formulario': formulario, 'gerente': gerente})
 
-def gerente_eliminar(request,gerente_id):
-    gerente = Gerente.objects.filter(id=gerente_id).all()
+@permission_required('GestionCine.delete_gerente')
+def gerente_eliminar(request, gerente_id):
+    gerente = Gerente.objects.get(id=gerente_id)
     try:
         gerente.delete()
-        messages.success(request, "Se ha elimnado el gerente con DNI: "+gerente.dni+" correctamente")
+        messages.success(request, "Gerente eliminado correctamente")
     except Exception as error:
-        print(error)
+        messages.error(request, f"Error al eliminar gerente: {error}")
     return redirect('lista_gerentes')
-
 
 #Sesiones y permisos
 
@@ -724,6 +716,7 @@ def registrar_usuario(request):
         formulario = RegistroForm()
     return render(request,'registration/signup.html', {'formulario':formulario})
 
+@permission_required('GestionCine.add_entrada')
 def entrada_crear(request):
     if request.method == 'POST':
         formulario = EntradaForm(request.POST)
