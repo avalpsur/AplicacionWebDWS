@@ -54,5 +54,8 @@ urlpatterns = [
     
     path('registrar',views.registrar_usuario,name='registrar_usuario'),
 
+     path('entrada/crear/', views.entrada_crear, name='entrada_crear'),
+    path('entrada/buscar/', views.buscar_entrada, name='buscar_entrada'),
+    path('entrada/lista/<int:usuario_id>/', views.entrada_lista_usuario, name='entrada_lista_usuario'),
 ]
 

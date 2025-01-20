@@ -1,5 +1,5 @@
 function eliminar() {
-    var x = confirm("¿Eliminar Libro ?");
+    var x = confirm("¿Eliminar Empleado ?");
     if (x)
       return true;
     else

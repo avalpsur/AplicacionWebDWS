@@ -1,41 +1,28 @@
-<h2>{{ empleado.nombre|capfirst }} {{ empleado.apellidos|capfirst }}</h2>
+<div>
+        <h2>Empleado: {{ empleado.nombre }}</h2>
         <p>DNI: {{ empleado.dni }}</p>
-        {% if empleado.dni == "666" or empleado.dni == 616 %}
-                    <p>EL DIABLO</p>
+        <p>Fecha de Contratación: {{ empleado.fecha_contratacion }}</p>
+        <p>Salario: {{ empleado.salario }}</p>
+    </div>
+    
+    {% load bootstrap_icons %}
+    
+    <div class="mb-2">
+        {% if perms.GestionCine.change_empleado %}
+        <button type="button" class="btn btn-outline-primary">
+            <a href="{% url 'empleado_editar' empleado.id %}"><span>{% bs_icon 'pencil' %}</span></a>
+        </button>
         {% endif %}
-        <p>NUSS: {{ empleado.nuss|cut:" " }}</p>
-        <p>IBAN: {{ empleado.iban|upper }}</p>
-        <div>
-        <p>Salario:</p> 
-                {% if empleado.salario > 18000 %}
-                        Usted cobra {{ empleado.salario }} euros, no se queje que está la cosa mala.
-                {% elif empleado.salario == 18000%}
-                        Usted cobra {{ empleado.salario }} euros, no está mal.
-                {% else %}
-                        Usted cobra {{ empleado.salario }} euros, es un/a tieso/a.
-                {% endif %}
-        </div>
-                {% if empleado.encargado != true %}
-                        <p>Es un pobre y triste empleado</p>
-                {% else %}
-                        <p><strong>Encargado</strong></p>
-                {% endif %}
-
-                {% load bootstrap_icons %}
-                <div class="mb-2">
-                        <button type="button" 
-                                class="btn btn-outline-primary"> 
-                                <a href="{% url 'empleado_editar' empleado.id %}" ><span>{% bs_icon 'pencil' %}</span></a>
-                        </button>
-                    </div>
-
-
-                <div class="mb-2">
-                        <form action = "{% url 'empleado_eliminar' empleado.id %}" method = "post"> 
-                            {% csrf_token %}
-                            <button class="btn btn-danger" onclick="return eliminar();" type="submit">
-                                <span>{% bs_icon 'trash' %}</span>
-                            </button> 
-                        </form>
-                </div>
-        <hr>
+    </div>
+    
+    <div class="mb-2">
+        {% if perms.GestionCine.delete_empleado %}
+        <form action="{% url 'empleado_eliminar' empleado.id %}" method="post">
+            {% csrf_token %}
+            <button class="btn btn-danger" onclick="return eliminar();" type="submit">
+                <span>{% bs_icon 'trash' %}</span>
+            </button>
+        </form>
+        {% endif %}
+    </div>
+    <hr>

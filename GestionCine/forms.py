@@ -427,18 +427,22 @@ class BusquedaGerenteForm(forms.Form):
 
 #SESIONES Y PERMISOS
 
+from django import forms
+from django.forms import ModelForm
+from .models import Entrada, Proyeccion
+
 class EntradaForm(ModelForm):
     class Meta:
         model = Entrada
-        fields = ('proyeccion','cliente')
+        fields = '__all__'
         widgets = {
-            "cliente":forms.HiddenInput()
+            "cliente": forms.HiddenInput()
         }
 
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop("request")
         super(EntradaForm, self).__init__(*args, **kwargs)
-        proyeccionesdisponibles = Proyeccion.objects.exclude(entrada__cliente=self.request.user.cliente).all()
+        proyeccionesdisponibles = Proyeccion.objects.exclude(entradas_proyeccion__cliente=self.request.user.clientes_usuario).all()
         self.fields["proyeccion"] = forms.ModelChoiceField(
             queryset=proyeccionesdisponibles,
             widget=forms.Select,
@@ -446,16 +450,39 @@ class EntradaForm(ModelForm):
             empty_label="Ninguna"
         )
 
-
 class RegistroForm(UserCreationForm):
     roles = (
-        (Usuario.CLIENTE,'cliente'),
-        (Usuario.EMPLEADO,'empleado'),
-        (Usuario.GERENTE,'gerente'),
+        (Usuario.CLIENTE, 'cliente'),
+        (Usuario.EMPLEADO, 'empleado'),
+        (Usuario.GERENTE, 'gerente'),
     )
     
-    rol = forms.ChoiceField(choices=roles)
+    rol = forms.ChoiceField(choices=roles, widget=forms.Select(attrs={'class': 'field-rol'}))
+    dni = forms.CharField(required=True, label="DNI", widget=forms.TextInput(attrs={'class': 'field-dni'}))
+    cine = forms.ModelChoiceField(queryset=Cine.objects.all(), required=False, label="Cine (Rellene únicamente si es empleado)", widget=forms.Select(attrs={'class': 'field-cine'}))
+
     class Meta:
         model = Usuario
-        fields = ('username', 'email', 'password1', 'password2', 'rol')
+        fields = ('username', 'email', 'password1', 'password2', 'rol', 'cine')
 
+    def clean(self):
+        cleaned_data = super().clean()
+        rol = cleaned_data.get('rol')
+        if rol == str(Usuario.EMPLEADO):
+            if not cleaned_data.get('cine'):
+                self.add_error('cine', 'Este campo es obligatorio para empleados.')
+        return cleaned_data
+    
+
+class BusquedaEntradaForm(forms.Form):
+    textoBusqueda = forms.CharField(required=False, label="Buscar (Película, Sala, Fecha)")
+
+    def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
+        super().__init__(*args, **kwargs)
+        if user:
+            self.fields['entradas'] = forms.ModelChoiceField(
+                queryset=Entrada.objects.filter(cliente=user.cliente),
+                required=False,
+                label="Entradas"
+            )

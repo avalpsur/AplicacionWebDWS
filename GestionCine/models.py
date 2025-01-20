@@ -21,10 +21,14 @@ class Usuario(AbstractUser):
     rol = models.PositiveSmallIntegerField(
         choices=ROLES,default=2
     )
+    dni = models.CharField(max_length=9, unique=True, null=True, blank=True)
+
+    def __str__(self):
+        return self.username
     
 
 class Cliente(models.Model):
-    dni = models.CharField(max_length=9, unique=True)
+    dni = models.CharField(max_length=9)
     nombre = models.CharField(max_length=150)
     apellidos = models.CharField(max_length=300)
     email = models.EmailField(default='nombre@ejemplo.com')

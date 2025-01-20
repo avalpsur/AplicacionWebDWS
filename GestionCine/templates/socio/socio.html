@@ -14,18 +14,21 @@
 {% load bootstrap_icons %}
 
 <div class="mb-2">
-    <button type="button" 
-            class="btn btn-outline-primary"> 
-            <a href="{% url 'socio_editar' socio.id %}" ><span>{% bs_icon 'pencil' %}</span></a>
+    {% if perms.GestionCine.change_socio %}
+    <button type="button" class="btn btn-outline-primary">
+        <a href="{% url 'socio_editar' socio.id %}"><span>{% bs_icon 'pencil' %}</span></a>
     </button>
+    {% endif %}
 </div>
 
 <div class="mb-2">
-    <form action = "{% url 'socio_eliminar' socio.id %}" method = "post"> 
+    {% if perms.GestionCine.delete_socio %}
+    <form action="{% url 'socio_eliminar' socio.id %}" method="post">
         {% csrf_token %}
         <button class="btn btn-danger" onclick="return eliminar();" type="submit">
             <span>{% bs_icon 'trash' %}</span>
-        </button> 
+        </button>
     </form>
+    {% endif %}
 </div>
 <hr>

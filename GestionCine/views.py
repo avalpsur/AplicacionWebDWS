@@ -2,16 +2,24 @@ from django.shortcuts import render, redirect
 from django.db.models import Q,Prefetch,Avg
 from django.forms import modelform_factory
 from datetime import timedelta
+from datetime import datetime
 from .models import *
 from .forms import *
 from django.contrib import messages
 from django.contrib.auth import login
-from django.contrib.auth.decorators import permission_required
+from django.contrib.auth.decorators import permission_required, login_required
 from django.contrib.auth.models import Group
 
 # Create your views here.
 def index(request):
+    if not "fecha_inicio" in request.session:
+        request.session["fecha_inicio"] = timezone.now().strftime('%d/%m/%Y %H:%M')
+        request.session['variable1'] ='Cines Polígono Sur'
+        request.session['variable2'] = '2025'
+        request.session['variable3'] = 'C/ Esclava del Señor, 1'
+        request.session['variable4'] = '41013'
     return render(request, 'index.html')
+
 
 #Lista de socios
 def listar_socios(request):
@@ -132,10 +140,10 @@ def cliente_buscar(request):
 
 @permission_required('GestionCine.change_cliente')
 def cliente_editar(request, cliente_id):
-    cliente = Cliente.objects.get(id=cliente_id)  # Obtener cliente por ID
+    cliente = Cliente.objects.get(id=cliente_id)  
 
     if request.method == "POST":
-        formulario = ClienteModelForm(request.POST)  # Crear formulario con los datos del POST
+        formulario = ClienteModelForm(request.POST)  
 
         if formulario.is_valid():
             cliente.dni = formulario.cleaned_data['dni']
@@ -221,7 +229,7 @@ def socio_buscar(request):
         formulario = BusquedaSocioForm()
 
     return render(request, 'socio/busqueda_avanzada_datepicker.html', {'formulario': formulario})
-
+@login_required
 @permission_required('GestionCine.change_socio')
 def socio_editar(request, socio_id):
     socio = Socio.objects.get(id=socio_id) 
@@ -693,44 +701,76 @@ def gerente_eliminar(request, gerente_id):
     return redirect('lista_gerentes')
 
 #Sesiones y permisos
-
 def registrar_usuario(request):
     if request.method == 'POST':
         formulario = RegistroForm(request.POST)
         if formulario.is_valid():
             user = formulario.save()
             rol = int(formulario.cleaned_data.get('rol'))
-            if(rol == Usuario.CLIENTE):
-                cliente = Cliente.objects.create(usuario = user)
-                cliente.save()
-            elif(rol == Usuario.EMPLEADO):
-                empleado = Empleado.objects.create(usuario=user)
-                empleado.save()
-            elif(rol == Usuario.GERENTE):
-                gerente = Gerente.objects.create(usuario = user)
-                gerente.save()
-                
+            if rol == Usuario.CLIENTE:
+                grupo = Group.objects.get(name='Clientes')
+                grupo.user_set.add(user)
+                Cliente.objects.create(usuario=user)
+            elif rol == Usuario.EMPLEADO:
+                grupo = Group.objects.get(name='Empleados')
+                grupo.user_set.add(user)
+                Empleado.objects.create(usuario=user, cine=formulario.cleaned_data.get('cine'))
+            elif rol == Usuario.GERENTE:
+                grupo = Group.objects.get(name='Gerentes')
+                grupo.user_set.add(user)
+                Gerente.objects.create(usuario=user)
+            
             login(request, user)
             return redirect('index')
     else:
         formulario = RegistroForm()
-    return render(request,'registration/signup.html', {'formulario':formulario})
+    return render(request, 'registration/signup.html', {'formulario': formulario})
 
+@login_required
 @permission_required('GestionCine.add_entrada')
 def entrada_crear(request):
+    try:
+        cliente = request.user.clientes_usuario
+    except Cliente.DoesNotExist:
+        messages.error(request, "El usuario no tiene un cliente asociado.")
+        return redirect('index')
+
     if request.method == 'POST':
-        formulario = EntradaForm(request.POST)
+        formulario = EntradaForm(request.POST, request=request)
         if formulario.is_valid():
-            try:
-                formulario.save()
-                return redirect("entrada_lista_usuario",usuario_id=request.user.cliente.id)
-            except Exception as error:
-                print(error)
+            entrada = formulario.save(commit=False)
+            entrada.cliente = cliente
+            entrada.save()
+            return redirect("entrada_lista_usuario", usuario_id=cliente.id)
     else:
-        formulario = EntradaForm(initial={"cliente":request.user.cliente})
+        formulario = EntradaForm(initial={"cliente": cliente}, request=request)
     return render(request, 'entrada/create.html', {'formulario': formulario})
+@login_required
+def buscar_entrada(request):
+    if not hasattr(request.user, 'cliente'):
+        messages.error(request, "El usuario no tiene un cliente asociado.")
+        return redirect('index')
 
+    if request.method == 'GET':
+        formulario = BusquedaEntradaForm(request.GET, user=request.user)
+        if formulario.is_valid():
+            texto_busqueda = formulario.cleaned_data.get('textoBusqueda')
+            entradas = Entrada.objects.filter(cliente=request.user.cliente)
+            if texto_busqueda:
+                entradas = entradas.filter(
+                    Q(proyeccion__pelicula__titulo__icontains=texto_busqueda) |
+                    Q(proyeccion__sala__nombre__icontains=texto_busqueda) |
+                    Q(fechaCompra__icontains=texto_busqueda)
+                )
+            return render(request, 'entrada/lista_busqueda.html', {'entradas': entradas, 'formulario': formulario})
+    else:
+        formulario = BusquedaEntradaForm(user=request.user)
+    return render(request, 'entrada/busqueda_avanzada.html', {'formulario': formulario})
 
+@login_required
+def entrada_lista_usuario(request, usuario_id):
+    entradas = Entrada.objects.filter(cliente__usuario_id=usuario_id)
+    return render(request, 'entrada/lista_usuario.html', {'entradas': entradas})
 #Errores
 def mi_error_400(request,exception=None):
     return render(request, 'errores/400.html',None,None,400)
