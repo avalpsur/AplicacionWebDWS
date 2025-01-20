@@ -93,3 +93,35 @@ Select: Para elegir opciones predefinidas de una lista (por ejemplo, seleccionar
 Checkbox: Para seleccionar opciones booleanas (por ejemplo, si un empleado es encargado).
 DateInput: Para elegir fechas (por ejemplo, fecha de alta del socio).
 FileInput: Para subir imágenes o archivos (por ejemplo, imágenes asociadas a una película o cine).
+
+
+**---PRÁCTICA 5 SESIONES Y AUTENTICACIÓN---**
+- Incluir al menos dos tipos de usuarios claramente diferenciados (No cuenta el usuario administrador):
+Se han definido tres tipos de usuarios: CLIENTE, EMPLEADO y GERENTE en el modelo Usuario.
+
+- En cada vista controlarse los permisos y si el usuario está logueado o no:
+Las vistas están decoradas con @login_required y @permission_required para controlar los permisos y la autenticación.
+
+- En cada template de vista y formulario controlarse los permisos y si el usuario está logueado o no:
+Los templates utilizan {% if request.user.is_authenticated %} y {% if perms.GestionCine.add_* %} para controlar los permisos y la autenticación.
+
+- Incluir al menos 4 variables que se guarden en la sesión y que aparezcan siempre en la cabecera de la página. Y se eliminen cuando se desloguea el usuario:
+Se han agregado variables de sesión en la vista index y se muestran en la cabecera de la página, eliminándose al desloguearse.
+
+- Debemos hacer un registro de los distintos tipos de usuario, salvo el administrador, con sus validaciones correspondientes, y controlar que dependiendo del tipo de usuario tendrá unos valores u otros:
+El formulario RegistroForm y la vista registrar_usuario manejan el registro de diferentes tipos de usuarios con validaciones específicas.
+
+- Debemos hacer un login y logout del usuario:
+La aplicación tiene vistas y templates para login y logout.
+
+- Debe crearse una funcionalidad en algún formulario, que el contenido de algún select ManyToMany o ManyToOne varíe dependiendo del usuario que está logueado:
+El formulario EntradaForm filtra las proyecciones disponibles según el cliente del usuario logueado.
+
+- En los formularios de crear debe incluirse siempre el usuario que crea dicho registro por la sesión del usuario:
+Las vistas de creación de entradas, clientes, empleados, etc., asignan el usuario logueado al registro antes de guardarlo.
+
+- Debe crearse una funcionalidad en algún formulario de búsqueda, que el contenido se filtre por el usuario que está logueado:
+La vista buscar_entrada filtra las entradas asociadas al cliente del usuario logueado.
+
+- Implementar funcionalidad de reinicio de contraseña:
+Se ha implementado la funcionalidad de reinicio de contraseña utilizando el backend de correo electrónico de consola y se ha agregado una opción en el menú para restablecer la contraseña.
