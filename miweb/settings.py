@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_seed',
     'django_bootstrap5',
     'django_bootstrap_icons', 
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
