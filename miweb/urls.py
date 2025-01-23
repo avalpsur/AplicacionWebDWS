@@ -28,6 +28,8 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('',include("GestionCine.urls")),
     path('api/v1/',include("GestionCine.api_urls")),
+    path('oauth2/',include('oauth2_provider.urls',namespace='oauth2')),
+
 ]
 
 from django.conf.urls import handler400,handler404,handler403,handler500

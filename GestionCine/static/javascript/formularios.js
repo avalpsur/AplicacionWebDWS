@@ -46,5 +46,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     rolField.addEventListener('change', toggleFields);
-    toggleFields(); // Initial call to set the correct fields
+    toggleFields(); 
 });

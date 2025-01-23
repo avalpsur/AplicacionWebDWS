@@ -1,668 +1,1877 @@
 [
-    {
-        "model": "GestionCine.cliente",
-        "pk": 1,
-        "fields": {
-            "dni": "12345678A",
-            "nombre": "Juan",
-            "apellidos": "Pérez García",
-            "email": "juan.perez@example.com"
-        }
-    },
-    {
-        "model": "GestionCine.cliente",
-        "pk": 2,
-        "fields": {
-            "dni": "87654321B",
-            "nombre": "Maria",
-            "apellidos": "Lopez Martin",
-            "email": "maria.lopez@example.com"
-        }
-    },
-    {
-        "model": "GestionCine.cliente",
-        "pk": 3,
-        "fields": {
-            "dni": "13579246C",
-            "nombre": "Luis",
-            "apellidos": "Ramirez Suarez",
-            "email": "luis.ramirez@example.com"
-        }
-    },
-    {
-        "model": "GestionCine.cliente",
-        "pk": 4,
-        "fields": {
-            "dni": "24681357D",
-            "nombre": "Ana",
-            "apellidos": "Garcia Fernandez",
-            "email": "ana.garcia@example.com"
-        }
-    },
-    {
-        "model": "GestionCine.cliente",
-        "pk": 5,
-        "fields": {
-            "dni": "12348765E",
-            "nombre": "Carlos",
-            "apellidos": "Sanchez Ortega",
-            "email": "carlos.sanchez@example.com"
-        }
-    },
-    {
-        "model": "GestionCine.cliente",
-        "pk": 6,
-        "fields": {
-            "dni": "87651234F",
-            "nombre": "Elena",
-            "apellidos": "Mendez Alonso",
-            "email": "elena.mendez@example.com"
-        }
-    },
-    {
-        "model": "GestionCine.socio",
-        "pk": 1,
-        "fields": {
-            "numSocio": "10001",
-            "fechaAlta": "2023-01-15",
-            "fechaCaducidad": "2024-01-15",
-            "cliente": 1
-        }
-    },
-    {
-        "model": "GestionCine.socio",
-        "pk": 3,
-        "fields": {
-            "numSocio": "10003",
-            "fechaAlta": "2023-03-05",
-            "fechaCaducidad": "2024-03-05",
-            "cliente": 3
-        }
-    },
-    {
-        "model": "GestionCine.socio",
-        "pk": 4,
-        "fields": {
-            "numSocio": "10004",
-            "fechaAlta": "2023-04-15",
-            "fechaCaducidad": "2024-04-15",
-            "cliente": 4
-        }
-    },
-    {
-        "model": "GestionCine.socio",
-        "pk": 6,
-        "fields": {
-            "numSocio": "10006",
-            "fechaAlta": "2023-06-10",
-            "fechaCaducidad": "2024-06-10",
-            "cliente": 6
-        }
-    },
-    {
-        "model": "GestionCine.gerente",
-        "pk": 1,
-        "fields": {
-            "dni": "11223344C",
-            "nombre": "Laura",
-            "apellidos": "Hernández López",
-            "telefono": "666777888"
-        }
-    },
-    {
-        "model": "GestionCine.gerente",
-        "pk": 2,
-        "fields": {
-            "dni": "55667788D",
-            "nombre": "Pedro",
-            "apellidos": "Martinez Gómez",
-            "telefono": "666888999"
-        }
-    },
-    {
-        "model": "GestionCine.gerente",
-        "pk": 3,
-        "fields": {
-            "dni": "77889900E",
-            "nombre": "Rosa",
-            "apellidos": "Diaz Ortega",
-            "telefono": "666999111"
-        }
-    },
-    {
-        "model": "GestionCine.gerente",
-        "pk": 4,
-        "fields": {
-            "dni": "99001122F",
-            "nombre": "Miguel",
-            "apellidos": "Fernandez Lopez",
-            "telefono": "666222333"
-        }
-    },
-    {
-        "model": "GestionCine.gerente",
-        "pk": 5,
-        "fields": {
-            "dni": "22334455G",
-            "nombre": "Alba",
-            "apellidos": "Lopez Ruiz",
-            "telefono": "666333444"
-        }
-    },
-    {
-        "model": "GestionCine.gerente",
-        "pk": 6,
-        "fields": {
-            "dni": "33445566H",
-            "nombre": "Javier",
-            "apellidos": "Castro Delgado",
-            "telefono": "666444555"
-        }
-    },
-    {
-        "model": "GestionCine.cine",
-        "pk": 1,
-        "fields": {
-            "direccion": "Calle Gran Via 1, Madrid",
-            "telefono": "915555555",
-            "email": "info@cinecentral.com",
-            "gerente": 1
-        }
-    },
-    {
-        "model": "GestionCine.cine",
-        "pk": 2,
-        "fields": {
-            "direccion": "Avenida de la Constitución 20, Sevilla",
-            "telefono": "954555555",
-            "email": "info@cineandaluz.com",
-            "gerente": 2
-        }
-    },
-    {
-        "model": "GestionCine.cine",
-        "pk": 3,
-        "fields": {
-            "direccion": "Calle Mayor 15, Barcelona",
-            "telefono": "934555555",
-            "email": "info@cinecatalunya.com",
-            "gerente": 3
-        }
-    },
-    {
-        "model": "GestionCine.cine",
-        "pk": 4,
-        "fields": {
-            "direccion": "Plaza Mayor 2, Valencia",
-            "telefono": "963555555",
-            "email": "info@cinevalenciano.com",
-            "gerente": 4
-        }
-    },
-    {
-        "model": "GestionCine.cine",
-        "pk": 5,
-        "fields": {
-            "direccion": "Paseo de la Castellana 101, Madrid",
-            "telefono": "917555555",
-            "email": "info@cinecastellana.com",
-            "gerente": 5
-        }
-    },
-    {
-        "model": "GestionCine.cine",
-        "pk": 6,
-        "fields": {
-            "direccion": "Calle Alcalá 50, Madrid",
-            "telefono": "918555555",
-            "email": "info@cinealcala.com",
-            "gerente": 6
-        }
-    },
-    {
-        "model": "GestionCine.empleado",
-        "pk": 1,
-        "fields": {
-            "dni": "44556677I",
-            "nombre": "Mario",
-            "apellidos": "Torres Diaz",
-            "nuss": "123456789012",
-            "iban": "ES9121000418450200051332",
-            "salario": 1300,
-            "encargado": true,
-            "cine": 1
-        }
-    },
-    {
-        "model": "GestionCine.empleado",
-        "pk": 2,
-        "fields": {
-            "dni": "55667788J",
-            "nombre": "Sara",
-            "apellidos": "Gonzalez Perez",
-            "nuss": "123456789013",
-            "iban": "ES9121000418450200051333",
-            "salario": 1200,
-            "encargado": false,
-            "cine": 2
-        }
-    },
-    {
-        "model": "GestionCine.empleado",
-        "pk": 3,
-        "fields": {
-            "dni": "66778899K",
-            "nombre": "Pablo",
-            "apellidos": "Santos Molina",
-            "nuss": "123456789014",
-            "iban": "ES9121000418450200051334",
-            "salario": 1250,
-            "encargado": false,
-            "cine": 3
-        }
-    },
-    {
-        "model": "GestionCine.empleado",
-        "pk": 4,
-        "fields": {
-            "dni": "77889900L",
-            "nombre": "Lucia",
-            "apellidos": "Martinez Lopez",
-            "nuss": "123456789015",
-            "iban": "ES9121000418450200051335",
-            "salario": 1350,
-            "encargado": true,
-            "cine": 4
-        }
-    },
-    {
-        "model": "GestionCine.empleado",
-        "pk": 5,
-        "fields": {
-            "dni": "88990011M",
-            "nombre": "David",
-            "apellidos": "Fernandez Ruiz",
-            "nuss": "123456789016",
-            "iban": "ES9121000418450200051336",
-            "salario": 1400,
-            "encargado": false,
-            "cine": 5
-        }
-    },
-    {
-        "model": "GestionCine.empleado",
-        "pk": 6,
-        "fields": {
-            "dni": "99001122N",
-            "nombre": "Carla",
-            "apellidos": "Sanchez Gonzalez",
-            "nuss": "123456789017",
-            "iban": "ES9121000418450200051337",
-            "salario": 1500,
-            "encargado": true,
-            "cine": 6
-        }
-    },
-
-    {
-            "model": "GestionCine.sala",
-            "pk": 1,
-            "fields": {
-                "tamano": "PE",
-                "cine": 1,
-                "empleado": [1]
-        }
-    },
-        {
-            "model": "GestionCine.sala",
-            "pk": 2,
-            "fields": {
-                "tamano": "ME",
-                "cine": 2,
-                "empleado": [2]
-            }
-        },
-        {
-            "model": "GestionCine.sala",
-            "pk": 3,
-            "fields": {
-                "tamano": "GR",
-                "cine": 3,
-                "empleado": [3]
-            }
-        },
-        {
-            "model": "GestionCine.sala",
-            "pk": 4,
-            "fields": {
-                "tamano": "PE",
-                "cine": 4,
-                "empleado": [4]
-            }
-        },
-        {
-            "model": "GestionCine.sala",
-            "pk": 5,
-            "fields": {
-                "tamano": "ME",
-                "cine": 5,
-                "empleado": [5]
-            }
-        },
-        {
-            "model": "GestionCine.sala",
-            "pk": 6,
-            "fields": {
-                "tamano": "GR",
-                "cine": 6,
-                "empleado": [6]
-            }
-        },
-        {
-            "model": "GestionCine.pelicula",
-            "pk": 1,
-            "fields": {
-                "titulo": "Inception",
-                "director": "Christopher Nolan",
-                "sinopsis": "A mind-bending thriller about dream infiltration.",
-                "fechaLanzamiento": "2010-07-16",
-                "tiempoProyectada": "02:28:00",
-                "sala": [1, 2]
-            }
-        },
-        {
-            "model": "GestionCine.pelicula",
-            "pk": 2,
-            "fields": {
-                "titulo": "Interstellar",
-                "director": "Christopher Nolan",
-                "sinopsis": "Exploration of space and time.",
-                "fechaLanzamiento": "2014-11-07",
-                "tiempoProyectada": "02:49:00",
-                "sala": [2, 3]
-            }
-        },
-        {
-            "model": "GestionCine.pelicula",
-            "pk": 3,
-            "fields": {
-                "titulo": "The Matrix",
-                "director": "The Wachowskis",
-                "sinopsis": "A hacker learns the truth about his reality.",
-                "fechaLanzamiento": "1999-03-31",
-                "tiempoProyectada": "02:16:00",
-                "sala": [3, 4]
-            }
-        },
-        {
-            "model": "GestionCine.pelicula",
-            "pk": 4,
-            "fields": {
-                "titulo": "Avatar",
-                "director": "James Cameron",
-                "sinopsis": "Humans attempt to colonize a new world.",
-                "fechaLanzamiento": "2009-12-18",
-                "tiempoProyectada": "02:42:00",
-                "sala": [4, 5]
-            }
-        },
-        {
-            "model": "GestionCine.pelicula",
-            "pk": 5,
-            "fields": {
-                "titulo": "The Lord of the Rings",
-                "director": "Peter Jackson",
-                "sinopsis": "An epic fantasy journey.",
-                "fechaLanzamiento": "2001-12-19",
-                "tiempoProyectada": "03:48:00",
-                "sala": [5, 6]
-            }
-        },
-        {
-            "model": "GestionCine.pelicula",
-            "pk": 6,
-            "fields": {
-                "titulo": "Harry Potter and the Philosopher's Stone",
-                "director": "Chris Columbus",
-                "sinopsis": "A young boy discovers he is a wizard.",
-                "fechaLanzamiento": "2001-11-16",
-                "tiempoProyectada": "02:32:00",
-                "sala": [1, 6]
-            }
-        },
-        {
-            "model": "GestionCine.proyeccion",
-            "pk": 1,
-            "fields": {
-                "hora": "2023-12-01T18:00:00Z",
-                "sala": 1,
-                "pelicula": 1
-            }
-        },
-        {
-            "model": "GestionCine.proyeccion",
-            "pk": 2,
-            "fields": {
-                "hora": "2023-12-02T20:00:00Z",
-                "sala": 2,
-                "pelicula": 2
-            }
-        },
-        {
-            "model": "GestionCine.proyeccion",
-            "pk": 3,
-            "fields": {
-                "hora": "2023-12-03T22:00:00Z",
-                "sala": 3,
-                "pelicula": 3
-            }
-        },
-        {
-            "model": "GestionCine.proyeccion",
-            "pk": 4,
-            "fields": {
-                "hora": "2023-12-04T19:00:00Z",
-                "sala": 4,
-                "pelicula": 4
-            }
-        },
-        {
-            "model": "GestionCine.proyeccion",
-            "pk": 5,
-            "fields": {
-                "hora": "2023-12-05T21:30:00Z",
-                "sala": 5,
-                "pelicula": 5
-            }
-        },
-        {
-            "model": "GestionCine.proyeccion",
-            "pk": 6,
-            "fields": {
-                "hora": "2023-12-06T18:30:00Z",
-                "sala": 6,
-                "pelicula": 6
-            }
-        },
-        {
-            "model": "GestionCine.entrada",
-            "pk": 1,
-            "fields": {
-                "fechaCompra": "2023-11-25T16:00:00Z",
-                "cliente": 1,
-                "proyeccion": 1
-            }
-        },
-        {
-            "model": "GestionCine.entrada",
-            "pk": 2,
-            "fields": {
-                "fechaCompra": "2023-11-25T16:30:00Z",
-                "cliente": 2,
-                "proyeccion": 2
-            }
-        },
-        {
-            "model": "GestionCine.entrada",
-            "pk": 3,
-            "fields": {
-                "fechaCompra": "2023-11-25T17:00:00Z",
-                "cliente": 3,
-                "proyeccion": 3
-            }
-        },
-        {
-            "model": "GestionCine.entrada",
-            "pk": 4,
-            "fields": {
-                "fechaCompra": "2023-11-25T17:30:00Z",
-                "cliente": 4,
-                "proyeccion": 4
-            }
-        },
-        {
-            "model": "GestionCine.entrada",
-            "pk": 5,
-            "fields": {
-                "fechaCompra": "2023-11-25T18:00:00Z",
-                "cliente": 5,
-                "proyeccion": 5
-            }
-        },
-        {
-            "model": "GestionCine.entrada",
-            "pk": 6,
-            "fields": {
-                "fechaCompra": "2023-11-25T18:30:00Z",
-                "cliente": 6,
-                "proyeccion": 6
-            }
-        },
-        {
-            "model": "GestionCine.proveedor",
-            "pk": 1,
-            "fields": {
-                "nombre": "Distribuidora Alimentos SA",
-                "direccion": "Calle Mayor 50, Barcelona",
-                "telefono": "934567890",
-                "web": "http://www.distribuidoraalimentos.com"
-            }
-        },
-        {
-            "model": "GestionCine.proveedor",
-            "pk": 2,
-            "fields": {
-                "nombre": "Bebidas Nacionales S.L.",
-                "direccion": "Avenida Central 23, Madrid",
-                "telefono": "912345678",
-                "web": "http://www.bebidasnacionales.com"
-            }
-        },
-        {
-            "model": "GestionCine.proveedor",
-            "pk": 3,
-            "fields": {
-                "nombre": "Snack World",
-                "direccion": "Plaza España 10, Sevilla",
-                "telefono": "954321987",
-                "web": "http://www.snackworld.com"
-            }
-        },
-        {
-            "model": "GestionCine.proveedor",
-            "pk": 4,
-            "fields": {
-                "nombre": "Popcorn Supply",
-                "direccion": "Calle Popcorn 5, Valencia",
-                "telefono": "963214579",
-                "web": "http://www.popcornsupply.com"
-            }
-        },
-        {
-            "model": "GestionCine.proveedor",
-            "pk": 5,
-            "fields": {
-                "nombre": "Chocolates y Más",
-                "direccion": "Calle del Chocolate 12, Bilbao",
-                "telefono": "944567321",
-                "web": "http://www.chocolatesymas.com"
-            }
-        },
-        {
-            "model": "GestionCine.proveedor",
-            "pk": 6,
-            "fields": {
-                "nombre": "Fruit and Juice",
-                "direccion": "Calle de la Salud 7, Málaga",
-                "telefono": "952123456",
-                "web": "http://www.fruitandjuice.com"
-            }
-        },
-        {
-            "model": "GestionCine.producto",
-            "pk": 1,
-            "fields": {
-                "nombre": "Palomitas",
-                "tipo": "co",
-                "fechaCaducidad": "2024-01-15",
-                "proveedor": 1,
-                "cliente": [1, 2]
-            }
-        },
-        {
-            "model": "GestionCine.producto",
-            "pk": 2,
-            "fields": {
-                "nombre": "Coca-Cola",
-                "tipo": "be",
-                "fechaCaducidad": "2024-01-20",
-                "proveedor": 2,
-                "cliente": [3, 4]
-            }
-        },
-        {
-            "model": "GestionCine.producto",
-            "pk": 3,
-            "fields": {
-                "nombre": "Chocolates",
-                "tipo": "co",
-                "fechaCaducidad": "2024-02-10",
-                "proveedor": 5,
-                "cliente": [5, 6]
-            }
-        },
-        {
-            "model": "GestionCine.producto",
-            "pk": 4,
-            "fields": {
-                "nombre": "Agua Mineral",
-                "tipo": "be",
-                "fechaCaducidad": "2024-03-05",
-                "proveedor": 6,
-                "cliente": [1, 3]
-            }
-        },
-        {
-            "model": "GestionCine.producto",
-            "pk": 5,
-            "fields": {
-                "nombre": "Nachos",
-                "tipo": "co",
-                "fechaCaducidad": "2024-04-12",
-                "proveedor": 3,
-                "cliente": [2, 4]
-            }
-        },
-        {
-            "model": "GestionCine.producto",
-            "pk": 6,
-            "fields": {
-                "nombre": "Jugo de Naranja",
-                "tipo": "be",
-                "fechaCaducidad": "2024-05-18",
-                "proveedor": 4,
-                "cliente": [5, 6]
-            }
-        }
-    
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 4,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 4,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 4,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 4,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 5,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 5,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 5,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 5,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add cine",
+        "content_type": 6,
+        "codename": "add_cine"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change cine",
+        "content_type": 6,
+        "codename": "change_cine"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete cine",
+        "content_type": 6,
+        "codename": "delete_cine"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view cine",
+        "content_type": 6,
+        "codename": "view_cine"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add cliente",
+        "content_type": 7,
+        "codename": "add_cliente"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change cliente",
+        "content_type": 7,
+        "codename": "change_cliente"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete cliente",
+        "content_type": 7,
+        "codename": "delete_cliente"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view cliente",
+        "content_type": 7,
+        "codename": "view_cliente"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add gerente",
+        "content_type": 8,
+        "codename": "add_gerente"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change gerente",
+        "content_type": 8,
+        "codename": "change_gerente"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete gerente",
+        "content_type": 8,
+        "codename": "delete_gerente"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view gerente",
+        "content_type": 8,
+        "codename": "view_gerente"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add pelicula",
+        "content_type": 9,
+        "codename": "add_pelicula"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change pelicula",
+        "content_type": 9,
+        "codename": "change_pelicula"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete pelicula",
+        "content_type": 9,
+        "codename": "delete_pelicula"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view pelicula",
+        "content_type": 9,
+        "codename": "view_pelicula"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add proveedor",
+        "content_type": 10,
+        "codename": "add_proveedor"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change proveedor",
+        "content_type": 10,
+        "codename": "change_proveedor"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete proveedor",
+        "content_type": 10,
+        "codename": "delete_proveedor"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view proveedor",
+        "content_type": 10,
+        "codename": "view_proveedor"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add empleado",
+        "content_type": 11,
+        "codename": "add_empleado"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change empleado",
+        "content_type": 11,
+        "codename": "change_empleado"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete empleado",
+        "content_type": 11,
+        "codename": "delete_empleado"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view empleado",
+        "content_type": 11,
+        "codename": "view_empleado"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add producto",
+        "content_type": 12,
+        "codename": "add_producto"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change producto",
+        "content_type": 12,
+        "codename": "change_producto"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete producto",
+        "content_type": 12,
+        "codename": "delete_producto"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view producto",
+        "content_type": 12,
+        "codename": "view_producto"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add proyeccion",
+        "content_type": 13,
+        "codename": "add_proyeccion"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change proyeccion",
+        "content_type": 13,
+        "codename": "change_proyeccion"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete proyeccion",
+        "content_type": 13,
+        "codename": "delete_proyeccion"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view proyeccion",
+        "content_type": 13,
+        "codename": "view_proyeccion"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+        "name": "Can add entrada",
+        "content_type": 14,
+        "codename": "add_entrada"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+        "name": "Can change entrada",
+        "content_type": 14,
+        "codename": "change_entrada"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+        "name": "Can delete entrada",
+        "content_type": 14,
+        "codename": "delete_entrada"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+        "name": "Can view entrada",
+        "content_type": 14,
+        "codename": "view_entrada"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+        "name": "Can add sala",
+        "content_type": 15,
+        "codename": "add_sala"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+        "name": "Can change sala",
+        "content_type": 15,
+        "codename": "change_sala"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+        "name": "Can delete sala",
+        "content_type": 15,
+        "codename": "delete_sala"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+        "name": "Can view sala",
+        "content_type": 15,
+        "codename": "view_sala"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+        "name": "Can add socio",
+        "content_type": 16,
+        "codename": "add_socio"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+        "name": "Can change socio",
+        "content_type": 16,
+        "codename": "change_socio"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+        "name": "Can delete socio",
+        "content_type": 16,
+        "codename": "delete_socio"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+        "name": "Can view socio",
+        "content_type": 16,
+        "codename": "view_socio"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 17,
+        "codename": "add_usuario"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 17,
+        "codename": "change_usuario"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 17,
+        "codename": "delete_usuario"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 17,
+        "codename": "view_usuario"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 69,
+    "fields": {
+        "name": "Can add application",
+        "content_type": 18,
+        "codename": "add_application"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 70,
+    "fields": {
+        "name": "Can change application",
+        "content_type": 18,
+        "codename": "change_application"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 71,
+    "fields": {
+        "name": "Can delete application",
+        "content_type": 18,
+        "codename": "delete_application"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 72,
+    "fields": {
+        "name": "Can view application",
+        "content_type": 18,
+        "codename": "view_application"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 73,
+    "fields": {
+        "name": "Can add access token",
+        "content_type": 19,
+        "codename": "add_accesstoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 74,
+    "fields": {
+        "name": "Can change access token",
+        "content_type": 19,
+        "codename": "change_accesstoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 75,
+    "fields": {
+        "name": "Can delete access token",
+        "content_type": 19,
+        "codename": "delete_accesstoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 76,
+    "fields": {
+        "name": "Can view access token",
+        "content_type": 19,
+        "codename": "view_accesstoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 77,
+    "fields": {
+        "name": "Can add grant",
+        "content_type": 20,
+        "codename": "add_grant"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 78,
+    "fields": {
+        "name": "Can change grant",
+        "content_type": 20,
+        "codename": "change_grant"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 79,
+    "fields": {
+        "name": "Can delete grant",
+        "content_type": 20,
+        "codename": "delete_grant"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 80,
+    "fields": {
+        "name": "Can view grant",
+        "content_type": 20,
+        "codename": "view_grant"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 81,
+    "fields": {
+        "name": "Can add refresh token",
+        "content_type": 21,
+        "codename": "add_refreshtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 82,
+    "fields": {
+        "name": "Can change refresh token",
+        "content_type": 21,
+        "codename": "change_refreshtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 83,
+    "fields": {
+        "name": "Can delete refresh token",
+        "content_type": 21,
+        "codename": "delete_refreshtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 84,
+    "fields": {
+        "name": "Can view refresh token",
+        "content_type": 21,
+        "codename": "view_refreshtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 85,
+    "fields": {
+        "name": "Can add id token",
+        "content_type": 22,
+        "codename": "add_idtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 86,
+    "fields": {
+        "name": "Can change id token",
+        "content_type": 22,
+        "codename": "change_idtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 87,
+    "fields": {
+        "name": "Can delete id token",
+        "content_type": 22,
+        "codename": "delete_idtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 88,
+    "fields": {
+        "name": "Can view id token",
+        "content_type": 22,
+        "codename": "view_idtoken"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "GestionCine",
+        "model": "cine"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "GestionCine",
+        "model": "cliente"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "GestionCine",
+        "model": "gerente"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "GestionCine",
+        "model": "pelicula"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "GestionCine",
+        "model": "proveedor"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "GestionCine",
+        "model": "empleado"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "GestionCine",
+        "model": "producto"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "GestionCine",
+        "model": "proyeccion"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+        "app_label": "GestionCine",
+        "model": "entrada"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+        "app_label": "GestionCine",
+        "model": "sala"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+        "app_label": "GestionCine",
+        "model": "socio"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": {
+        "app_label": "GestionCine",
+        "model": "usuario"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 18,
+    "fields": {
+        "app_label": "oauth2_provider",
+        "model": "application"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 19,
+    "fields": {
+        "app_label": "oauth2_provider",
+        "model": "accesstoken"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 20,
+    "fields": {
+        "app_label": "oauth2_provider",
+        "model": "grant"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 21,
+    "fields": {
+        "app_label": "oauth2_provider",
+        "model": "refreshtoken"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 22,
+    "fields": {
+        "app_label": "oauth2_provider",
+        "model": "idtoken"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "7avklzsvxlfclwr8ln21i9az2qxjs1ul",
+    "fields": {
+        "session_data": ".eJxNjLEKwzAMBX9FaA5YchIIWUv3QtZCcR0lNRgLHJKl9N9rb17fu7svbuI_7hVS8EFxRsuG2FiyI9A084QdXi4H947C5b6FJAc8ND5PIll3TQrLmRvK1kjRm6mvooH74aO7HKwSYZEa2FhzB9ygQ0EHJu7x9wcfZy3m:1ta9Sa:AcdGue8ya5u3x5gs6ahrjn_83tb8AeKDbdj0vzHtffM",
+        "expire_date": "2025-02-04T08:18:08.728Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "y23n8bd0l8u6nelwn07b6yw2zuad0k6c",
+    "fields": {
+        "session_data": ".eJxVj71qwzAYRV9FeA62JFuxkrElY6CQtWC-P8VqjQR2nKX03StDBne999wD96caYH2Mw7rIPESuzpWrDvsMgb4lbQV_QbrnmnJ6zBHrDalf7VJfM8v09mL_CUZYxrImp5EJgrF4QvS-D-zIHi0DOm-F-6BDKx2hs0fsA7HruT8JoXiPzFSkQWiEIaZIMRejbRttGqutU9qfu7YQT5gj4CSm1O8xyaI-8vS5ai18zymr2zrvKLtJynwXtduwUZeFJniCKp_UTTZBMHk-KLNDu4J2Rpu2-v0DoyBnCQ:1tasny:xnXY-vVB1g50lypufmO75lB9Q0PSj51wQr7TMEUsRQQ",
+        "expire_date": "2025-02-06T08:43:14.045Z"
+    }
+},
+{
+    "model": "GestionCine.usuario",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$vKmmBYUh5zlcMSN6rSdLTx$rUCsOv8hLY8ev4JbdC7AxUf9MgEauSi8Sr4FMyA2Y6c=",
+        "last_login": "2025-01-14T08:41:30.829Z",
+        "is_superuser": false,
+        "username": "Lolo",
+        "first_name": "",
+        "last_name": "",
+        "email": "lolo@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-01-14T08:40:49.064Z",
+        "rol": 2,
+        "dni": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "GestionCine.usuario",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$r0glHb3P1ZXjYBtUuiVQHb$u5N6WcjrG9YJ8oMN7OgBBljyipnnsMN32MOdcmdHsvY=",
+        "last_login": "2025-01-14T09:21:25.774Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-01-14T09:20:31.426Z",
+        "rol": 2,
+        "dni": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "GestionCine.usuario",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$6mng9sLLOXguBEpwxBFxA3$A2H8MNu/hAGF+EZ99IsWmiqjCtobv1zKxFeqABo+oR0=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Joaquinma",
+        "first_name": "",
+        "last_name": "",
+        "email": "Joaquinma@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-01-17T12:32:29.456Z",
+        "rol": 3,
+        "dni": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "GestionCine.usuario",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$oiCdYul4YEDkO1dTOaZQwI$uBKAatLdhFcQFgy0npckIG4SqUtQ+Vz2W/vwUGpHd/o=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "jorge",
+        "first_name": "",
+        "last_name": "",
+        "email": "jorge@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-01-17T12:37:23.855Z",
+        "rol": 3,
+        "dni": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "GestionCine.usuario",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$K23z3lIYanhojEozeVJKwG$ZSBsaEYsgC3Rz3zJmGQUl/OdjPSCV8d5w8+drrljzu8=",
+        "last_login": "2025-01-23T08:43:13.996Z",
+        "is_superuser": true,
+        "username": "alumnado",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-01-23T08:41:43.860Z",
+        "rol": 2,
+        "dni": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "GestionCine.cliente",
+    "pk": 1,
+    "fields": {
+        "dni": "12345678A",
+        "nombre": "Juan",
+        "apellidos": "Pérez García",
+        "email": "juan.perez@example.com",
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.cliente",
+    "pk": 2,
+    "fields": {
+        "dni": "87654321B",
+        "nombre": "Maria",
+        "apellidos": "Lopez Martin",
+        "email": "maria.lopez@example.com",
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.cliente",
+    "pk": 3,
+    "fields": {
+        "dni": "13579246C",
+        "nombre": "Luis",
+        "apellidos": "Ramirez Suarez",
+        "email": "luis.ramirez@example.com",
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.cliente",
+    "pk": 4,
+    "fields": {
+        "dni": "24681357D",
+        "nombre": "Ana",
+        "apellidos": "Garcia Fernandez",
+        "email": "ana.garcia@example.com",
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.cliente",
+    "pk": 5,
+    "fields": {
+        "dni": "12348765E",
+        "nombre": "Carlos",
+        "apellidos": "Sanchez Ortega",
+        "email": "carlos.sanchez@example.com",
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.cliente",
+    "pk": 6,
+    "fields": {
+        "dni": "87651234F",
+        "nombre": "Elena",
+        "apellidos": "Mendez Alonso",
+        "email": "elena.mendez@example.com",
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.cliente",
+    "pk": 7,
+    "fields": {
+        "dni": "",
+        "nombre": "",
+        "apellidos": "",
+        "email": "nombre@ejemplo.com",
+        "usuario": 1
+    }
+},
+{
+    "model": "GestionCine.socio",
+    "pk": 1,
+    "fields": {
+        "numSocio": "10001",
+        "fechaAlta": "2023-01-15",
+        "fechaCaducidad": "2024-01-15",
+        "cliente": 1
+    }
+},
+{
+    "model": "GestionCine.socio",
+    "pk": 3,
+    "fields": {
+        "numSocio": "10003",
+        "fechaAlta": "2023-03-05",
+        "fechaCaducidad": "2024-03-05",
+        "cliente": 3
+    }
+},
+{
+    "model": "GestionCine.socio",
+    "pk": 4,
+    "fields": {
+        "numSocio": "10004",
+        "fechaAlta": "2023-04-15",
+        "fechaCaducidad": "2024-04-15",
+        "cliente": 4
+    }
+},
+{
+    "model": "GestionCine.socio",
+    "pk": 6,
+    "fields": {
+        "numSocio": "10006",
+        "fechaAlta": "2023-06-10",
+        "fechaCaducidad": "2024-06-10",
+        "cliente": 6
+    }
+},
+{
+    "model": "GestionCine.gerente",
+    "pk": 1,
+    "fields": {
+        "dni": "11223344C",
+        "nombre": "Laura",
+        "apellidos": "Hernández López",
+        "telefono": "666777888",
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.gerente",
+    "pk": 2,
+    "fields": {
+        "dni": "55667788D",
+        "nombre": "Pedro",
+        "apellidos": "Martinez Gómez",
+        "telefono": "666888999",
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.gerente",
+    "pk": 3,
+    "fields": {
+        "dni": "77889900E",
+        "nombre": "Rosa",
+        "apellidos": "Diaz Ortega",
+        "telefono": "666999111",
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.gerente",
+    "pk": 4,
+    "fields": {
+        "dni": "99001122F",
+        "nombre": "Miguel",
+        "apellidos": "Fernandez Lopez",
+        "telefono": "666222333",
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.gerente",
+    "pk": 5,
+    "fields": {
+        "dni": "22334455G",
+        "nombre": "Alba",
+        "apellidos": "Lopez Ruiz",
+        "telefono": "666333444",
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.gerente",
+    "pk": 6,
+    "fields": {
+        "dni": "33445566H",
+        "nombre": "Javier",
+        "apellidos": "Castro Delgado",
+        "telefono": "666444555",
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.cine",
+    "pk": 1,
+    "fields": {
+        "direccion": "Calle Gran Via 1, Madrid",
+        "telefono": "915555555",
+        "email": "info@cinecentral.com",
+        "gerente": 1
+    }
+},
+{
+    "model": "GestionCine.cine",
+    "pk": 2,
+    "fields": {
+        "direccion": "Avenida de la Constitución 20, Sevilla",
+        "telefono": "954555555",
+        "email": "info@cineandaluz.com",
+        "gerente": 2
+    }
+},
+{
+    "model": "GestionCine.cine",
+    "pk": 3,
+    "fields": {
+        "direccion": "Calle Mayor 15, Barcelona",
+        "telefono": "934555555",
+        "email": "info@cinecatalunya.com",
+        "gerente": 3
+    }
+},
+{
+    "model": "GestionCine.cine",
+    "pk": 4,
+    "fields": {
+        "direccion": "Plaza Mayor 2, Valencia",
+        "telefono": "963555555",
+        "email": "info@cinevalenciano.com",
+        "gerente": 4
+    }
+},
+{
+    "model": "GestionCine.cine",
+    "pk": 5,
+    "fields": {
+        "direccion": "Paseo de la Castellana 101, Madrid",
+        "telefono": "917555555",
+        "email": "info@cinecastellana.com",
+        "gerente": 5
+    }
+},
+{
+    "model": "GestionCine.cine",
+    "pk": 6,
+    "fields": {
+        "direccion": "Calle Alcalá 50, Madrid",
+        "telefono": "918555555",
+        "email": "info@cinealcala.com",
+        "gerente": 6
+    }
+},
+{
+    "model": "GestionCine.empleado",
+    "pk": 1,
+    "fields": {
+        "dni": "44556677I",
+        "nombre": "Mario",
+        "apellidos": "Torres Diaz",
+        "nuss": "123456789012",
+        "iban": "ES9121000418450200051332",
+        "salario": 1300,
+        "encargado": true,
+        "cine": 1,
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.empleado",
+    "pk": 2,
+    "fields": {
+        "dni": "55667788J",
+        "nombre": "Sara",
+        "apellidos": "Gonzalez Perez",
+        "nuss": "123456789013",
+        "iban": "ES9121000418450200051333",
+        "salario": 1200,
+        "encargado": false,
+        "cine": 2,
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.empleado",
+    "pk": 3,
+    "fields": {
+        "dni": "66778899K",
+        "nombre": "Pablo",
+        "apellidos": "Santos Molina",
+        "nuss": "123456789014",
+        "iban": "ES9121000418450200051334",
+        "salario": 1250,
+        "encargado": false,
+        "cine": 3,
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.empleado",
+    "pk": 4,
+    "fields": {
+        "dni": "77889900L",
+        "nombre": "Lucia",
+        "apellidos": "Martinez Lopez",
+        "nuss": "123456789015",
+        "iban": "ES9121000418450200051335",
+        "salario": 1350,
+        "encargado": true,
+        "cine": 4,
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.empleado",
+    "pk": 5,
+    "fields": {
+        "dni": "88990011M",
+        "nombre": "David",
+        "apellidos": "Fernandez Ruiz",
+        "nuss": "123456789016",
+        "iban": "ES9121000418450200051336",
+        "salario": 1400,
+        "encargado": false,
+        "cine": 5,
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.empleado",
+    "pk": 6,
+    "fields": {
+        "dni": "99001122N",
+        "nombre": "Carla",
+        "apellidos": "Sanchez Gonzalez",
+        "nuss": "123456789017",
+        "iban": "ES9121000418450200051337",
+        "salario": 1500,
+        "encargado": true,
+        "cine": 6,
+        "usuario": null
+    }
+},
+{
+    "model": "GestionCine.sala",
+    "pk": 1,
+    "fields": {
+        "tamano": "PE",
+        "cine": 1,
+        "empleado": [
+            1
+        ]
+    }
+},
+{
+    "model": "GestionCine.sala",
+    "pk": 2,
+    "fields": {
+        "tamano": "ME",
+        "cine": 2,
+        "empleado": [
+            2
+        ]
+    }
+},
+{
+    "model": "GestionCine.sala",
+    "pk": 3,
+    "fields": {
+        "tamano": "GR",
+        "cine": 3,
+        "empleado": [
+            3
+        ]
+    }
+},
+{
+    "model": "GestionCine.sala",
+    "pk": 4,
+    "fields": {
+        "tamano": "PE",
+        "cine": 4,
+        "empleado": [
+            4
+        ]
+    }
+},
+{
+    "model": "GestionCine.sala",
+    "pk": 5,
+    "fields": {
+        "tamano": "ME",
+        "cine": 5,
+        "empleado": [
+            5
+        ]
+    }
+},
+{
+    "model": "GestionCine.sala",
+    "pk": 6,
+    "fields": {
+        "tamano": "GR",
+        "cine": 6,
+        "empleado": [
+            6
+        ]
+    }
+},
+{
+    "model": "GestionCine.pelicula",
+    "pk": 1,
+    "fields": {
+        "titulo": "Inception",
+        "director": "Christopher Nolan",
+        "sinopsis": "A mind-bending thriller about dream infiltration.",
+        "fechaLanzamiento": "2010-07-16",
+        "tiempoProyectada": "02:28:00",
+        "sala": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "GestionCine.pelicula",
+    "pk": 2,
+    "fields": {
+        "titulo": "Interstellar",
+        "director": "Christopher Nolan",
+        "sinopsis": "Exploration of space and time.",
+        "fechaLanzamiento": "2014-11-07",
+        "tiempoProyectada": "02:49:00",
+        "sala": [
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "GestionCine.pelicula",
+    "pk": 3,
+    "fields": {
+        "titulo": "The Matrix",
+        "director": "The Wachowskis",
+        "sinopsis": "A hacker learns the truth about his reality.",
+        "fechaLanzamiento": "1999-03-31",
+        "tiempoProyectada": "02:16:00",
+        "sala": [
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "GestionCine.pelicula",
+    "pk": 4,
+    "fields": {
+        "titulo": "Avatar",
+        "director": "James Cameron",
+        "sinopsis": "Humans attempt to colonize a new world.",
+        "fechaLanzamiento": "2009-12-18",
+        "tiempoProyectada": "02:42:00",
+        "sala": [
+            4,
+            5
+        ]
+    }
+},
+{
+    "model": "GestionCine.pelicula",
+    "pk": 5,
+    "fields": {
+        "titulo": "The Lord of the Rings",
+        "director": "Peter Jackson",
+        "sinopsis": "An epic fantasy journey.",
+        "fechaLanzamiento": "2001-12-19",
+        "tiempoProyectada": "03:48:00",
+        "sala": [
+            5,
+            6
+        ]
+    }
+},
+{
+    "model": "GestionCine.pelicula",
+    "pk": 6,
+    "fields": {
+        "titulo": "Harry Potter and the Philosopher's Stone",
+        "director": "Chris Columbus",
+        "sinopsis": "A young boy discovers he is a wizard.",
+        "fechaLanzamiento": "2001-11-16",
+        "tiempoProyectada": "02:32:00",
+        "sala": [
+            1,
+            6
+        ]
+    }
+},
+{
+    "model": "GestionCine.proyeccion",
+    "pk": 1,
+    "fields": {
+        "hora": "2023-12-01T18:00:00Z",
+        "sala": 1,
+        "pelicula": 1
+    }
+},
+{
+    "model": "GestionCine.proyeccion",
+    "pk": 2,
+    "fields": {
+        "hora": "2023-12-02T20:00:00Z",
+        "sala": 2,
+        "pelicula": 2
+    }
+},
+{
+    "model": "GestionCine.proyeccion",
+    "pk": 3,
+    "fields": {
+        "hora": "2023-12-03T22:00:00Z",
+        "sala": 3,
+        "pelicula": 3
+    }
+},
+{
+    "model": "GestionCine.proyeccion",
+    "pk": 4,
+    "fields": {
+        "hora": "2023-12-04T19:00:00Z",
+        "sala": 4,
+        "pelicula": 4
+    }
+},
+{
+    "model": "GestionCine.proyeccion",
+    "pk": 5,
+    "fields": {
+        "hora": "2023-12-05T21:30:00Z",
+        "sala": 5,
+        "pelicula": 5
+    }
+},
+{
+    "model": "GestionCine.proyeccion",
+    "pk": 6,
+    "fields": {
+        "hora": "2023-12-06T18:30:00Z",
+        "sala": 6,
+        "pelicula": 6
+    }
+},
+{
+    "model": "GestionCine.entrada",
+    "pk": 1,
+    "fields": {
+        "fechaCompra": "2023-11-25T16:00:00Z",
+        "cliente": 1,
+        "proyeccion": 1
+    }
+},
+{
+    "model": "GestionCine.entrada",
+    "pk": 2,
+    "fields": {
+        "fechaCompra": "2023-11-25T16:30:00Z",
+        "cliente": 2,
+        "proyeccion": 2
+    }
+},
+{
+    "model": "GestionCine.entrada",
+    "pk": 3,
+    "fields": {
+        "fechaCompra": "2023-11-25T17:00:00Z",
+        "cliente": 3,
+        "proyeccion": 3
+    }
+},
+{
+    "model": "GestionCine.entrada",
+    "pk": 4,
+    "fields": {
+        "fechaCompra": "2023-11-25T17:30:00Z",
+        "cliente": 4,
+        "proyeccion": 4
+    }
+},
+{
+    "model": "GestionCine.entrada",
+    "pk": 5,
+    "fields": {
+        "fechaCompra": "2023-11-25T18:00:00Z",
+        "cliente": 5,
+        "proyeccion": 5
+    }
+},
+{
+    "model": "GestionCine.entrada",
+    "pk": 6,
+    "fields": {
+        "fechaCompra": "2023-11-25T18:30:00Z",
+        "cliente": 6,
+        "proyeccion": 6
+    }
+},
+{
+    "model": "GestionCine.proveedor",
+    "pk": 1,
+    "fields": {
+        "nombre": "Distribuidora Alimentos SA",
+        "direccion": "Calle Mayor 50, Barcelona",
+        "telefono": "934567890",
+        "web": "http://www.distribuidoraalimentos.com"
+    }
+},
+{
+    "model": "GestionCine.proveedor",
+    "pk": 2,
+    "fields": {
+        "nombre": "Bebidas Nacionales S.L.",
+        "direccion": "Avenida Central 23, Madrid",
+        "telefono": "912345678",
+        "web": "http://www.bebidasnacionales.com"
+    }
+},
+{
+    "model": "GestionCine.proveedor",
+    "pk": 3,
+    "fields": {
+        "nombre": "Snack World",
+        "direccion": "Plaza España 10, Sevilla",
+        "telefono": "954321987",
+        "web": "http://www.snackworld.com"
+    }
+},
+{
+    "model": "GestionCine.proveedor",
+    "pk": 4,
+    "fields": {
+        "nombre": "Popcorn Supply",
+        "direccion": "Calle Popcorn 5, Valencia",
+        "telefono": "963214579",
+        "web": "http://www.popcornsupply.com"
+    }
+},
+{
+    "model": "GestionCine.proveedor",
+    "pk": 5,
+    "fields": {
+        "nombre": "Chocolates y Más",
+        "direccion": "Calle del Chocolate 12, Bilbao",
+        "telefono": "944567321",
+        "web": "http://www.chocolatesymas.com"
+    }
+},
+{
+    "model": "GestionCine.proveedor",
+    "pk": 6,
+    "fields": {
+        "nombre": "Fruit and Juice",
+        "direccion": "Calle de la Salud 7, Málaga",
+        "telefono": "952123456",
+        "web": "http://www.fruitandjuice.com"
+    }
+},
+{
+    "model": "GestionCine.producto",
+    "pk": 1,
+    "fields": {
+        "nombre": "Palomitas",
+        "tipo": "co",
+        "fechaCaducidad": "2024-01-15",
+        "proveedor": 1,
+        "cliente": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "GestionCine.producto",
+    "pk": 2,
+    "fields": {
+        "nombre": "Coca-Cola",
+        "tipo": "be",
+        "fechaCaducidad": "2024-01-20",
+        "proveedor": 2,
+        "cliente": [
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "GestionCine.producto",
+    "pk": 3,
+    "fields": {
+        "nombre": "Chocolates",
+        "tipo": "co",
+        "fechaCaducidad": "2024-02-10",
+        "proveedor": 5,
+        "cliente": [
+            5,
+            6
+        ]
+    }
+},
+{
+    "model": "GestionCine.producto",
+    "pk": 4,
+    "fields": {
+        "nombre": "Agua Mineral",
+        "tipo": "be",
+        "fechaCaducidad": "2024-03-05",
+        "proveedor": 6,
+        "cliente": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "GestionCine.producto",
+    "pk": 5,
+    "fields": {
+        "nombre": "Nachos",
+        "tipo": "co",
+        "fechaCaducidad": "2024-04-12",
+        "proveedor": 3,
+        "cliente": [
+            2,
+            4
+        ]
+    }
+},
+{
+    "model": "GestionCine.producto",
+    "pk": 6,
+    "fields": {
+        "nombre": "Jugo de Naranja",
+        "tipo": "be",
+        "fechaCaducidad": "2024-05-18",
+        "proveedor": 4,
+        "cliente": [
+            5,
+            6
+        ]
+    }
+},
+{
+    "model": "oauth2_provider.application",
+    "pk": 1,
+    "fields": {
+        "client_id": "API_1",
+        "user": 5,
+        "redirect_uris": "",
+        "post_logout_redirect_uris": "",
+        "client_type": "confidential",
+        "authorization_grant_type": "password",
+        "client_secret": "PepeElSecretos",
+        "hash_client_secret": false,
+        "name": "API_Cine",
+        "skip_authorization": false,
+        "created": "2025-01-23T08:43:41.015Z",
+        "updated": "2025-01-23T09:31:27.709Z",
+        "algorithm": "",
+        "allowed_origins": ""
+    }
+},
+{
+    "model": "oauth2_provider.accesstoken",
+    "pk": 1,
+    "fields": {
+        "user": 5,
+        "source_refresh_token": null,
+        "token": "L0gwvfWPXggGBm7t3D1IAETxgtGxzw",
+        "token_checksum": "8092d29113f290afcc28b881e9919cfa354da724ddd74c3abfbd24d510da2825",
+        "id_token": null,
+        "application": 1,
+        "expires": "2025-01-23T19:31:43.907Z",
+        "scope": "read write groups",
+        "created": "2025-01-23T09:31:43.908Z",
+        "updated": "2025-01-23T09:31:43.908Z"
+    }
+},
+{
+    "model": "oauth2_provider.refreshtoken",
+    "pk": 1,
+    "fields": {
+        "user": 5,
+        "token": "fXzeQoWQQT4xd9T4gZGldjneOwaYAP",
+        "application": 1,
+        "access_token": 1,
+        "token_family": "54ef0961-784a-4a13-b431-470b160e95e1",
+        "created": "2025-01-23T09:31:43.909Z",
+        "updated": "2025-01-23T09:31:43.909Z",
+        "revoked": null
+    }
+}
 ]
