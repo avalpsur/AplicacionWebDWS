@@ -28,9 +28,6 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'),True)
 env = environ.Env()
 SECRET_KEY =  env("SECRET_KEY")
 
-CLIENTE_KEY = env('CLIENTE_KEY')
-EMPLEADO_KEY = env('EMPLEADO_KEY')
-GERENTE_KEY = env('GERENTE_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
