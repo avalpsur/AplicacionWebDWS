@@ -24,12 +24,12 @@ def cine_list(request):
 
 @api_view(['GET'])
 def sala_list(request):
-    salas = Sala.objects.all()
+    salas = Sala.objects.all().select_related("cine")
     serializer = SalaSerializer(salas,many=True)
     return Response(serializer.data)
 
 @api_view(['GET'])
 def pelicula_list(request):
     peliculas = Pelicula.objects.all().prefetch_related("sala").all()
-    serializer = PeliculaSerializer(peliculas,many=True)
+    serializer = PeliculaSerializerMejorado(peliculas,many=True)
     return Response(serializer.data)

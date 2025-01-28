@@ -125,3 +125,15 @@ La vista buscar_entrada filtra las entradas asociadas al cliente del usuario log
 
 - Implementar funcionalidad de reinicio de contraseña:
 Se ha implementado la funcionalidad de reinicio de contraseña utilizando el backend de correo electrónico de consola y se ha agregado una opción en el menú para restablecer la contraseña.
+
+**---PRÁCTICA 6 API REST I---**
+- En esta practica tenemos que crear una api en nuestro servidor y obtener los datos desde una aplicación cliente. Para ello he creado una aplicación cliente nueva (puntos 1 y 2 de la tarea).
+
+- En cuanto a las consultas, he utilizado 4 modelos de mi aplicación principal (cliente, cine, sala y película), de los cuales 3 tienen relaciones entre ellos que usaremos para mostrar las consultas mejoradas (puntos 3, 4 Y 7).
+
+- He creado un token mediante OAUTH2 (punto 5).
+
+- He generado una variable de entorno para cada tipo de usuario modificando el .env.plantilla y el settings.py (punto 6)
+
+- He utilizado Simple JWT para securizar mi API. Para ello, simplemente he seguido los pasos de la documentación oficial (https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html) y he utilizado el token generado en la request de la lista de clientes. Estos pasos se resumen en instalar SimpleJWT, modificar la configuración en el settings.py, en miweb/urls.py añado el enlace para obtener los tokens. 
+Hecho esto, solo queda generar el token en el cliente y pegarlo en nuestra request.(punto 8)

@@ -14,6 +14,7 @@ class CineSerializer(serializers.ModelSerializer):
         fields = '__all__'
         
 class SalaSerializer(serializers.ModelSerializer):
+    cine = CineSerializer(read_only=True, many=False)
     class Meta:
         model = Sala
         fields = '__all__'
@@ -26,7 +27,6 @@ class PeliculaSerializer(serializers.ModelSerializer):
         
 class PeliculaSerializerMejorado(serializers.ModelSerializer):
     sala = SalaSerializer(read_only=True, many=True)
-    
     class Meta:
         model = Pelicula
         fields = '__all__'
