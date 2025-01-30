@@ -133,7 +133,18 @@ Se ha implementado la funcionalidad de reinicio de contraseña utilizando el bac
 
 - He creado un token mediante OAUTH2 (punto 5).
 
-- He generado una variable de entorno para cada tipo de usuario modificando el .env.plantilla y el settings.py (punto 6)
+- He generado una variable de entorno para cada tipo de usuario en el cliente. Para poder acceder a las claves, he tenido que crear una aplicación del oauth2/applications con CADA TIPO DE USUARIO. Con esas credenciales y con la clave de cada uno (expuestas más abajo), he generado un token para cada uno. Cada variable coge el valor de su token y se utiliza en las views. (punto 6)
 
-- He utilizado Simple JWT para securizar mi API. Para ello, simplemente he seguido los pasos de la documentación oficial (https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html) y he utilizado el token generado en la request de la lista de clientes. Estos pasos se resumen en instalar SimpleJWT, modificar la configuración en el settings.py, en miweb/urls.py añado el enlace para obtener los tokens. 
-Hecho esto, solo queda generar el token en el cliente y pegarlo en nuestra request.(punto 8)
+- He utilizado Simple JWT para securizar mi API. Para ello, simplemente he seguido los pasos de la documentación oficial (https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html) y he utilizado el token generado en la request de la lista de clientes. Estos pasos se resumen en instalar SimpleJWT, modificar la configuración en el settings.py y en miweb/urls.py añadir el enlace para obtener los tokens. 
+Hecho esto, solo queda generar el token en el cliente y pegarlo en nuestra view.(punto 8)
+
+Usuarios:
+  - Cliente: nombre de usuario -> mohcencito    contraseña -> mellamomohcen_11
+      curl -X POST "http://0.0.0.0:8000/oauth2/token/" -d "grant_type=password&username=mohcencito&password=mellamomohcen_11&client_id=Cliente_ID&client_secret=contraseña_clientes"
+
+  - Empleado: nombre de usuario -> mohcencitoElEncargado    contraseña -> mellamomohcen_11
+      curl -X POST "http://0.0.0.0:8000/oauth2/token/" -d "grant_type=password&username=mohcencitoElEncargado&password=mellamomohcen_11&client_id=Empleado_ID&client_secret=contraseña_empleados"
+
+  - Gerente: nombre de usuario -> mohcencitoElGerente    contraseña -> mellamomohcen_11 
+      curl -X POST "http://0.0.0.0:8000/oauth2/token/" -d "grant_type=password&username=mohcencitoElGerente&
+      password=mellamomohcen_11&client_id=Gerente_ID&client_secret=contraseña_gerentes"
