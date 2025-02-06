@@ -33,3 +33,14 @@ def pelicula_list(request):
     peliculas = Pelicula.objects.all().prefetch_related("sala").all()
     serializer = PeliculaSerializerMejorado(peliculas,many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def cliente_buscar(request):
+    formulario = BusquedaClienteForm(request.query_params)
+    if(formulario.is_valid()):
+        texto = formulario.data.get('textoBusqueda')
+        clientes = Cliente.objects.filter(Q(nombre__icontains=texto) | Q(apellidos__icontains=texto)).all()
+        serializer = ClienteSerializer(clientes,many=True)
+        return Response(serializer.data)
+    else:
+        return Response(formulario.errors,status=status.HTTP_400_BAD_REQUEST)
