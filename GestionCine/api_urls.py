@@ -9,4 +9,7 @@ urlpatterns = [
     path('peliculas',pelicula_list),
     
     path('clientes/buscar',cliente_buscar),
+    path('cines/buscar',cine_buscar),
+    path('salas/buscar',sala_buscar),
+    path('peliculas/buscar',pelicula_buscar),
 ]

@@ -486,3 +486,12 @@ class BusquedaEntradaForm(forms.Form):
                 required=False,
                 label="Entradas"
             )
+
+class BusquedaSalaForm(forms.Form):
+    TAMANO_CHOICES = [
+        ('PE', 'Pequeña'),
+        ('ME', 'Mediana'),
+        ('GR', 'Grande'),
+    ]
+    tamano = forms.ChoiceField(required=False, choices=TAMANO_CHOICES, label="Tamaño de la Sala")
+    cine = forms.IntegerField(required=False, label="ID del Cine")
