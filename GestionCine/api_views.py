@@ -115,3 +115,23 @@ def pelicula_buscar(request):
         return Response(serializer.data, status=status.HTTP_200_OK)
     
     return Response({"error": "No se proporcionaron parámetros de búsqueda."}, status=status.HTTP_400_BAD_REQUEST)
+
+
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
+
+@api_view(['POST'])
+def cliente_create(request):
+    print(request.data)
+    clienteCreateSerializer = ClienteSerializerCreate(data=request.data)
+    if clienteCreateSerializer.is_valid():
+        try:
+            clienteCreateSerializer.save()
+            return Response("Cliente creado", status=status.HTTP_201_CREATED)
+        except serializers.ValidationError as error:
+            return Response(error.detail, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as error:
+            print(repr(error))
+            return Response(repr(error), status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    else:
+        return Response(clienteCreateSerializer.errors, status=status.HTTP_400_BAD_REQUEST)

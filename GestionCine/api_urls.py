@@ -12,4 +12,6 @@ urlpatterns = [
     path('cines/buscar',cine_buscar),
     path('salas/buscar',sala_buscar),
     path('peliculas/buscar',pelicula_buscar),
+    
+    path('clientes/create',cliente_create),
 ]
