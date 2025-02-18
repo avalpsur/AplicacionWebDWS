@@ -17,6 +17,7 @@ def cliente_list(request):
     serializer = ClienteSerializer(clientes,many=True)
     return Response(serializer.data)
 
+
 @api_view(['GET'])
 def cine_list(request):
     cines = Cine.objects.all()
@@ -135,3 +136,27 @@ def cliente_create(request):
             return Response(repr(error), status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     else:
         return Response(clienteCreateSerializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET'])
+def cliente_obtener(request, cliente_id):
+    try:
+        cliente = Cliente.objects.get(id=cliente_id)
+        serializer = ClienteSerializer(cliente)
+        return Response(serializer.data)
+    except Cliente.DoesNotExist:
+        return Response({"error": "Cliente no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['PUT'])
+def cliente_editar(request, cliente_id):
+    try:
+        cliente = Cliente.objects.get(id=cliente_id)
+    except Cliente.DoesNotExist:
+        return Response({"error": "Cliente no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+
+    serializer = ClienteSerializer(cliente, data=request.data)
+    
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -13,5 +13,8 @@ urlpatterns = [
     path('salas/buscar',sala_buscar),
     path('peliculas/buscar',pelicula_buscar),
     
-    path('clientes/create',cliente_create),
+    path('clientes/<int:cliente_id>', cliente_obtener, name='cliente_obtener'),
+    path('clientes/<int:cliente_id>/editar', cliente_editar, name='cliente_editar'),
+ 
+
 ]
