@@ -55,3 +55,34 @@ class ClienteSerializerCreate(serializers.ModelSerializer):
             raise serializers.ValidationError("El nombre debe tener al menos 3 caracteres")
         return nombre
     
+
+
+
+class EmpleadoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Empleado
+        fields = ['id', 'dni', 'nombre', 'apellidos', 'nuss', 'iban', 'salario', 'encargado', 'cine']
+
+
+class SalaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Sala
+        fields = ['id', 'tamano', 'cine', 'empleado']
+        extra_kwargs = {
+            'cine': {'required': True}
+        }
+    def validate_tamano(self, tamano):
+        opciones_validas = ["PE", "ME", "GR"]
+        if tamano not in opciones_validas:
+            raise serializers.ValidationError("El tamaño debe ser 'PE' (Pequeño), 'ME' (Mediano) o 'GR' (Grande).")
+        return tamano
+
+    def validate_cine(self, cine):
+        if not Cine.objects.filter(id=cine.id).exists():
+            raise serializers.ValidationError("El cine seleccionado no existe.")
+        return cine
+
+    def validate_empleado(self, empleados):
+        if not empleados:
+            raise serializers.ValidationError("Debes asignar al menos un empleado a la sala.")
+        return empleados

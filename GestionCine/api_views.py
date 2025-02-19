@@ -19,6 +19,13 @@ def cliente_list(request):
 
 
 @api_view(['GET'])
+def empleados_list(request):
+    empleados = Empleado.objects.all()
+    serializer = EmpleadoSerializer(empleados, many=True)
+    return Response(serializer.data)
+
+
+@api_view(['GET'])
 def cine_list(request):
     cines = Cine.objects.all()
     serializer = CineSerializer(cines,many=True)
@@ -118,9 +125,6 @@ def pelicula_buscar(request):
     return Response({"error": "No se proporcionaron parámetros de búsqueda."}, status=status.HTTP_400_BAD_REQUEST)
 
 
-from rest_framework.authentication import SessionAuthentication, BasicAuthentication
-from rest_framework.permissions import IsAuthenticated
-
 @api_view(['POST'])
 def cliente_create(request):
     print(request.data)
@@ -159,4 +163,42 @@ def cliente_editar(request, cliente_id):
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['PATCH'])
+def cliente_actualizar_nombre(request, cliente_id):
+    try:
+        cliente = Cliente.objects.get(id=cliente_id)
+    except Cliente.DoesNotExist:
+        return Response({"error": "Cliente no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+
+    serializer = ClienteSerializer(cliente, data=request.data, partial=True)
+
+    if serializer.is_valid():
+        try:
+            serializer.save()
+            return Response({"mensaje": "Nombre actualizado", "cliente": serializer.data})
+        except Exception as error:
+            print(repr(error))
+            return Response({"error": repr(error)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    else:
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+@api_view(['DELETE'])
+def cliente_eliminar(request, cliente_id):
+    try:
+        cliente = Cliente.objects.get(id=cliente_id) 
+        cliente.delete()  
+        return Response({"mensaje": "Cliente eliminado correctamente"}, status=status.HTTP_200_OK)
+    except Exception as error:
+        return Response({"error": repr(error)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['POST'])
+def sala_create(request):
+    serializer = SalaSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response({"message": "Sala creada con éxito"}, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
