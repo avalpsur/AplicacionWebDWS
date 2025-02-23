@@ -9,6 +9,9 @@ from django.contrib.auth.models import Group
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.permissions import IsAuthenticated
 from django.shortcuts import render,redirect
+from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
+
 
 
 @api_view(['GET'])
@@ -197,8 +200,116 @@ def cliente_eliminar(request, cliente_id):
 
 @api_view(['POST'])
 def sala_create(request):
-    serializer = SalaSerializer(data=request.data)
+    serializer = SalaSerializerCreate(data=request.data)
     if serializer.is_valid():
         serializer.save()
-        return Response({"message": "Sala creada con éxito"}, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET'])
+def sala_obtener(request, sala_id):
+    try:
+        sala = Sala.objects.get(id=sala_id)
+        serializer = SalaSerializer(sala)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    except Sala.DoesNotExist:
+        return Response({"error": "Sala no encontrada"}, status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['PUT'])
+def sala_editar(request, sala_id):
+    sala = Sala.objects.get(id=sala_id)
+    sala_serializer = SalaSerializerEditar(data=request.data, instance=sala)
+    if sala_serializer.is_valid():
+        try:
+            sala_serializer.save()
+            return Response("Sala editada con éxito", status=status.HTTP_200_OK)
+        except serializers.ValidationError as error:
+            return Response(error.detail, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as error:
+            return Response(repr(error), status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    else:
+        return Response(sala_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['PATCH'])
+def sala_actualizar_tamano(request, sala_id):
+    sala = Sala.objects.get(id=sala_id)
+    sala_serializer = SalaSerializerActualizarTamano(data=request.data, instance=sala)
+    if sala_serializer.is_valid():
+        try:
+            sala_serializer.save()
+            return Response("Tamaño de la sala actualizado", status=status.HTTP_200_OK)
+        except Exception as error:
+            return Response(repr(error), status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    else:
+        return Response(sala_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['DELETE'])
+def sala_eliminar(request, sala_id):
+    sala = Sala.objects.get(id=sala_id)
+    try:
+        sala.delete()
+        return Response("Sala eliminada con éxito", status=status.HTTP_200_OK)
+    except Exception as error:
+        return Response(repr(error), status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['POST'])
+def pelicula_create(request):
+    serializer = PeliculaSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET'])
+def pelicula_obtener(request, pelicula_id):
+    try:
+        pelicula = Pelicula.objects.get(id=pelicula_id)
+        serializer = PeliculaSerializer(pelicula)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    except Pelicula.DoesNotExist:
+        return Response({"error": "Pelicula no encontrada"}, status=status.HTTP_404_NOT_FOUND)
+@api_view(['PUT'])
+def pelicula_editar(request, pelicula_id):
+    try:
+        pelicula = Pelicula.objects.get(id=pelicula_id)
+        serializer = PeliculaSerializerCreate(data=request.data, instance=pelicula)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"mensaje": "Película actualizada con éxito"}, status=status.HTTP_200_OK)
+        else:
+            print("❌ Errores de validación:", serializer.errors)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    except Pelicula.DoesNotExist:
+        return Response({"error": "Película no encontrada"}, status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['PATCH'])
+def pelicula_actualizar_nombre(request, pelicula_id):
+    try:
+        pelicula = Pelicula.objects.get(id=pelicula_id)
+        serializer = PeliculaSerializerCreate(data=request.data, instance=pelicula, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"mensaje": "Título de la película actualizado"}, status=status.HTTP_200_OK)
+        else:
+            print("❌ Errores de validación:", serializer.errors)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    except Pelicula.DoesNotExist:
+        return Response({"error": "Película no encontrada"}, status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['DELETE'])
+def pelicula_eliminar(request, pelicula_id):
+    try:
+        pelicula = Pelicula.objects.get(id=pelicula_id)
+        pelicula.delete()
+        return Response({"mensaje": "Película eliminada con éxito"}, status=status.HTTP_204_NO_CONTENT)
+    except Pelicula.DoesNotExist:
+        return Response({"error": "Película no encontrada"}, status=status.HTTP_404_NOT_FOUND)
+
+class ClienteViewSet(viewsets.ModelViewSet):
+    queryset = Cliente.objects.all()
+    serializer_class = ClienteSerializer
+    permission_classes = [IsAuthenticated]
