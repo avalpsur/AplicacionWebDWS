@@ -28,7 +28,10 @@ urlpatterns = [
 
     path('peliculas/create', pelicula_create, name='pelicula_create'),
     path('peliculas/<int:pelicula_id>/editar', pelicula_editar, name='pelicula_editar'),
-path('peliculas/<int:pelicula_id>/actualizar/nombre', pelicula_actualizar_nombre, name='pelicula_actualizar_nombre'),
-path('peliculas/<int:pelicula_id>/eliminar', pelicula_eliminar, name='pelicula_eliminar'),
+    path('peliculas/<int:pelicula_id>/actualizar/nombre', pelicula_actualizar_nombre, name='pelicula_actualizar_nombre'),
+    path('peliculas/<int:pelicula_id>/eliminar', pelicula_eliminar, name='pelicula_eliminar'),
     path('peliculas/<int:pelicula_id>', pelicula_obtener, name='pelicula_obtener'),
+
+    path('registrar/usuario',registrar_usuario.as_view()),
+    path('usuario/token/<str:token>',obtener_usuario_token),
 ]

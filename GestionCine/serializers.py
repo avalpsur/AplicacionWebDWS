@@ -118,30 +118,25 @@ class PeliculaSerializerCreate(serializers.Serializer):
         required=True
     )
 
-    # ✅ Validación de título
     def validate_titulo(self, titulo):
         if len(titulo) < 3:
             raise serializers.ValidationError("El título debe tener al menos 3 caracteres.")
         return titulo
 
-    # ✅ Validación de director
     def validate_director(self, director):
         if len(director) < 3:
             raise serializers.ValidationError("El nombre del director debe tener al menos 3 caracteres.")
         return director
 
-    # ✅ Validación de fecha de lanzamiento
     def validate_fechaLanzamiento(self, fechaLanzamiento):
         if fechaLanzamiento > timezone.now().date():
             raise serializers.ValidationError("La fecha de lanzamiento no puede ser en el futuro.")
         return fechaLanzamiento
 
-    # ✅ Validación de sala (al menos una)
     def validate_sala(self, salas):
         if not salas:
             raise serializers.ValidationError("Debes seleccionar al menos una sala.")
         
-        # Validar que todas las salas existen en la base de datos
         for sala_id in salas:
             if not Sala.objects.filter(id=sala_id).exists():
                 raise serializers.ValidationError(f"La sala con ID {sala_id} no existe.")
@@ -162,10 +157,28 @@ class PeliculaSerializerCreate(serializers.Serializer):
         instance.fechaLanzamiento = validated_data.get('fechaLanzamiento', instance.fechaLanzamiento)
         instance.tiempoProyectada = validated_data.get('tiempoProyectada', instance.tiempoProyectada)
         
-        # ✅ Actualizar la relación ManyToMany con `sala`
         if 'sala' in validated_data:
             salas_data = validated_data.pop('sala')
             instance.sala.set(salas_data)
         
         instance.save()
         return instance
+    
+class UsuarioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Usuario
+        fields = '__all__'
+
+class UsuarioSerializerRegistro(serializers.Serializer):
+ 
+    username = serializers.CharField()
+    password1 = serializers.CharField()
+    password2 = serializers.CharField()
+    email = serializers.EmailField()
+    rol = serializers.IntegerField()
+    
+    def validate_username(self,username):
+        usuario = Usuario.objects.filter(username=username).first()
+        if(not usuario is None):
+            raise serializers.ValidationError('Ya existe un usuario con ese nombre')
+        return username
